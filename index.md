@@ -35,4 +35,5 @@ No domain pages yet.
 ## Control Files
 
 - [AGENTS.md](AGENTS.md): schema and operating rules for this vault.
+- [CLAUDE.md](CLAUDE.md): Claude-facing pointer to the AGENTS.md schema.
 - [log.md](log.md): append-only maintenance log.
