@@ -4,6 +4,10 @@ Primary catalog for the LLM Wiki maintained in this vault.
 
 ## Sources
 
+- Backend and database decision notes:
+  - [Backend version decision - Spring Boot and Java](wiki/sources/2026-06-15-notes-backend-version-decision.md)
+  - [Database choice decision - MySQL](wiki/sources/2026-06-15-notes-database-choice-decision.md)
+
 - Notion 369 team raw capture:
   - [Notion 369팀 루트](wiki/sources/2026-06-15-markdown-notion-369-team-root.md)
   - [Notion 369팀 소개 페이지](wiki/sources/2026-06-15-markdown-notion-369-team-introduction.md)
