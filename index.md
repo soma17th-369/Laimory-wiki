@@ -7,6 +7,7 @@ Primary catalog for the LLM Wiki maintained in this vault.
 - Backend and database decision notes:
   - [Backend version decision - Spring Boot and Java](wiki/sources/2026-06-15-notes-backend-version-decision.md)
   - [Database choice decision - MySQL](wiki/sources/2026-06-15-notes-database-choice-decision.md)
+  - [Timeline Card Grouping And Typed Payload Design](wiki/sources/2026-06-16-notes-timeline-card-grouping-design.md)
 
 - Notion 369 team raw capture:
   - [Notion 369팀 루트](wiki/sources/2026-06-15-markdown-notion-369-team-root.md)
@@ -63,4 +64,5 @@ No domain pages yet.
 
 - [AGENTS.md](AGENTS.md): schema and operating rules for this vault.
 - [CLAUDE.md](CLAUDE.md): Claude-facing pointer to the AGENTS.md schema.
+- [UbiquitousLanguage.md](UbiquitousLanguage.md): DDD glossary for Laimory domain terms.
 - [log.md](log.md): append-only maintenance log.
