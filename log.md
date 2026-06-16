@@ -17,3 +17,4 @@
 [2026-06-16] raw-design-note | define AI request itemId as source item array index before DB insert
 [2026-06-16] ingest | ingest timeline card grouping and typed payload design into wiki source page
 [2026-06-16] documentation | add Laimory DDD ubiquitous language glossary
+[2026-06-16] documentation | remove ubiquitous language glossary from wiki repo; keep it for development project context only

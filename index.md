@@ -64,5 +64,4 @@ No domain pages yet.
 
 - [AGENTS.md](AGENTS.md): schema and operating rules for this vault.
 - [CLAUDE.md](CLAUDE.md): Claude-facing pointer to the AGENTS.md schema.
-- [UbiquitousLanguage.md](UbiquitousLanguage.md): DDD glossary for Laimory domain terms.
 - [log.md](log.md): append-only maintenance log.
