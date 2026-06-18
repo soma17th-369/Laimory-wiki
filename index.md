@@ -8,6 +8,8 @@ Primary catalog for the LLM Wiki maintained in this vault.
   - [Backend version decision - Spring Boot and Java](wiki/sources/2026-06-15-notes-backend-version-decision.md)
   - [Database choice decision - MySQL](wiki/sources/2026-06-15-notes-database-choice-decision.md)
   - [Timeline Card Grouping And Typed Payload Design](wiki/sources/2026-06-16-notes-timeline-card-grouping-design.md)
+  - [Timeline Draft API Thought Process](wiki/sources/2026-06-17-notes-timeline-draft-api-thought-process.md)
+  - [Timeline Implementation Reconciliation](wiki/sources/2026-06-19-notes-timeline-implementation-reconciliation.md)
 
 - Notion 369 team raw capture:
   - [Notion 369팀 루트](wiki/sources/2026-06-15-markdown-notion-369-team-root.md)
@@ -44,7 +46,7 @@ Primary catalog for the LLM Wiki maintained in this vault.
 
 ## Answers
 
-No durable answer pages yet.
+- [Server-to-server auth for Laimory](wiki/answers/server-to-server-auth-for-laimory.md): recommended server-to-server authentication path for app server and AI server callbacks.
 
 ## Domains
 

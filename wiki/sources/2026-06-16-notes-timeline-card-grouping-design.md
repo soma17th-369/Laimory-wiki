@@ -30,6 +30,8 @@ Android/source data is first handled as temporary source items. The backend send
 - `timeline_items` is not a raw source archive; it stores only AI-accepted source events under exactly one timeline card.
 - `timeline_items.payload` is stored as JSON in MySQL, but Java should use typed payload objects, not `Map<String, Object>`.
 - The recommended Java model is a sealed `TimelineItemPayload` interface with payload records such as `PhotoPayload`, `CalendarPayload`, `LocationPayload`, and `MovementPayload`.
+- The current server implementation has no `timeline_items.item_type` column in v1; item type lives in the payload JSON discriminator and is projected into response DTOs.
+- The current server implementation uses plain FK IDs (`dailyRecordId`, `timelineCardId`) rather than JPA object relationships/cascade.
 - AI request `itemId` values are request-local 0-based array indexes, not database primary keys.
 - Cards and items must be saved in one database transaction; AI calls should happen outside the transaction.
 - `timeline_items.timeline_card_id` should be non-null and card deletion should cascade to child items.
@@ -70,6 +72,7 @@ because each persisted timeline item belongs to exactly one card, and omitted so
 
 - Payload JSON shape is not fully enforced by the database.
 - Source items omitted by AI are not preserved in MVP.
+- Older sketches in the raw note that mention an `item_type` database column, JPA object relationships, or `CalendarPayload.attendeesCount` are superseded by the current server implementation.
 - Regeneration policy for memo-bearing cards still needs a final decision.
 - Card-level visibility and title/subtitle editability are still open questions.
 - If raw source preservation, multi-card references, or AI generation history become important, the model may need a source archive table or card-item join table later.
@@ -81,4 +84,4 @@ because each persisted timeline item belongs to exactly one card, and omitted so
 - [[2026-06-15-notes-database-choice-decision]]
 - [[2026-06-15-markdown-notion-ai-daily-timeline-mvp]]
 - [[2026-06-15-markdown-notion-erd]]
-
+- [[2026-06-19-notes-timeline-implementation-reconciliation]]

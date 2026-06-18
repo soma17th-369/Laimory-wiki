@@ -18,3 +18,8 @@
 [2026-06-16] ingest | ingest timeline card grouping and typed payload design into wiki source page
 [2026-06-16] documentation | add Laimory DDD ubiquitous language glossary
 [2026-06-16] documentation | remove ubiquitous language glossary from wiki repo; keep it for development project context only
+[2026-06-18] ingest | ingest timeline draft API thought-process note as source page for server-to-server auth answer
+[2026-06-18] answer | document server-to-server auth options and Laimory recommendation for app server and AI callbacks
+[2026-06-18] answer-update | clarify private-zone AI server auth and per-task callback token tradeoff
+[2026-06-18] answer-update | switch Laimory MVP recommendation from X-Internal-Secret to one-time Callback-Token
+[2026-06-19] maintenance | reconcile timeline draft API and storage notes with current server implementation
