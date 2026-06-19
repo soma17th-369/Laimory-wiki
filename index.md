@@ -47,6 +47,7 @@ Primary catalog for the LLM Wiki maintained in this vault.
 ## Answers
 
 - [Server-to-server auth for Laimory](wiki/answers/server-to-server-auth-for-laimory.md): recommended server-to-server authentication path for app server and AI server callbacks.
+- [Timeline Draft API Sequence Diagrams](wiki/answers/timeline-draft-api-sequence-diagrams.md): Mermaid sequence diagrams for the current timeline draft creation, AI callback, and polling APIs.
 
 ## Domains
 

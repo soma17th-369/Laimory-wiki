@@ -23,3 +23,4 @@
 [2026-06-18] answer-update | clarify private-zone AI server auth and per-task callback token tradeoff
 [2026-06-18] answer-update | switch Laimory MVP recommendation from X-Internal-Secret to one-time Callback-Token
 [2026-06-19] maintenance | reconcile timeline draft API and storage notes with current server implementation
+[2026-06-19] answer | add sequence diagrams for current timeline draft create, callback, and polling APIs
