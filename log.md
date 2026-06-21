@@ -24,3 +24,19 @@
 [2026-06-18] answer-update | switch Laimory MVP recommendation from X-Internal-Secret to one-time Callback-Token
 [2026-06-19] maintenance | reconcile timeline draft API and storage notes with current server implementation
 [2026-06-19] answer | add sequence diagrams for current timeline draft create, callback, and polling APIs
+[2026-06-20] answer | document why AWS root user should not be used for daily work and summarize IAM/Identity Center guidance
+[2026-06-20] answer | document AWS Organizations and IAM Identity Center account/resource model
+[2026-06-20] answer-update | add staged guidance for existing AWS workload resources in a management account
+[2026-06-20] answer-update | add alternative path to create a new empty management account and invite the existing resource account
+[2026-06-20] planning-note | record itemType column plan and payload discriminator correction
+[2026-06-20] planning-note | fold BaseEntity auditing plan into the current timeline backend change note
+[2026-06-20] planning-note | add MySQL draft persistence and evaluation table plan for AI failure recovery
+[2026-06-20] planning-note | revise draft persistence plan to remove AI result DB table and move evaluation storage outside app MySQL
+[2026-06-20] planning-note | keep Redis task state and scope MySQL persistence to draft source items with callback retry guidance
+[2026-06-20] planning-note | add Timeline Card to Timeline Event domain rename plan
+[2026-06-20] planning-note | add explicit primary key and foreign key naming plan
+[2026-06-21] planning-note | add generic API response envelope plan with HTTP status and app code guidance
+[2026-06-21] planning-note | define record_date as a noon-boundary local record day with timezone guidance
+[2026-06-21] planning-note | clarify client sends occurrence instant and timezone while server computes record_date
+[2026-06-21] ingest | ingest VPC cost investigation note (SSM interface endpoints) as source page and cross-link AWS answer pages
+[2026-06-21] answer | document how Laimory backend mentor feedback maps to planned server code changes
