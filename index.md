@@ -11,6 +11,7 @@ Primary catalog for the LLM Wiki maintained in this vault.
   - [Timeline Draft API Thought Process](wiki/sources/2026-06-17-notes-timeline-draft-api-thought-process.md)
   - [Timeline Implementation Reconciliation](wiki/sources/2026-06-19-notes-timeline-implementation-reconciliation.md)
   - [Timeline Backend Change Plan](wiki/sources/2026-06-20-notes-item-type-column-plan.md)
+  - [AI Daily Timeline Agent Draft](wiki/sources/2026-06-20-notes-ai-daily-timeline-agent-draft.md)
 
 - AWS infrastructure and cost notes:
   - [VPC Cost Investigation - SSM Interface Endpoints](wiki/sources/2026-06-21-notes-vpc-ssm-endpoint-cost.md)

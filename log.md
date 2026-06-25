@@ -40,3 +40,4 @@
 [2026-06-21] planning-note | clarify client sends occurrence instant and timezone while server computes record_date
 [2026-06-21] ingest | ingest VPC cost investigation note (SSM interface endpoints) as source page and cross-link AWS answer pages
 [2026-06-21] answer | document how Laimory backend mentor feedback maps to planned server code changes
+[2026-06-26] design-note | revise AI daily timeline Agent draft around input, expected output, and high-level Agent structure
