@@ -10,6 +10,10 @@ Primary catalog for the LLM Wiki maintained in this vault.
   - [Timeline Card Grouping And Typed Payload Design](wiki/sources/2026-06-16-notes-timeline-card-grouping-design.md)
   - [Timeline Draft API Thought Process](wiki/sources/2026-06-17-notes-timeline-draft-api-thought-process.md)
   - [Timeline Implementation Reconciliation](wiki/sources/2026-06-19-notes-timeline-implementation-reconciliation.md)
+  - [Timeline Backend Change Plan](wiki/sources/2026-06-20-notes-item-type-column-plan.md)
+
+- AWS infrastructure and cost notes:
+  - [VPC Cost Investigation - SSM Interface Endpoints](wiki/sources/2026-06-21-notes-vpc-ssm-endpoint-cost.md)
 
 - Notion 369 team raw capture:
   - [Notion 369팀 루트](wiki/sources/2026-06-15-markdown-notion-369-team-root.md)
@@ -48,6 +52,9 @@ Primary catalog for the LLM Wiki maintained in this vault.
 
 - [Server-to-server auth for Laimory](wiki/answers/server-to-server-auth-for-laimory.md): recommended server-to-server authentication path for app server and AI server callbacks.
 - [Timeline Draft API Sequence Diagrams](wiki/answers/timeline-draft-api-sequence-diagrams.md): Mermaid sequence diagrams for the current timeline draft creation, AI callback, and polling APIs.
+- [Laimory Backend Feedback Code Mapping](wiki/answers/laimory-backend-feedback-code-mapping.md): maps mentor/backend review feedback to the planned server code changes.
+- [AWS root user vs IAM user](wiki/answers/aws-root-user-vs-iam-user.md): why AWS root should be reserved for root-only tasks and daily work should use IAM Identity Center, roles, or scoped IAM identities.
+- [AWS Organizations and Identity Center account model](wiki/answers/aws-organizations-identity-center-account-model.md): how management accounts, member accounts, Identity Center users, permission sets, and resources relate.
 
 ## Domains
 
