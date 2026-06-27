@@ -55,3 +55,6 @@
 [2026-06-27] design-note | reorder Agent structure so Repair Agent appears after Reflection and ReflectionIssue
 [2026-06-27] design-note | translate AI daily timeline structure explanation labels to Korean while preserving Agent and schema names
 [2026-06-27] ingest | ingest AI daily timeline Agent draft into source, topic, entity, and index pages
+[2026-06-27] ingest | document Laboratory mobile data extraction code and propose JSON/table payload structure for timeline source item upload
+[2026-06-27] answer-update | add field importance tiers to Laboratory mobile data extraction payload documentation
+[2026-06-27] answer-update | reorganize mobile extraction payload docs by photo, sleep, calendar, notification, and expected stay/move location item formats

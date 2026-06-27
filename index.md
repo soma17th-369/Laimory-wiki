@@ -16,6 +16,9 @@ Primary catalog for the LLM Wiki maintained in this vault.
 - AWS infrastructure and cost notes:
   - [VPC Cost Investigation - SSM Interface Endpoints](wiki/sources/2026-06-21-notes-vpc-ssm-endpoint-cost.md)
 
+- Android laboratory data extraction:
+  - [Laboratory Mobile Data Extraction](wiki/sources/2026-06-27-github-laboratory-mobile-data-extraction.md)
+
 - Notion 369 team raw capture:
   - [Notion 369팀 루트](wiki/sources/2026-06-15-markdown-notion-369-team-root.md)
   - [Notion 369팀 소개 페이지](wiki/sources/2026-06-15-markdown-notion-369-team-introduction.md)
@@ -57,6 +60,7 @@ Primary catalog for the LLM Wiki maintained in this vault.
 - [Laimory Backend Feedback Code Mapping](wiki/answers/laimory-backend-feedback-code-mapping.md): maps mentor/backend review feedback to the planned server code changes.
 - [AWS root user vs IAM user](wiki/answers/aws-root-user-vs-iam-user.md): why AWS root should be reserved for root-only tasks and daily work should use IAM Identity Center, roles, or scoped IAM identities.
 - [AWS Organizations and Identity Center account model](wiki/answers/aws-organizations-identity-center-account-model.md): how management accounts, member accounts, Identity Center users, permission sets, and resources relate.
+- [Mobile Data Extraction Payload Structure](wiki/answers/mobile-data-extraction-payload-structure.md): proposed JSON and human-readable table structure for sending Laboratory mobile extraction data as typed timeline source items.
 
 ## Domains
 

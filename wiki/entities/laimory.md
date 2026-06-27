@@ -27,6 +27,7 @@ Laimory는 모바일 기기 안에 흩어진 사진, 위치, 일정, 앱 사용,
 - 기록은 저장 전까지 계속 추가되며, 기존 수정/작성 내용은 임시저장으로 유지되는 방향이 제안되었다.
 - 사업화 구상은 Free, Premium, Max 3단계 구독 모델이며, 고급 AI 회고/패턴/대화 기능을 유료화한다.
 - 기술 전략은 Android 앱, Spring Boot backend, 자체 경량 AI 서버/상용 LLM API, On-device AI 1차 가공, 모니터링 도구를 포함한다.
+- Laboratory Android lab에서 사진, 일정, 알림, Health Connect, Samsung Health-origin 데이터를 실험하고 있으며, 서버 전송 후보 구조는 typed timeline source item batch로 정리되었다.
 
 ## Risks and Tensions
 
@@ -42,6 +43,7 @@ Laimory는 모바일 기기 안에 흩어진 사진, 위치, 일정, 앱 사용,
 - On-device SLM이 한국어 일상 이벤트 요약과 감정 추출을 충분히 수행할 수 있는가?
 - Google Timeline/Places 연동, Geofencing, Passive Location 중 MVP에 맞는 위치 수집 전략은 무엇인가?
 - 20~30대 직장인과 50대 이상 액티브 시니어 중 어떤 persona가 더 강한 문제/지불 의사를 보이는가?
+- 모바일 추출 데이터 중 metadata-only로 충분한 항목과 원본/썸네일 업로드가 필요한 항목을 어떻게 나눌 것인가?
 
 ## Linked Sources
 
@@ -53,6 +55,7 @@ Laimory는 모바일 기기 안에 흩어진 사진, 위치, 일정, 앱 사용,
 - [[2026-06-15-markdown-notion-laimory-planning-review-evaluation]]
 - [[2026-06-15-markdown-notion-background-location]]
 - [[2026-06-20-notes-ai-daily-timeline-agent-draft]]
+- [[2026-06-27-github-laboratory-mobile-data-extraction]]
 
 ## Related Pages
 
@@ -61,3 +64,4 @@ Laimory는 모바일 기기 안에 흩어진 사진, 위치, 일정, 앱 사용,
 - [[ai-daily-timeline-generation]]
 - [[laimory-planning-and-validation]]
 - [[android-life-logging-data-collection]]
+- [[mobile-data-extraction-payload-structure]]
