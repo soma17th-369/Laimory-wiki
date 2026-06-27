@@ -41,6 +41,7 @@ Primary catalog for the LLM Wiki maintained in this vault.
 ## Topics
 
 - [AI Life Logging](wiki/topics/ai-life-logging.md): mobile AI life-logging and Personal AI Memory pattern synthesized from Laimory planning sources.
+- [AI Daily Timeline Generation](wiki/topics/ai-daily-timeline-generation.md): Laimory AI timeline generation architecture using Event normalization, Reflection, and selective re-orchestration.
 - [Laimory Planning And Validation](wiki/topics/laimory-planning-and-validation.md): Laimory planning, metrics, risks, and validation questions.
 - [Android Life Logging Data Collection](wiki/topics/android-life-logging-data-collection.md): Android location/background-data constraints for life-logging apps.
 

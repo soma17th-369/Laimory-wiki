@@ -2,7 +2,7 @@
 title: Laimory
 kind: entity
 status: active
-updated: 2026-06-15
+updated: 2026-06-27
 tags: [product, ai-life-logging, personal-ai-memory, android]
 ---
 
@@ -23,6 +23,7 @@ Laimory는 모바일 기기 안에 흩어진 사진, 위치, 일정, 앱 사용,
 - 핵심 기능은 AI Timeline, 5가지 구조화 회고, 충분한 기록 누적 후 Personal AI Chat이다.
 - 회고 기능은 기억 복원, 패턴 발견, 변화 인식, 회고 유도, 재방문/재평가로 나뉜다.
 - MVP 시나리오는 사용자가 하루 보기에서 사진을 선택하고 AI 초안을 받은 뒤 자기 전에 수정/저장하는 흐름이다.
+- AI 하루 타임라인 생성 설계는 데이터별 Event Agent가 source별 `Event` 후보를 만들고, Timeline Agent가 이를 병합한 뒤 Reflection Agent와 Repair Agent가 bounded loop로 품질을 개선하는 구조로 구체화되었다.
 - 기록은 저장 전까지 계속 추가되며, 기존 수정/작성 내용은 임시저장으로 유지되는 방향이 제안되었다.
 - 사업화 구상은 Free, Premium, Max 3단계 구독 모델이며, 고급 AI 회고/패턴/대화 기능을 유료화한다.
 - 기술 전략은 Android 앱, Spring Boot backend, 자체 경량 AI 서버/상용 LLM API, On-device AI 1차 가공, 모니터링 도구를 포함한다.
@@ -51,11 +52,12 @@ Laimory는 모바일 기기 안에 흩어진 사진, 위치, 일정, 앱 사용,
 - [[2026-06-15-markdown-notion-laimory-presentation-script-260529]]
 - [[2026-06-15-markdown-notion-laimory-planning-review-evaluation]]
 - [[2026-06-15-markdown-notion-background-location]]
+- [[2026-06-20-notes-ai-daily-timeline-agent-draft]]
 
 ## Related Pages
 
 - [[369-team]]
 - [[ai-life-logging]]
+- [[ai-daily-timeline-generation]]
 - [[laimory-planning-and-validation]]
 - [[android-life-logging-data-collection]]
-

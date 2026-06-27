@@ -41,3 +41,17 @@
 [2026-06-21] ingest | ingest VPC cost investigation note (SSM interface endpoints) as source page and cross-link AWS answer pages
 [2026-06-21] answer | document how Laimory backend mentor feedback maps to planned server code changes
 [2026-06-26] design-note | revise AI daily timeline Agent draft around input, expected output, and high-level Agent structure
+[2026-06-26] design-note | add Event normalization and batch synthesis plus selective re-orchestration rationale to AI daily timeline Agent draft
+[2026-06-26] design-note | clarify Reflection-driven Main Agent orchestration and remove USER_PROVIDED from AI inference levels
+[2026-06-26] design-note | update AI daily timeline parallel architecture diagram to include Reflection and re-orchestration loop
+[2026-06-26] design-note | clarify revised timelines are re-evaluated by Reflection after re-orchestration
+[2026-06-26] design-note | revise AI daily timeline repair path into an explicit bounded Reflection loop
+[2026-06-27] design-note | add ReflectionIssue schema as Main Agent re-orchestration input for AI daily timeline Agent
+[2026-06-27] design-note | add test-suite evaluation and observability plan for AI daily timeline Agent workflow traces
+[2026-06-27] design-note | document Event type meanings and usage criteria for AI daily timeline Agent
+[2026-06-27] design-note | rename Main Agent to Repair Orchestrator to scope it to the Reflection repair loop
+[2026-06-27] design-note | add sourceId and targetSourceRefs guidance for scoped repair orchestration
+[2026-06-27] design-note | rename Repair Orchestrator to Repair Agent in AI daily timeline Agent design
+[2026-06-27] design-note | reorder Agent structure so Repair Agent appears after Reflection and ReflectionIssue
+[2026-06-27] design-note | translate AI daily timeline structure explanation labels to Korean while preserving Agent and schema names
+[2026-06-27] ingest | ingest AI daily timeline Agent draft into source, topic, entity, and index pages
