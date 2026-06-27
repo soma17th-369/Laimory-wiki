@@ -58,3 +58,4 @@
 [2026-06-27] ingest | document Laboratory mobile data extraction code and propose JSON/table payload structure for timeline source item upload
 [2026-06-27] answer-update | add field importance tiers to Laboratory mobile data extraction payload documentation
 [2026-06-27] answer-update | reorganize mobile extraction payload docs by photo, sleep, calendar, notification, and expected stay/move location item formats
+[2026-06-27] maintenance | rewrite README as a human-facing guide for using the LLM Wiki vault
