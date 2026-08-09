@@ -22,6 +22,19 @@ Primary catalog for the LLM Wiki maintained in this vault.
 - GitHub collaboration rules:
   - [GitHub Co-work Rule](wiki/sources/2026-06-28-github-github-co-work-rule.md)
 
+- Laimory AI system documents (verified at commit `c36799389ce449ad3b8500865476e1b7fb859a47`):
+  - [Laimory AI·LLM Wiki Guide](wiki/sources/2026-08-09-markdown-laimory-ai-llm-wiki-readme.md)
+  - [Laimory AI System Architecture](wiki/sources/2026-08-09-markdown-laimory-ai-system-architecture.md)
+  - [Timeline LangGraph and Agent Engineering](wiki/sources/2026-08-09-markdown-laimory-timeline-graph-and-agents.md)
+  - [Prompt Engineering and Structured Output](wiki/sources/2026-08-09-markdown-laimory-prompt-engineering.md)
+  - [Deterministic Timeline Repair and Tools](wiki/sources/2026-08-09-markdown-laimory-deterministic-repair-and-tools.md)
+  - [User Memory Design and Update](wiki/sources/2026-08-09-markdown-laimory-user-memory.md)
+  - [LLM Provider Structure and Model Evaluation Plan](wiki/sources/2026-08-09-markdown-laimory-llm-provider-model-evaluation.md)
+  - [AI Deployment and Runtime](wiki/sources/2026-08-09-markdown-laimory-ai-deployment-and-runtime.md)
+  - [Observability - Filebeat, Elasticsearch, and Langfuse](wiki/sources/2026-08-09-markdown-laimory-observability.md)
+  - [AI Domain Invariants, Glossary, and Known Gaps](wiki/sources/2026-08-09-markdown-laimory-ai-invariants-and-known-gaps.md)
+  - [Laimory AI·LLM Wiki All-in-One](wiki/sources/2026-08-09-markdown-laimory-ai-llm-wiki-all-in-one.md)
+
 - Notion 369 team raw capture:
   - [Notion 369팀 루트](wiki/sources/2026-06-15-markdown-notion-369-team-root.md)
   - [Notion 369팀 소개 페이지](wiki/sources/2026-06-15-markdown-notion-369-team-introduction.md)
@@ -47,7 +60,10 @@ Primary catalog for the LLM Wiki maintained in this vault.
 ## Topics
 
 - [AI Life Logging](wiki/topics/ai-life-logging.md): mobile AI life-logging and Personal AI Memory pattern synthesized from Laimory planning sources.
-- [AI Daily Timeline Generation](wiki/topics/ai-daily-timeline-generation.md): Laimory AI timeline generation architecture using Event normalization, Reflection, and selective re-orchestration.
+- [AI Daily Timeline Generation](wiki/topics/ai-daily-timeline-generation.md): current Event-Agent fan-out, Timeline synthesis, deterministic Repair, and post-repair Question flow.
+- [Laimory User Memory](wiki/topics/laimory-user-memory.md): bounded user profile rewrite, memo provenance rules, and safe context consumption.
+- [Laimory AI Model Evaluation](wiki/topics/laimory-ai-model-evaluation.md): provider-neutral evaluation plan for source fidelity, structured reliability, quality, latency, and cost.
+- [Laimory AI Runtime and Observability](wiki/topics/laimory-ai-runtime-and-observability.md): EC2 and AgentCore runtime paths, task lifecycle, operational events, and Langfuse tracing.
 - [Laimory Planning And Validation](wiki/topics/laimory-planning-and-validation.md): Laimory planning, metrics, risks, and validation questions.
 - [Android Life Logging Data Collection](wiki/topics/android-life-logging-data-collection.md): Android location/background-data constraints for life-logging apps.
 
