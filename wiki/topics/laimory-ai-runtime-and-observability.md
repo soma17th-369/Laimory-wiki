@@ -20,6 +20,8 @@ Laimory AI server의 EC2·AgentCore 배포 경로, background task 수명, healt
 
 관측은 세 경계로 나뉜다. local diagnostic은 상세 debugging, Elasticsearch는 allowlist된 운영 집계, Langfuse는 Agent tree와 LLM generation 분석을 담당한다. 관측 장애는 제품 결과를 바꾸지 않지만 그만큼 서비스 성공과 관측 공백이 동시에 생길 수 있어 관측 파이프라인 자체를 따로 감시해야 한다.
 
+2026-07-28과 07-30 회의에서는 AI Server의 직접 RDB 접근을 제거하고 App Server API를 통해 조회·저장하는 전환, callback·polling 장애, server-to-server token 갱신, Elasticsearch보다 Agent 내부 판단을 보기 적합한 Langfuse 도입이 진행 상황으로 보고됐다. 08-02부터 08-06에는 AWS 예산에 따른 RDS·EC2·NAT 선택, AgentCore 후보, 외부 장소 API의 WebClient connection pool 병목과 User Memory 충돌 작업 재처리가 논의됐다. 비용과 성능 수치는 회의 중 추정 또는 관찰이므로 운영 결정 전에 측정 자료로 확인해야 한다.
+
 ## Key Points
 
 - 결과 저장과 callback, User Memory result 저장 여부는 task 완료 운영 이벤트의 핵심 상태다.
@@ -36,6 +38,7 @@ Laimory AI server의 EC2·AgentCore 배포 경로, background task 수명, healt
 - Filebeat를 대체할 CloudWatch subscription, Lambda, Firehose 또는 collector 중 무엇을 쓸 것인가?
 - 관측 공백을 감지할 별도 health와 alert 기준은 무엇인가?
 - EC2와 AgentCore의 traffic ownership과 rollback 기간을 어떻게 운영할 것인가?
+- 외부 장소 API를 포함한 실제 production traffic에서 connection pool, batch 크기와 concurrency 목표는 얼마인가?
 
 ## Linked Sources
 
@@ -43,6 +46,12 @@ Laimory AI server의 EC2·AgentCore 배포 경로, background task 수명, healt
 - [[2026-08-09-markdown-laimory-ai-deployment-and-runtime]]
 - [[2026-08-09-markdown-laimory-observability]]
 - [[2026-08-09-markdown-laimory-ai-invariants-and-known-gaps]]
+- [[2026-07-28-meeting-369-team-space]]
+- [[2026-07-30-meeting-369-team-space]]
+- [[2026-08-02-meeting-369-team-space]]
+- [[2026-08-03-meeting-369-team-space]]
+- [[2026-08-05-meeting-369-team-space]]
+- [[2026-08-06-meeting-369-team-space]]
 
 ## Related Pages
 

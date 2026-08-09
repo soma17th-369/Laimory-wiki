@@ -18,6 +18,8 @@ Laimory의 기획은 "자동 모바일 라이프 로그 -> 회고 -> 장기 기�
 
 따라서 검증의 중심은 기능 구현 여부보다 "사용자가 데이터 권한을 줄 만큼 즉시 가치를 느끼는가", "자동 타임라인이 반복 방문을 만들 만큼 의미 있는가", "기록 누적 후 회고/AI 대화가 유료 전환 가치로 이어지는가"에 있다.
 
+2026-05-16부터 05-23까지의 회의들은 이 가설이 한 번에 확정된 것이 아니라 문제 정의, MVP 데이터 범위, permission onboarding, 경쟁 비교, 수익화와 성공 지표를 반복해서 다듬은 결과임을 보여준다. 사진·위치·calendar 중심의 축소 MVP와 단계적 permission 요청은 유력한 안이었지만, 우선 persona와 일간 회고의 실제 문제 강도는 미결이었다. 2026-08-05에는 제품 상태를 alpha test 단계로 설명하고 marketing 시작 방식과 예산 집행을 mentor에게 묻는 준비가 보고됐다.
+
 ## Key Points
 
 - 초기 persona는 20~30대 디지털 네이티브/직장인 중심이지만, 심의에서는 50대 이상 액티브 시니어와 자서전 방향 피봇 가능성도 제안되었다.
@@ -43,6 +45,13 @@ Laimory의 기획은 "자동 모바일 라이프 로그 -> 회고 -> 장기 기�
 - [[2026-06-15-markdown-notion-ai-diary-draft-service]]
 - [[2026-06-15-markdown-notion-ai-diary-renewal]]
 - [[2026-06-15-markdown-notion-meeting-records]]
+- [[2026-05-16-meeting-369-team-space]]
+- [[2026-05-17-meeting-369-team-space]]
+- [[2026-05-18-meeting-369-team-planning-review-preparation]]
+- [[2026-05-19-meeting-369-team-planning-review-preparation]]
+- [[2026-05-21-meeting-369-team-planning-review-preparation]]
+- [[2026-05-23-meeting-369-team-space]]
+- [[2026-08-05-meeting-369-team-space]]
 
 ## Related Pages
 

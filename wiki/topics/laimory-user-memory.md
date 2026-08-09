@@ -20,6 +20,8 @@ User Memory는 장기 사건 로그나 사실 source가 아니라 고정 크기�
 
 가장 중요한 안전장치는 문장 출처의 구분이다. AI가 작성한 title, subtitle, question에서 성향을 다시 추출하면 모델의 추측이 다음 세대의 사실처럼 증폭된다. 그래서 `personality`, `values`, `preferences`, `emotionalPatterns`, `memoryStyle`은 사용자가 직접 쓴 memo만 근거로 갱신한다. memo가 없는 batch에서 이 필드들을 그대로 유지하는 것은 정상 성공이다.
 
+2026-08-02부터 08-06까지의 회의에서는 User Memory가 제품의 장기 맥락 계층으로 구체화되는 과정이 기록됐다. 별도 table 저장, Timeline이 `SAVED`가 되는 시점의 갱신 trigger, 동일 사용자의 동시 Timeline 저장 충돌이 차례로 논의됐다. Redis 보류와 일일 batch 재처리 방안은 회의상 설계 또는 구현 중으로 언급됐지만 최종 구현 여부와 순서·멱등성·부분 실패 정책은 확인이 필요하다.
+
 ## Key Points
 
 - User Memory는 `rawId`나 `sourceRefs`를 갖지 않는다.
@@ -36,6 +38,8 @@ User Memory는 장기 사건 로그나 사실 source가 아니라 고정 크기�
 - 1,200자 상한이 실제 한국어 profile 품질과 provider context 비용에 적절한가?
 - memo 출처 규칙을 prompt뿐 아니라 더 강한 provenance 구조로 검증할 수 있는가?
 - profile retention, 사용자 열람·수정·삭제와 consent 정책은 어떻게 연결되는가?
+- 동일 사용자의 여러 Timeline이 동시에 완료될 때 User Memory 갱신 순서와 멱등성을 어떻게 보장하는가?
+- 2026-08-06 회의에서 언급된 Redis 보류 및 일일 batch 방안이 실제 구현인지 잠정 설계인지 확인해야 한다.
 
 ## Linked Sources
 
@@ -44,6 +48,10 @@ User Memory는 장기 사건 로그나 사실 source가 아니라 고정 크기�
 - [[2026-08-09-markdown-laimory-user-memory]]
 - [[2026-08-09-markdown-laimory-observability]]
 - [[2026-08-09-markdown-laimory-ai-invariants-and-known-gaps]]
+- [[2026-08-02-meeting-369-team-space]]
+- [[2026-08-04-meeting-369-team-space]]
+- [[2026-08-05-meeting-369-team-space]]
+- [[2026-08-06-meeting-369-team-space]]
 
 ## Related Pages
 
@@ -51,4 +59,3 @@ User Memory는 장기 사건 로그나 사실 source가 아니라 고정 크기�
 - [[ai-daily-timeline-generation]]
 - [[laimory-ai-model-evaluation]]
 - [[laimory-ai-runtime-and-observability]]
-

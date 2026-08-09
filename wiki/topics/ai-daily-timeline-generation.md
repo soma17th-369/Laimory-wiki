@@ -22,6 +22,8 @@ AI 하루 타임라인 생성의 핵심은 사진, 위치, 캘린더, 수면·�
 
 User Memory는 Timeline 문체와 중요도, Question의 결을 조정하는 보조 context일 뿐 오늘 사건의 근거가 아니다. Event Agent와 Repair Agent에는 주입하지 않고, source와 충돌하면 source가 우선한다.
 
+2026-07-28부터 08-05까지의 회의는 현재 구조로 수렴하는 통합 과정을 기록한다. `source_id`와 `row_id` 불일치, JSON 필수 필드 실패, callback 저장과 FCM·polling 문제를 발견한 뒤 structured output과 App Server 경유 저장을 강화했고, alpha test에서 하루 경계와 UTC/KST 해석 문제를 확인했다. 08-04에는 생성물을 `DRAFT` 편집 상태와 `SAVED` 기록 상태로 구분하고 저장을 User Memory 갱신 trigger로 삼는 방향이 논의됐다. 이 회의 기록은 당시 진행 상황이며 최종 구현 계약은 2026-08-09 AI 시스템 문서를 우선한다.
+
 ## Key Points
 
 - 제품 source는 location, calendar, photo, sleep/activity, notification이며 User Memory는 source 목록에서 분리한다.
@@ -52,6 +54,11 @@ User Memory는 Timeline 문체와 중요도, Question의 결을 조정하는 보
 - [[2026-08-09-markdown-laimory-prompt-engineering]]
 - [[2026-08-09-markdown-laimory-deterministic-repair-and-tools]]
 - [[2026-08-09-markdown-laimory-ai-invariants-and-known-gaps]]
+- [[2026-07-28-meeting-369-team-space]]
+- [[2026-07-30-meeting-369-team-space]]
+- [[2026-08-03-meeting-369-team-space]]
+- [[2026-08-04-meeting-369-team-space]]
+- [[2026-08-05-meeting-369-team-space]]
 
 ## Related Pages
 

@@ -1,0 +1,146 @@
+---
+title: 369팀 기획심의 준비 회의 - 2026-05-19
+source_type: meeting
+source_path: raw/meetings/369팀 기획심의 준비_20260519/회의 요약_369팀 기획심의 준비_20260519.md
+transcript_path: raw/meetings/369팀 기획심의 준비_20260519/대화 내용_369팀 기획심의 준비_20260519.md
+meeting_date: 2026-05-19
+ingest_date: 2026-08-09
+duration: 02:40:13
+transcript_type: auto-generated
+speaker_attribution: available-but-unverified
+status: ingested
+tags: [meeting, transcript, 369-team, laimory, planning-review, competitor-analysis, privacy, android]
+---
+
+# 369팀 기획심의 준비 회의 - 2026-05-19
+
+## 개요
+
+기획심의용 경쟁 서비스 비교표와 차별화 논리를 구체화한 회의다. Google과 Apple의 journal 제품, Day One, Memento 계열 앱, Rewind/Limitless와 PC·wearable 기반 기억 보조 제품 등을 조사하며, 기존 제품을 일반 journaling, AI journaling, 업무 생산성·기억 보조, wearable lifelogging으로 구분하려 했다. 팀 제품은 Android 모바일의 사진·일정·위치·통화 등 일상 데이터를 자동으로 통합하고, 수집에서 끝나지 않고 AI가 하루 기록·report·대화 context로 가공한다는 점을 차별화 후보로 정리했다. (`00:04-01:53:50`)
+
+그러나 경쟁사 기능, download 수, 점유율과 서비스 상태는 회의 중 web 검색과 AI 답변을 보며 즉석에서 정리한 것이 많고, 참여자 스스로 hallucination 가능성을 언급했다. 따라서 “현재 시장을 지배하는 제품이 없다”, “특정 제품은 종료되었다”, “Pixel 전용이다” 같은 판단은 검증되지 않은 회의 가설로만 다뤄야 한다. (`00:04-39:50`, `01:06:33-01:47:16`)
+
+회의 후반에는 광범위한 device permission과 privacy가 onboarding 장벽이 될 수 있다는 mentor 질문을 검토했다. 팀은 자동으로 정리된 하루를 처음 보여 주는 놀라움이 사용 동기가 될 수 있다고 보았지만, 실제 사용자가 permission 비용을 감수할 이유와 법적·보안 대책에는 명확한 답을 내리지 못했다. 이어 backend API·database schema 변경, 관계 mapping, query 방식과 다양한 beta test data 확보도 논의했으며, 기획심의 문서는 금요일 mentor meeting 전후로 마무리한다는 일정을 잡았다. (`01:54:14-02:40:13`)
+
+## 상세 요약
+
+### 경쟁 서비스 조사
+
+- Google의 journal 제품과 Apple Journal이 사진·위치 등 device data를 바탕으로 기록 작성을 제안하는 것으로 보인다는 이야기가 나왔다. Google 제품은 Play Store 접근과 지원 device가 불명확해 직접 설치·확인이 필요했다. (`00:04-03:18`, `26:18-35:58`)
+- 오래된 journal 앱인 Day One, SNS·online trace를 연동하는 것으로 설명된 Memento 계열 서비스, 감정 질문 기반 journaling 앱 등이 비교 대상으로 거론되었다. (`03:21-13:00`)
+- Rewind AI, Limitless, HP 또는 LG PC의 기억·검색 보조 기능은 desktop 업무 생산성이나 wearable 대화 기록에 초점을 두는 사례로 분류하려 했다. (`13:00-21:07`, `01:06:33-01:16:04`)
+- 경쟁 표에는 사용자, platform, data source, 자동화 수준, AI 기능, 회고·통계 기능, 비용과 서비스 상태 등을 넣고 팀 제품과 나란히 비교하려 했다. (`23:37-39:50`, `58:05-01:19:44`)
+- 여러 제품명이 비슷하고 링크가 열리지 않거나 AI가 서로 다른 프로젝트를 섞어 설명하는 사례가 있어, 당시 조사 결과는 신뢰도 낮은 초안이다. (`13:00-17:44`, `01:31:00-01:45:49`)
+
+### 시장 위치와 차별화
+
+- 팀은 업무 생산성 중심 제품과 달리 개인의 일상·인생 기록에 초점을 맞춘다고 구분했다. 개인정보 위험이 더 큰 영역이라는 점도 함께 인식했다. (`19:58-22:25`)
+- Apple과 Google은 ecosystem data 접근성이 높아 강한 경쟁자가 될 수 있다는 우려가 있었다. 특히 사진·위치·일정 등 account 기반 data의 양에서 팀보다 유리할 수 있다는 의견이 나왔다. (`25:15-27:03`)
+- Android에서 먼저 구현하면 Pixel 또는 Apple ecosystem에 제한된 제품보다 접근성이 넓을 수 있다는 의견이 있었지만, Android-first 자체를 충분한 차별점으로 삼는 데는 이견이 있었다. (`27:03-36:19`)
+- 더 중요한 차별화 후보는 기기 data를 모아 주는 데서 끝나지 않고 AI가 하루 단위로 정리하고 report·회고·대화에 활용하는 것이다. 기존 journal 앱은 사용자의 작성이 선행되거나 기록 저장에서 끝나는 경우가 많다는 가설을 세웠다. (`35:20-39:50`, `01:13:16-01:18:50`)
+- 팀은 당장 시장을 압도하는 동일 제품은 보이지 않는다고 평가했지만, 이는 제한된 회의 조사에서 나온 인상이며 시장 검증 결과가 아니다. (`17:44-18:33`, `35:58-36:19`)
+
+### Android-first 범위
+
+- 초기 개발은 Android native로 진행하는 것이 안정성과 권한·background 처리 측면에서 현실적이라는 의견이 제시되었다. iOS는 권한 체계와 구현이 달라 별도 native 개발이 필요할 수 있다는 설명이다. (`32:21-34:09`)
+- Android-first는 MVP 개발 범위에 가까우며, 장기적으로 iOS를 출시하지 않겠다는 결정은 아니다. platform 전략은 mentor와 추가 논의가 필요하다고 정리되었다. (`33:55-34:41`)
+- Google journal 제품이 Pixel 전용인지, emulator에서 설치 가능한지조차 회의 중 확정되지 않아 Android 시장 공백 주장에는 검증이 필요하다. (`27:10-28:25`, `01:45:57-01:47:16`)
+
+### 서비스 이름과 표기
+
+- 제품 이름으로 `Laimory`로 들리는 표현을 사용하기로 하고 team matching page에 반영하는 대화가 있었다. 이름은 `life`, `AI`, `memory`를 연상시키는 조합으로 설명되었다. (`41:41-48:14`)
+- 대문자 `L` 또는 일부 대문자 조합과 전부 소문자 표기 사이에서 형태를 비교했고, domain 가격과 검색 중복도 확인했다. (`48:14-57:34`)
+- 회의 맥락상 working name 채택에는 동의가 있었지만, 정확한 영문 spelling과 대소문자 규칙은 전사만으로 완전히 확정하기 어렵다.
+
+### permission, privacy, onboarding
+
+- mentor feedback으로 보이는 질문에는 여러 device permission을 요구하는 기능의 진입 장벽, 사용 동기, business model에 대한 우려가 포함된 것으로 보인다. (`01:53:54-01:57:25`)
+- 팀은 앱이 첫 사용부터 자동으로 정리된 하루를 보여 주면 신기함과 즉시 보상이 생길 수 있다고 예상했다. 하지만 장기 사용 동기와 permission을 허용할 이유는 충분히 설명하지 못했다고 인정했다. (`01:57:25-02:03:28`)
+- permission을 한꺼번에 받지 않고 필요한 시점에 선택적으로 요청하거나 onboarding 흐름에 자연스럽게 녹이는 방안이 제안되었다. (`02:01:08-02:02:51`)
+- 사진·일정·위치 등 개인 data 유출 위험과 법적 검토 필요성은 인식했지만, 구체적인 encryption·retention·삭제·third-party 전송 정책은 결정되지 않았다. (`21:39-22:25`, `02:01:45-02:26:25`)
+
+### 수익 모델 초안
+
+- 무료 사용자가 AI 기능을 쓸 때 광고를 보게 하거나 유료 구독을 두는 방안이 짧게 논의되었다. banner보다 rewarded video와 같은 형식도 예시로 나왔다. (`01:18:50-01:20:13`)
+- business model은 확정되지 않았으며, privacy·AI 비용·retention과 함께 더 검토해야 하는 항목이다.
+
+### backend API와 database 설계
+
+- backend project skeleton을 만드는 중이며 mobile과 맞출 API 설계를 논의할 필요가 있다는 상태 공유가 있었다. (`02:05:14-02:06:32`)
+- schema 변경 시 column 추가, default value, 기존 data backfill 또는 batch 처리, 새 table 분리 등 일반적인 선택지를 논의했다. 특정 설계를 확정한 것은 아니다. (`02:08:24-02:17:49`)
+- ORM 관계 mapping을 쓰지 않고 repository별로 조회한 뒤 service에서 조립하는 방식, join과 subquery의 trade-off, entity inheritance 사례도 탐색적으로 이야기했다. (`02:18:03-02:22:20`)
+- 해당 구간은 자동 전사 오류가 특히 많고 실제 schema나 code가 제시되지 않아 기술 결정으로 기록하면 안 된다.
+
+### 테스트 데이터와 AI 품질 검증
+
+- 세 명의 비슷한 개발자 data만으로는 다양한 사용자의 lifelog를 검증하기 어렵다는 문제가 제기되었다. 직업, 연령, 성별 등 분포를 고려한 beta tester를 모집하는 방안이 논의되었다. (`02:28:03-02:30:49`)
+- store 출시를 위한 tester 요건과 실제 product validation을 위한 beta test는 구분해야 한다. 회의에서 언급된 인원 수와 store policy는 검증되지 않았다. (`02:29:48-02:30:39`)
+- 기능 동작뿐 아니라 사진·일정 등 다양한 input에서 AI 결과가 의미 있게 나오는지 QA해야 하며, AI output을 바로 노출하지 않고 별도 검증 단계를 두는 아이디어가 언급되었다. (`02:30:49-02:34:25`)
+
+### 기획심의 준비 일정
+
+- mentor에게 받은 질문에 팀의 답을 정리한 뒤 금요일 12시 30분 meeting에서 종합적으로 설명하자는 계획이 세워졌다. (`02:22:40-02:23:18`, `02:37:05-02:38:48`)
+- 기획심의 문서는 금요일까지 최대한 마무리하고, 필요하면 주말까지 보완하는 일정이 제안되었다. (`02:37:39-02:38:04`)
+- 다음 내부 회의는 목요일 오후 10시로 잡은 것으로 보인다. (`02:38:38-02:39:37`)
+
+## 진행 상황
+
+- 경쟁 서비스 비교표를 사용자·platform·data source·자동화·AI·비용 기준으로 작성 중이다. (`23:37-39:50`, `58:05-01:19:44`)
+- Android native 기반 MVP와 자동 data 통합·AI 정리라는 차별화 문구를 다듬고 있다. (`32:21-39:50`, `01:46:01-01:53:50`)
+- permission과 onboarding 장벽에 대한 mentor 질문의 답을 준비 중이다. (`01:53:54-02:03:28`)
+- backend project와 API·schema 초안을 논의하는 초기 단계다. (`02:05:14-02:22:20`)
+- 다양한 beta data와 AI output 검증 방법을 계획 중이다. (`02:28:03-02:34:25`)
+
+## 결정·제안·미결 사항
+
+| 분류 | 내용 | 근거 |
+|---|---|---|
+| working decision | 초기 MVP는 Android native를 우선 대상으로 개발 | `32:21-34:09`, `01:47:44-01:48:19` |
+| working decision | 제품명으로 `Laimory` 계열 표기를 team page에 사용 | `41:41-48:14` |
+| 방향성 합의 | 자동 수집뿐 아니라 하루 기록·report·AI 활용까지 자동화하는 점을 차별화 후보로 설정 | `35:20-39:50`, `01:13:16-01:18:50` |
+| 제안 | permission은 필요한 시점에 선택적으로 요청하고 onboarding에서 가치를 먼저 설명 | `02:01:08-02:02:51` |
+| 제안 | 다양한 beta tester와 AI 결과 검증 단계를 마련 | `02:28:03-02:34:25` |
+| 미결 | 장기 iOS 지원과 Android-first를 차별점으로 내세울지 | `32:21-35:15` |
+| 미결 | privacy·법적 대응, data storage와 전송 방식 | `21:39-22:25`, `02:01:45-02:26:25` |
+| 미결 | 광고·구독을 포함한 business model | `01:18:50-01:20:13` |
+| 미결 | backend schema와 관계 조회 전략 | `02:05:14-02:22:20` |
+
+## 액션 아이템
+
+| 작업 | 담당자 | 기한 | 상태 | 근거 |
+|---|---|---|---|---|
+| 경쟁 제품의 공식 링크·기능·상태를 확인하고 비교표 보정 | 팀 | 기획심의 문서 마감 전 | 진행 중 | `23:37-39:50`, `01:46:01-02:04:15` |
+| Google journal 제품을 지원 device 또는 emulator에서 직접 확인 | 전형선으로 표기된 화자 | 미확인 | 시도 중 | `01:45:57-01:47:16` |
+| permission 장벽, 사용 동기, business model 질문에 대한 답변 정리 | 팀 | mentor meeting 전 | 예정 | `01:53:54-02:03:28`, `02:37:05-02:38:48` |
+| backend project skeleton과 mobile 연동 API 논의 | 정수현·전형선으로 표기된 화자 | 수요일·목요일 언급 | 진행 예정 | `02:05:14-02:06:32` |
+| 다양한 persona의 beta data 확보 및 AI output QA 계획 작성 | 팀 | 개발·beta 단계 | 예정 | `02:28:03-02:34:25` |
+| 기획심의 문서를 금요일까지 정리하고 필요 시 주말 보완 | 팀 | 2026-05-22 전후로 추정 | 예정 | `02:37:39-02:38:04` |
+
+## 열린 질문
+
+- 경쟁 서비스별 기능, 지원 platform, 가격, download 수와 현재 운영 상태는 공식 자료로 확인되는가?
+- Android-first는 구현 범위일 뿐인가, 실제 시장 차별화로도 유효한가?
+- 사용자는 왜 사진·위치·일정·통화 등의 permission을 허용하고 장기 사용하려 하는가?
+- 최소 권한 원칙, local processing, encryption, data deletion을 어떻게 설계할 것인가?
+- 하루 기록을 처음 보여 준 뒤 retention을 만들 핵심 보상과 interaction은 무엇인가?
+- AI output의 정확성·안전성·개인화 품질을 어떤 dataset과 metric으로 검증할 것인가?
+- `Laimory`의 정확한 영문 표기, domain, 상표 사용 가능성은 확인되었는가?
+
+## 주의 사항
+
+- 경쟁 서비스에 관한 대부분의 설명은 회의 중 즉석 검색과 AI 답변에 기반한다. primary source 검증 전에는 사실로 인용하면 안 된다.
+- 참여자가 직접 `hallucination`을 의심한 구간이 있고, 서로 다른 제품과 회사 인수 관계가 섞였을 가능성이 있다. (`13:00-17:44`)
+- `Journal`, `Memento`, `Rewind`, `Limitless`, PC product, app 이름과 기능이 STT에서 크게 훼손되어 정확한 식별이 필요하다.
+- global market share, download 수, store tester 수, 구독 가격 등의 수치는 검증되지 않았다.
+- `permission`이 `commission`, `회고`가 `해고`, `API`가 `APR` 등으로 오인식되었다.
+- 화자명은 transcript metadata로만 사용했으며 실제 책임자나 확정된 담당을 추측하지 않았다.
+
+## 관련 페이지
+
+- [[369-team-meeting-history]]
+- [[369-team]]
+- [[laimory]]
+- [[ai-life-logging]]
+- [[laimory-user-memory]]
+- [[android-life-logging-data-collection]]
+- [[laimory-ai-model-evaluation]]

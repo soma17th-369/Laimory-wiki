@@ -20,6 +20,8 @@ Laimory는 모바일 기기 안에 흩어진 사진, 위치, 일정, 앱 사용,
 
 2026-08-09 기준 AI 구현은 App Server가 source, 결과, User Memory와 task 상태를 소유하고 FastAPI AI server가 무상태 실행 계층을 맡는 구조로 구체화되었다. 다섯 Event Agent가 source domain을 병렬 해석하고 Timeline, Repair, Question 단계를 거친다. User Memory는 사건 근거가 아닌 압축 profile이며, 배포는 현재 EC2 자동 경로와 AgentCore 수동 경로를 병행한다.
 
+회의 기록은 이 구조의 시간적 변화를 보완한다. 2026-05에는 AI 일기에서 모바일 life logging과 Personal AI Memory로 제품 정의를 넓히고 MVP와 permission 가설을 다듬었으며, 07-28 이후에는 alpha test에서 source ID, structured output, callback, Langfuse, 시간대, Android 수집과 외부 API 병목을 발견해 수정했다. 회의 중 수치·경쟁사 정보·잠정 설계는 해당 시점의 주장으로 남기고 최신 구현 판단에는 2026-08-09 시스템 문서를 우선한다.
+
 ## Key Points
 
 - 핵심 기능은 AI Timeline, 5가지 구조화 회고, 충분한 기록 누적 후 Personal AI Chat이다.
@@ -74,9 +76,23 @@ Laimory는 모바일 기기 안에 흩어진 사진, 위치, 일정, 앱 사용,
 - [[2026-08-09-markdown-laimory-ai-deployment-and-runtime]]
 - [[2026-08-09-markdown-laimory-observability]]
 - [[2026-08-09-markdown-laimory-ai-invariants-and-known-gaps]]
+- [[2026-05-16-meeting-369-team-space]]
+- [[2026-05-17-meeting-369-team-space]]
+- [[2026-05-18-meeting-369-team-planning-review-preparation]]
+- [[2026-05-19-meeting-369-team-planning-review-preparation]]
+- [[2026-05-21-meeting-369-team-planning-review-preparation]]
+- [[2026-05-23-meeting-369-team-space]]
+- [[2026-07-28-meeting-369-team-space]]
+- [[2026-07-30-meeting-369-team-space]]
+- [[2026-08-02-meeting-369-team-space]]
+- [[2026-08-03-meeting-369-team-space]]
+- [[2026-08-04-meeting-369-team-space]]
+- [[2026-08-05-meeting-369-team-space]]
+- [[2026-08-06-meeting-369-team-space]]
 
 ## Related Pages
 
+- [[369-team-meeting-history]]
 - [[369-team]]
 - [[ai-life-logging]]
 - [[ai-daily-timeline-generation]]

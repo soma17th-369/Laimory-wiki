@@ -2,7 +2,7 @@
 title: Android Life Logging Data Collection
 kind: topic
 status: active
-updated: 2026-06-27
+updated: 2026-08-09
 tags: [android, location, background-data, laimory, technical-risk]
 ---
 
@@ -20,6 +20,10 @@ MVP에서는 Passive Location, Geofencing, WorkManager 기반 주기적 스냅�
 
 Laboratory Android lab work expands the collection scope beyond location into photos, calendars, filtered notifications, Health Connect, and Samsung Health-origin verification. For server upload, this should be normalized as request-local timeline source items with `itemType`, local time bounds, a short summary, and typed payload JSON rather than uploading UI display strings directly. Location upload is still an expected design, tentatively split into `LOCATION_STAY` for tens-of-minutes stays and `LOCATION_MOVE` for several-minutes movement segments.
 
+2026-08-06 회의에서는 위치·체류 수집 개선 build가 app console에 배포되었고, 실제 이동 데이터 검증이 다음 단계로 보고되었다. Android 내부 reverse geocoding으로 위도·경도 위에 주소를 표시하는 기능도 추가되었지만 도로명과 지번 주소가 일관되지 않는 문제가 있다. 이는 회의 보고에 근거한 상태이며 구현 코드 검증은 아직 하지 않았다.
+
+초기 2026-05 회의에서는 사진·위치·calendar를 MVP 우선 source로 좁히고 permission을 필요한 순간에 단계적으로 요청하는 안이 논의됐다. 07-30부터 08-06 alpha test에서는 알림 과다 수집, 로컬 DB 정리, photo 선택·삭제, GPS noise, 하루 경계와 주소 표시 문제가 실제 개선 항목으로 나타났다. 08-04의 on-device SLM privacy filter는 법률 mentoring을 참석자들이 재해석해 제안한 절충안이므로 법률 요구사항이나 검증된 보호 수단으로 단정할 수 없다.
+
 ## Key Points
 
 - Android 8 이후 백그라운드 위치 업데이트가 제한되고 Doze 모드에서 GPS 접근이 막힐 수 있다.
@@ -29,7 +33,8 @@ Laboratory Android lab work expands the collection scope beyond location into ph
 - 기능 가치와 데이터 신뢰를 설명하는 온보딩/권한 UX가 기술 구현만큼 중요하다.
 - 사진/일정/알림/헬스 데이터는 서로 구조가 다르므로, 서버 전송 단계에서는 source-specific fields를 typed payload로 보존하는 편이 안전하다.
 - Health Connect rows are currently display-oriented in the lab; production upload should preserve structured metric values and units.
-- 위치 데이터는 아직 구현 전이며, 기본 payload에는 정밀 GPS trail 전체가 아니라 체류/이동 구간 요약을 보내는 방향이 더 안전하다.
+- 2026-06-27 laboratory 자료에서는 위치 데이터가 구현 전이었으며, 기본 payload에는 정밀 GPS trail 전체가 아니라 체류/이동 구간 요약을 보내는 방향이 더 안전하다고 정리했다.
+- 회의 보고 기준으로 위치·체류 수집과 기본 주소 표시는 구현 검증 단계에 들어갔지만, 장소명 조회와 외부 지도 API 호출 위치는 미결이다.
 
 ## Open Questions
 
@@ -37,6 +42,8 @@ Laboratory Android lab work expands the collection scope beyond location into ph
 - Geofencing만으로 충분히 풍부한 하루 타임라인을 만들 수 있는가?
 - 위치 권한을 앱 설치 첫날 요청할지, 첫 회고 가치 체감 이후 요청할지 결정해야 한다.
 - 알림과 사진 원본/썸네일을 어느 수준까지 서버로 보낼지, metadata-only로 시작할지 결정해야 한다.
+- reverse geocoding과 장소명 조회를 Android client와 server 중 어디에서 수행할 것인가?
+- 회의에서 언급된 이동 관련 20분 기준이 정확히 어떤 판정 규칙인지 코드로 확인해야 한다.
 
 ## Linked Sources
 
@@ -45,6 +52,16 @@ Laboratory Android lab work expands the collection scope beyond location into ph
 - [[2026-06-15-markdown-notion-laimory-planning-review-evaluation]]
 - [[2026-06-15-markdown-notion-epic-system-initial-setup]]
 - [[2026-06-27-github-laboratory-mobile-data-extraction]]
+- [[2026-05-18-meeting-369-team-planning-review-preparation]]
+- [[2026-05-19-meeting-369-team-planning-review-preparation]]
+- [[2026-05-21-meeting-369-team-planning-review-preparation]]
+- [[2026-05-23-meeting-369-team-space]]
+- [[2026-07-30-meeting-369-team-space]]
+- [[2026-08-02-meeting-369-team-space]]
+- [[2026-08-03-meeting-369-team-space]]
+- [[2026-08-04-meeting-369-team-space]]
+- [[2026-08-05-meeting-369-team-space]]
+- [[2026-08-06-meeting-369-team-space]]
 
 ## Related Pages
 

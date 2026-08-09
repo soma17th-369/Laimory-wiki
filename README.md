@@ -45,6 +45,7 @@ LLM은 먼저 `index.md`를 보고, 관련 `wiki/` 페이지를 읽은 뒤 답�
 | 자료 유형 | 넣는 위치 |
 |---|---|
 | 개인 메모, 설계 초안 | `raw/notes/` |
+| 회의 자동 전사 TXT 또는 Markdown | `raw/meetings/` |
 | Notion/Markdown export | `raw/markdown/` |
 | GitHub repo 조사 자료 | `raw/github/` |
 | 웹 페이지 캡처 | `raw/web/` 또는 `Clippings/` |
@@ -56,6 +57,14 @@ LLM은 먼저 `index.md`를 보고, 관련 `wiki/` 페이지를 읽은 뒤 답�
 ```text
 이 raw 자료 ingest 해줘
 ```
+
+회의 전사본은 `raw/meetings/`에 그대로 넣은 뒤 이렇게 요청하면 됩니다.
+
+```text
+새 회의록 ingest 해줘
+```
+
+TXT로 넣은 전사본은 본문을 바꾸지 않고 Obsidian에서 볼 수 있는 `대화 내용_*.md`로 전환합니다. 그 옆에 `회의 요약_*.md`를 별도로 만들어 개요, 상세 요약, 확정 사항, 제안, action item, 열린 질문을 타임스탬프와 함께 정리합니다. 이후 `wiki/sources/` page는 raw 요약본을 `source_path`로, 원문 전사를 `transcript_path`로 참조하여 topic과 entity에 인제스트합니다. 화자 정보가 없거나 자동 전사가 불명확하면 담당자와 결론을 추측하지 않습니다.
 
 LLM은 보통 다음 순서로 작업합니다.
 

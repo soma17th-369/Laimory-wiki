@@ -56,7 +56,8 @@ Original files provided or captured by the human.
 - `raw/web/`: manually collected web pages or exports
 - `raw/github/`: repository notes, README captures, GitHub-adjacent source notes
 - `raw/markdown/`: Markdown exports, local documentation snapshots, converted documents, and folder-based Markdown source collections
-- `raw/notes/`: personal notes, scratch notes, meeting notes, idea fragments
+- `raw/meetings/`: meeting transcript exports plus their LLM-derived raw summary files
+- `raw/notes/`: personal notes, scratch notes, idea fragments
 
 Rules:
 
@@ -100,6 +101,28 @@ When a new source is added, follow this workflow:
 
 Rule:
 Always create or update `wiki/sources/` before changing topic, entity, answer, or domain pages.
+
+## Meeting Transcript Workflow
+
+When meeting transcript files are added to `raw/meetings/`:
+
+1. when the human drops in a `.txt` transcript, change only its extension to `.md` so Obsidian can display it; preserve the transcript body exactly
+2. treat `대화 내용_*.md` as the original transcript and do not clean up or rewrite its body
+3. create a separate `회의 요약_*.md` beside the transcript in the same meeting folder; this is the derived raw summary used as the ingest input
+4. identify unprocessed transcripts by checking whether a `wiki/sources/` page references the summary as `source_path` and the original as `transcript_path`
+5. derive `meeting_date` from an unambiguous date in the filename or content; keep `summary_date` and `ingest_date` separate
+6. create or update one `wiki/sources/YYYY-MM-DD-meeting-<slug>.md` page from the raw summary before changing synthesis pages
+7. set the wiki source page's `source_path` to `회의 요약_*.md` and `transcript_path` to `대화 내용_*.md`
+8. treat the raw `회의 요약_*.md` as the detailed derived ingest input; the wiki source body may mirror it but must not contain material claims or detail absent from the raw summary
+9. use `개요` and `상세 요약` as the main summary sections, followed when useful by decisions, proposals, action items, open questions, and caveats with timestamp evidence
+10. distinguish explicitly between confirmed decisions, work reported as in progress, proposed alternatives, and unresolved questions
+11. do not infer speaker identity, ownership, deadlines, or implementation status when the transcript does not establish them
+12. preserve transcription uncertainty and flag terms that require checking against audio, code, issues, or another primary record
+13. update existing topic and entity pages only when the meeting materially adds durable information
+14. treat raw transcripts and summaries as potentially sensitive because they may contain personal schedules, locations, or operational details
+
+Rule:
+The human only needs to drop transcript files into `raw/meetings/`; Markdown conversion, adjacent raw summary creation, and wiki ingest are LLM-maintained work.
 
 ## Social Source Verification Workflow
 
@@ -224,7 +247,7 @@ Use stable, descriptive filenames so pages remain easy to navigate and deduplica
 ### Source Pages
 
 - format: `wiki/sources/YYYY-MM-DD-<source_type>-<slug>.md`
-- `source_type` should usually be one of: `web`, `social`, `github`, `pdf`, `markdown`, `notes`
+- `source_type` should usually be one of: `web`, `social`, `github`, `pdf`, `markdown`, `notes`, `meeting`
 - `slug` should describe the source artifact, repository, post, article, or topic
 - keep the filename consistent with the `source_path` and page title
 
@@ -322,7 +345,7 @@ Document meaningful maintenance work in `log.md`.
 Run a lightweight vault check during maintenance or after meaningful ingest work.
 
 1. read `index.md`
-2. check for source files in `Clippings/` or `raw/` that do not yet have matching `wiki/sources/` pages, including folder-based Markdown collections under `raw/markdown/`
+2. convert leftover `.txt` transcripts under `raw/meetings/` to body-identical Markdown, verify every canonical `대화 내용_*.md` has one adjacent `회의 요약_*.md`, and verify each pair is referenced by a `wiki/sources/` page through `source_path` and `transcript_path`; then check remaining source files in `Clippings/` or `raw/`, including folder-based Markdown collections under `raw/markdown/`
 3. check for `wiki/` pages that are missing from `index.md`
 4. check for weak or missing cross-links between source, topic, entity, answer, domain, and reference pages
 5. check for stale, duplicate, orphan, or overly thin pages that should be expanded, merged, or better linked

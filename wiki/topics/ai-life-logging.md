@@ -2,7 +2,7 @@
 title: AI Life Logging
 kind: topic
 status: active
-updated: 2026-06-27
+updated: 2026-08-09
 tags: [ai-life-logging, personal-ai-memory, journaling, self-tracking]
 ---
 
@@ -17,6 +17,8 @@ tags: [ai-life-logging, personal-ai-memory, journaling, self-tracking]
 AI life logging의 핵심 가설은 사용자의 하루 데이터가 이미 모바일 기기에 충분히 남아 있지만, 여러 앱에 흩어져 있어 회고 가능한 기억으로 전환되지 못한다는 것이다. AI는 이 데이터를 자동으로 구조화하고, 사용자가 직접 긴 일기를 쓰지 않아도 회고와 자기이해를 시작할 수 있게 만드는 중간 계층으로 제안된다.
 
 Laimory 자료에서 반복되는 제품 원칙은 "기록 노동을 줄이고 의미를 빨리 돌려주는 것"이다. 단순히 데이터를 모으는 것보다 사용자가 그날의 흐름, 반복 패턴, 변화, 과거와의 연결을 체감하는 것이 가치의 중심이다.
+
+2026-05-16부터 05-23까지의 회의 기록은 제품 설명이 단순 AI 일기에서 파편화된 모바일 흔적을 하루 기록으로 복원하는 AI life logging으로 발전한 과정을 보여준다. 이 과정에서 일기와 회고는 수동 입력 중심의 핵심 제품이 아니라 자동 생성 기록에 의미를 더하는 interface로 재배치되었고, 장기적으로 Personal AI Memory와 대화로 확장하는 비전이 형성됐다. 다만 경쟁 제품·시장 수치와 사용 동기에 관한 내용은 회의 중 조사와 가설이므로 독립 검증이 필요하다.
 
 ## Key Points
 
@@ -42,6 +44,12 @@ Laimory 자료에서 반복되는 제품 원칙은 "기록 노동을 줄이고 �
 - [[2026-06-15-markdown-notion-ai-diary-renewal]]
 - [[2026-06-15-markdown-notion-ai-daily-timeline-mvp]]
 - [[2026-06-20-notes-ai-daily-timeline-agent-draft]]
+- [[2026-05-16-meeting-369-team-space]]
+- [[2026-05-17-meeting-369-team-space]]
+- [[2026-05-18-meeting-369-team-planning-review-preparation]]
+- [[2026-05-19-meeting-369-team-planning-review-preparation]]
+- [[2026-05-21-meeting-369-team-planning-review-preparation]]
+- [[2026-05-23-meeting-369-team-space]]
 
 ## Related Pages
 

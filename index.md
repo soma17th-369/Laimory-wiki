@@ -57,8 +57,24 @@ Primary catalog for the LLM Wiki maintained in this vault.
   - [Notion Laimory 기획심의 발표 스크립트 260529](wiki/sources/2026-06-15-markdown-notion-laimory-presentation-script-260529.md)
   - [Notion Laimory 기획심의 평가의견](wiki/sources/2026-06-15-markdown-notion-laimory-planning-review-evaluation.md)
 
+- Meeting transcripts:
+  - [369팀 스페이스 회의 - 2026-05-16](wiki/sources/2026-05-16-meeting-369-team-space.md)
+  - [369팀 스페이스 회의 - 2026-05-17](wiki/sources/2026-05-17-meeting-369-team-space.md)
+  - [369팀 기획심의 준비 회의 - 2026-05-18](wiki/sources/2026-05-18-meeting-369-team-planning-review-preparation.md)
+  - [369팀 기획심의 준비 회의 - 2026-05-19](wiki/sources/2026-05-19-meeting-369-team-planning-review-preparation.md)
+  - [369팀 기획심의 준비 회의 - 2026-05-21](wiki/sources/2026-05-21-meeting-369-team-planning-review-preparation.md)
+  - [369팀 스페이스 회의 - 2026-05-23](wiki/sources/2026-05-23-meeting-369-team-space.md)
+  - [369팀 스페이스 회의 - 2026-07-28](wiki/sources/2026-07-28-meeting-369-team-space.md)
+  - [369팀 스페이스 회의 - 2026-07-30](wiki/sources/2026-07-30-meeting-369-team-space.md)
+  - [369팀 스페이스 회의 요약 - 2026-08-02](wiki/sources/2026-08-02-meeting-369-team-space.md)
+  - [369팀 스페이스 회의 요약 - 2026-08-03](wiki/sources/2026-08-03-meeting-369-team-space.md)
+  - [369팀 스페이스 회의 요약 - 2026-08-04](wiki/sources/2026-08-04-meeting-369-team-space.md)
+  - [369팀 스페이스 회의 요약 - 2026-08-05](wiki/sources/2026-08-05-meeting-369-team-space.md)
+  - [369팀 스페이스 회의 요약 - 2026-08-06](wiki/sources/2026-08-06-meeting-369-team-space.md)
+
 ## Topics
 
+- [369팀 회의 이력](wiki/topics/369-team-meeting-history.md): 13개 회의의 제품 정의, 기획심의, 구현 통합, alpha test와 기술 의사결정 변화.
 - [AI Life Logging](wiki/topics/ai-life-logging.md): mobile AI life-logging and Personal AI Memory pattern synthesized from Laimory planning sources.
 - [AI Daily Timeline Generation](wiki/topics/ai-daily-timeline-generation.md): current Event-Agent fan-out, Timeline synthesis, deterministic Repair, and post-repair Question flow.
 - [Laimory User Memory](wiki/topics/laimory-user-memory.md): bounded user profile rewrite, memo provenance rules, and safe context consumption.

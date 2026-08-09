@@ -61,4 +61,8 @@
 [2026-06-27] maintenance | rewrite README as a human-facing guide for using the LLM Wiki vault
 [2026-06-28] ingest | ingest GitHub co-work rule document as branch, commit, issue, and pull request convention source
 [2026-08-09] ingest | ingest Laimory AI system Markdown collection into 11 source pages, refresh Timeline implementation synthesis, and add User Memory, model evaluation, and runtime-observability topics
+[2026-08-09] ingest | add raw meeting transcript workflow and ingest the 2026-08-06 369 team meeting into source, topic, entity, and index pages
+[2026-08-09] meeting-maintenance | convert the 2026-08-06 transcript to body-identical Markdown and expand its separate source summary with timestamp-checked details
+[2026-08-09] meeting-ingest | convert 15 nested transcript exports to body-identical Markdown, ingest 12 additional unique meetings, record duplicate exports, and connect the meeting series across index, topic, and entity pages
+[2026-08-09] meeting-reingest | add 13 adjacent raw meeting summaries, repoint wiki source pages to summary/transcript pairs, and add a chronological 369 team meeting-history topic
 [2026-08-09] ingest | replace partial Laimory planning-review captures with the complete PDF and timed presentation script, then refresh source, topic, entity, and index links
