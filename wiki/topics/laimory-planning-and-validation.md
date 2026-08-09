@@ -2,7 +2,7 @@
 title: Laimory Planning And Validation
 kind: topic
 status: active
-updated: 2026-06-15
+updated: 2026-08-09
 tags: [laimory, product-validation, planning-review, business-model]
 ---
 
@@ -25,6 +25,8 @@ Laimory의 기획은 "자동 모바일 라이프 로그 -> 회고 -> 장기 기�
 - 유료화 가설은 기본 기록/타임라인은 무료, 고급 AI 회고/패턴 분석/AI 대화는 Premium/Max로 차등 제공하는 것이다.
 - 운영 비용 추정과 손익분기점은 내부 가정이므로 별도 검증 전에는 사업 계획 가설로 취급한다.
 - 기획심의 피드백은 Apple Journal 등 기존 서비스 대비 별도 앱을 신뢰하고 장기 데이터를 맡겨야 하는 이유를 더 명확히 요구한다.
+- 기획심의 보고서의 경쟁 구도는 웨어러블 기반 자동 로깅, 직접 입력형 AI 저널, 플랫폼 종속 저널의 세 유형이다. Laimory는 자동 기록과 장기 생활 맥락 기반 회고를 동시에 제공한다는 가설로 차별화한다.
+- 문서에 제시된 Agent·Reflection·Memory Graph 구조와 개발환경은 기획 시점 설계이며, 현재 구현 상태를 판단할 때는 2026-08-09 AI 시스템 문서를 우선한다.
 
 ## Open Questions
 
@@ -35,7 +37,7 @@ Laimory의 기획은 "자동 모바일 라이프 로그 -> 회고 -> 장기 기�
 
 ## Linked Sources
 
-- [[2026-06-15-markdown-notion-laimory-planning-review-report]]
+- [[2026-08-09-pdf-laimory-planning-review-report]]
 - [[2026-06-15-markdown-notion-laimory-presentation-script-260529]]
 - [[2026-06-15-markdown-notion-laimory-planning-review-evaluation]]
 - [[2026-06-15-markdown-notion-ai-diary-draft-service]]

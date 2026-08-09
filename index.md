@@ -53,7 +53,7 @@ Primary catalog for the LLM Wiki maintained in this vault.
   - [Notion AI 하루 타임라인 기능 MVP 개발](wiki/sources/2026-06-15-markdown-notion-ai-daily-timeline-mvp.md)
   - [Notion Epic - 시스템 초기 설계 및 구축](wiki/sources/2026-06-15-markdown-notion-epic-system-initial-setup.md)
   - [Notion 백그운드 위치 가져오기](wiki/sources/2026-06-15-markdown-notion-background-location.md)
-  - [Notion Laimory 기획심의 보고서](wiki/sources/2026-06-15-markdown-notion-laimory-planning-review-report.md)
+  - [AI·SW마에스트로 제17기 369팀 프로젝트 기획심의 보고서](wiki/sources/2026-08-09-pdf-laimory-planning-review-report.md)
   - [Notion Laimory 기획심의 발표 스크립트 260529](wiki/sources/2026-06-15-markdown-notion-laimory-presentation-script-260529.md)
   - [Notion Laimory 기획심의 평가의견](wiki/sources/2026-06-15-markdown-notion-laimory-planning-review-evaluation.md)
 

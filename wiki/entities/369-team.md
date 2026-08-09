@@ -24,6 +24,7 @@ AI·SW마에스트로 제17기에서 Laimory를 기획/개발하는 팀. 이 페
 - 협업 방식은 주 1~2회 오프라인 미팅, 목적별 대면/비대면 분리, Jira/Notion 기반 진행 공유다.
 - Notion workspace는 팀 소개, 일정, 회의록, 회고록, 아이디어, Tech Spec, Specification, ERD, 팀원별 연구 페이지로 구성되어 있다.
 - 초기 아이디어 흐름은 AI 일기 초안, 회고/성장/기록, 모바일 기반 AI 라이프 로깅을 거쳐 Laimory로 수렴한다.
+- 기획심의 보고서의 멘토 역할은 서비스 기획·AI 응답 품질·LLM 비용, Spring·Backend·Cloud architecture, Android 안정성·성능 검토로 나뉜다.
 
 ## Open Questions
 
@@ -39,6 +40,7 @@ AI·SW마에스트로 제17기에서 Laimory를 기획/개발하는 팀. 이 페
 - [[2026-06-15-markdown-notion-meeting-records]]
 - [[2026-06-15-markdown-notion-retrospective-records]]
 - [[2026-06-15-markdown-notion-ideas-list]]
+- [[2026-08-09-pdf-laimory-planning-review-report]]
 
 ## Related Pages
 

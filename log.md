@@ -61,3 +61,4 @@
 [2026-06-27] maintenance | rewrite README as a human-facing guide for using the LLM Wiki vault
 [2026-06-28] ingest | ingest GitHub co-work rule document as branch, commit, issue, and pull request convention source
 [2026-08-09] ingest | ingest Laimory AI system Markdown collection into 11 source pages, refresh Timeline implementation synthesis, and add User Memory, model evaluation, and runtime-observability topics
+[2026-08-09] ingest | replace partial Laimory planning-review captures with the complete PDF and timed presentation script, then refresh source, topic, entity, and index links

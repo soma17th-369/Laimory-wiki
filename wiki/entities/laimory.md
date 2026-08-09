@@ -60,7 +60,7 @@ Laimory는 모바일 기기 안에 흩어진 사진, 위치, 일정, 앱 사용,
 - [[2026-06-15-markdown-notion-laimory]]
 - [[2026-06-15-markdown-notion-mobile-ai-lifelogging-app-1]]
 - [[2026-06-15-markdown-notion-ai-daily-timeline-mvp]]
-- [[2026-06-15-markdown-notion-laimory-planning-review-report]]
+- [[2026-08-09-pdf-laimory-planning-review-report]]
 - [[2026-06-15-markdown-notion-laimory-presentation-script-260529]]
 - [[2026-06-15-markdown-notion-laimory-planning-review-evaluation]]
 - [[2026-06-15-markdown-notion-background-location]]
