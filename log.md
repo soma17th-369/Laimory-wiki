@@ -66,3 +66,4 @@
 [2026-08-09] meeting-ingest | convert 15 nested transcript exports to body-identical Markdown, ingest 12 additional unique meetings, record duplicate exports, and connect the meeting series across index, topic, and entity pages
 [2026-08-09] meeting-reingest | add 13 adjacent raw meeting summaries, repoint wiki source pages to summary/transcript pairs, and add a chronological 369 team meeting-history topic
 [2026-08-09] ingest | replace partial Laimory planning-review captures with the complete PDF and timed presentation script, then refresh source, topic, entity, and index links
+[2026-08-14] maintenance | add a human-facing wiki status dashboard to README and require it to stay synchronized with vault changes and review state

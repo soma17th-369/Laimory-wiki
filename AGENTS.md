@@ -340,6 +340,25 @@ Periodically check for:
 
 Document meaningful maintenance work in `log.md`.
 
+## README Status Workflow
+
+Treat the `현재 위키 상태` section in `README.md` as the human-facing freshness checkpoint and `log.md` as the complete append-only history.
+
+After meaningful ingest, maintenance, or review-draft work:
+
+1. append the detailed operation to `log.md` when required by the logging convention
+2. update the README status in the same work unit
+3. keep `마지막 상태 확인`, `main에 반영된 위키 기준`, `상태`, and `최근 작업` accurate
+4. keep only a short recent-history summary in README and link to `log.md` for the full history
+5. list material `status: awaiting-human-review` drafts that still require human action
+
+Status rules:
+
+- use a current or verified status only after the relevant vault lint checks have completed
+- if unprocessed sources, uncommitted maintenance work, or review drafts exist, state that explicitly instead of claiming the wiki is fully current
+- distinguish the last status-check date from the date through which approved wiki content is reflected on `main`
+- whenever a change makes the README status inaccurate, updating that status is part of completing the change
+
 ## Lint Workflow
 
 Run a lightweight vault check during maintenance or after meaningful ingest work.
