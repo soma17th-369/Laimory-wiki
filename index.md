@@ -45,7 +45,8 @@ Primary catalog for the LLM Wiki maintained in this vault.
   - [Notion 369팀 Tech Spec 허브](wiki/sources/2026-06-15-markdown-notion-tech-spec.md)
   - [Notion 369팀 Specification](wiki/sources/2026-06-15-markdown-notion-specification.md)
   - [Notion 369팀 ERD](wiki/sources/2026-06-15-markdown-notion-erd.md)
-- Notion Laimory raw capture:
+- Notion Laimory and planning-review sources:
+  - [Laimory 8월 7일 마케팅 KPI 멘토링과 초기 사용자 획득안](wiki/sources/2026-08-07-notes-laimory-marketing-kpi-mentoring.md)
   - [Notion Laimory](wiki/sources/2026-06-15-markdown-notion-laimory.md)
   - [Notion 모바일 기반 AI 라이프 로깅 앱 (1)](wiki/sources/2026-06-15-markdown-notion-mobile-ai-lifelogging-app-1.md)
   - [Notion AI 일기 초안 작성 서비스](wiki/sources/2026-06-15-markdown-notion-ai-diary-draft-service.md)
@@ -54,8 +55,9 @@ Primary catalog for the LLM Wiki maintained in this vault.
   - [Notion Epic - 시스템 초기 설계 및 구축](wiki/sources/2026-06-15-markdown-notion-epic-system-initial-setup.md)
   - [Notion 백그운드 위치 가져오기](wiki/sources/2026-06-15-markdown-notion-background-location.md)
   - [AI·SW마에스트로 제17기 369팀 프로젝트 기획심의 보고서](wiki/sources/2026-08-09-pdf-laimory-planning-review-report.md)
+  - [AI·SW마에스트로 제17기 서울센터 369팀 프로젝트 중간보고서](wiki/sources/2026-08-17-pdf-laimory-midterm-report.md)
   - [Notion Laimory 기획심의 발표 스크립트 260529](wiki/sources/2026-06-15-markdown-notion-laimory-presentation-script-260529.md)
-  - [Notion Laimory 기획심의 평가의견](wiki/sources/2026-06-15-markdown-notion-laimory-planning-review-evaluation.md)
+  - [AI·SW마에스트로 제17기 Laimory 기획심의 종합의견](wiki/sources/2026-06-05-notes-laimory-planning-review-evaluation.md)
 
 - Meeting transcripts:
   - [369팀 스페이스 회의 - 2026-05-16](wiki/sources/2026-05-16-meeting-369-team-space.md)
@@ -80,7 +82,7 @@ Primary catalog for the LLM Wiki maintained in this vault.
 - [Laimory User Memory](wiki/topics/laimory-user-memory.md): bounded user profile rewrite, memo provenance rules, and safe context consumption.
 - [Laimory AI Model Evaluation](wiki/topics/laimory-ai-model-evaluation.md): provider-neutral evaluation plan for source fidelity, structured reliability, quality, latency, and cost.
 - [Laimory AI Runtime and Observability](wiki/topics/laimory-ai-runtime-and-observability.md): EC2 and AgentCore runtime paths, task lifecycle, operational events, and Langfuse tracing.
-- [Laimory Planning And Validation](wiki/topics/laimory-planning-and-validation.md): Laimory planning, metrics, risks, and validation questions.
+- [Laimory Planning And Validation](wiki/topics/laimory-planning-and-validation.md): Laimory planning, activation·retention funnel, marketing experiments, risks, and validation questions.
 - [Android Life Logging Data Collection](wiki/topics/android-life-logging-data-collection.md): Android location/background-data constraints for life-logging apps.
 
 ## Entities

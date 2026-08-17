@@ -2,7 +2,7 @@
 title: Android Life Logging Data Collection
 kind: topic
 status: active
-updated: 2026-08-09
+updated: 2026-08-17
 tags: [android, location, background-data, laimory, technical-risk]
 ---
 
@@ -22,6 +22,8 @@ Laboratory Android lab work expands the collection scope beyond location into ph
 
 2026-08-06 회의에서는 위치·체류 수집 개선 build가 app console에 배포되었고, 실제 이동 데이터 검증이 다음 단계로 보고되었다. Android 내부 reverse geocoding으로 위도·경도 위에 주소를 표시하는 기능도 추가되었지만 도로명과 지번 주소가 일관되지 않는 문제가 있다. 이는 회의 보고에 근거한 상태이며 구현 코드 검증은 아직 하지 않았다.
 
+2026-08-17 공식 중간보고서는 MediaStore, Calendar Provider와 Health Connect 기반 source 수집, Room 저장, source별 permission fallback, 사용자가 선택한 데이터만 AI에 보내는 흐름을 구현했다고 보고한다. 위치는 Foreground Service로 수집 상태를 표시하고 체류·이동 구간으로 줄이며 재시작 뒤 진행 상태를 복원한다. Kakao API 위치 보강은 server가 담당하고, 고유 좌표 실패율 20% 이하의 부분 실패는 허용하되 20% 초과 또는 시간순 3개 연속 실패에서는 생성을 중단하는 정책을 제시한다. Android 버전·제조사별 누락과 battery 영향은 beta에서 검증할 계획이므로 아직 결과로 보지 않는다.
+
 초기 2026-05 회의에서는 사진·위치·calendar를 MVP 우선 source로 좁히고 permission을 필요한 순간에 단계적으로 요청하는 안이 논의됐다. 07-30부터 08-06 alpha test에서는 알림 과다 수집, 로컬 DB 정리, photo 선택·삭제, GPS noise, 하루 경계와 주소 표시 문제가 실제 개선 항목으로 나타났다. 08-04의 on-device SLM privacy filter는 법률 mentoring을 참석자들이 재해석해 제안한 절충안이므로 법률 요구사항이나 검증된 보호 수단으로 단정할 수 없다.
 
 ## Key Points
@@ -35,6 +37,7 @@ Laboratory Android lab work expands the collection scope beyond location into ph
 - Health Connect rows are currently display-oriented in the lab; production upload should preserve structured metric values and units.
 - 2026-06-27 laboratory 자료에서는 위치 데이터가 구현 전이었으며, 기본 payload에는 정밀 GPS trail 전체가 아니라 체류/이동 구간 요약을 보내는 방향이 더 안전하다고 정리했다.
 - 회의 보고 기준으로 위치·체류 수집과 기본 주소 표시는 구현 검증 단계에 들어갔지만, 장소명 조회와 외부 지도 API 호출 위치는 미결이다.
+- 중간보고서 기준 장소·주소 보강의 현재 설계 위치는 API Server이며 Kakao API를 병렬 호출한다. 다만 실제 code와 운영 실패율은 이 ingest에서 검증하지 않았다.
 
 ## Open Questions
 
@@ -42,14 +45,16 @@ Laboratory Android lab work expands the collection scope beyond location into ph
 - Geofencing만으로 충분히 풍부한 하루 타임라인을 만들 수 있는가?
 - 위치 권한을 앱 설치 첫날 요청할지, 첫 회고 가치 체감 이후 요청할지 결정해야 한다.
 - 알림과 사진 원본/썸네일을 어느 수준까지 서버로 보낼지, metadata-only로 시작할지 결정해야 한다.
-- reverse geocoding과 장소명 조회를 Android client와 server 중 어디에서 수행할 것인가?
+- client의 기본 주소 표시와 server의 Kakao 장소 보강 사이에서 정본, cache와 불일치 처리 책임을 어떻게 나눌 것인가?
 - 회의에서 언급된 이동 관련 20분 기준이 정확히 어떤 판정 규칙인지 코드로 확인해야 한다.
+- Android 버전·제조사별 데이터 누락과 배터리 소모를 어떤 기기 matrix와 수치 threshold로 통과 판정할 것인가?
 
 ## Linked Sources
 
+- [[2026-08-17-pdf-laimory-midterm-report]]
 - [[2026-06-15-markdown-notion-background-location]]
 - [[2026-06-15-markdown-notion-ai-daily-timeline-mvp]]
-- [[2026-06-15-markdown-notion-laimory-planning-review-evaluation]]
+- [[2026-06-05-notes-laimory-planning-review-evaluation]]
 - [[2026-06-15-markdown-notion-epic-system-initial-setup]]
 - [[2026-06-27-github-laboratory-mobile-data-extraction]]
 - [[2026-05-18-meeting-369-team-planning-review-preparation]]

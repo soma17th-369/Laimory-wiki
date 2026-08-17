@@ -28,5 +28,5 @@ tags: [notion, 369-team, meeting-records, planning]
 
 - [[369-team]]
 - [[laimory-planning-and-validation]]
-- [[2026-06-15-markdown-notion-laimory-planning-review-evaluation]]
+- [[2026-06-05-notes-laimory-planning-review-evaluation]]
 

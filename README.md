@@ -8,19 +8,26 @@
 
 | 항목 | 현재 값 |
 |---|---|
-| 마지막 상태 확인 | 2026-08-14 |
-| `main`에 반영된 위키 기준 | 2026-08-09 |
-| 상태 | 미커밋 유지보수 변경과 인간 검토 대기 초안이 있음 |
-| 최근 작업 | README 상태판과 동기화 규칙 추가 |
+| 마지막 상태 확인 | 2026-08-17 |
+| `main`에 반영된 위키 기준 | 2026-08-17 |
+| 상태 | 미처리 source 후보와 인간 검토 대기 초안이 있음 |
+| 최근 작업 | 369팀 공식 프로젝트 중간보고서 PDF를 보존·검수하고 source·topic·entity에 인제스트 |
 
 현재 인간 검토를 기다리는 초안은 다음과 같습니다. 이 문서들은 승인 전까지 `wiki/`에 반영하지 않습니다.
 
 - [Laimory 중간보고서 목차별 작성 가이드 초안](raw/notes/2026-08-10-laimory-midterm-report-section-guide-draft.md)
 - [Laimory 신규 기능 가치 제안 초안](raw/notes/2026-08-12-laimory-new-value-proposition-draft.md)
 - [Laimory 중간 보고서 마케팅 및 KPI 설정 초안](raw/notes/2026-08-14-laimory-midterm-report-marketing-kpi-draft.md)
+- [Laimory 중간보고서 피드백 반영안](raw/notes/2026-08-16-laimory-midterm-report-feedback-resolution-draft.md)
+- [Laimory 프로젝트 중간점검 발표자료 초안](raw/notes/2026-08-16-laimory-midterm-presentation-draft.md)
+- [Laimory 프로젝트 중간점검 HTML 발표자료 초안](raw/notes/2026-08-17-laimory-midterm-presentation-html-draft.md)
 
 ### 최근 변경 이력
 
+- 2026-08-17: 27쪽 공식 중간보고서를 전 페이지 검수하고, 현재 MVP 진행 상태·베타 계획·첫 가치 행동·멘토 의견을 source와 관련 종합 페이지에 인제스트했습니다.
+- 2026-08-17: 지정된 목차를 반영하고 개발 진행현황의 비중을 확대한 40장 HTML 발표자료를 제작하여 브라우저·인쇄 레이아웃을 검수했습니다.
+- 2026-08-16: 중간보고서 원문에 충실한 20분 발표용 본편 20장과 질의응답용 부록 5장을 제작하고 렌더링·오버플로 검사를 완료했습니다.
+- 2026-08-16: Google Docs 원문을 수정하지 않고, 중간보고서 피드백의 페이지별 위치와 교체 문안·출처·제품 서사를 검토 초안으로 정리했습니다.
 - 2026-08-14: README에 현재 상태판을 추가하고 지속적인 동기화 규칙을 정의했습니다.
 - 2026-08-12: 8월 7일 마케팅 KPI 멘토링과 획득 계획을 보존·인제스트하고 관련 기획 종합을 갱신했습니다.
 - 2026-08-10: 기획심의 평가 원문을 보존·재인제스트하고, 중간보고서 가이드를 인간 검토 대기 초안으로 전환했습니다.

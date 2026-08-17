@@ -66,4 +66,11 @@
 [2026-08-09] meeting-ingest | convert 15 nested transcript exports to body-identical Markdown, ingest 12 additional unique meetings, record duplicate exports, and connect the meeting series across index, topic, and entity pages
 [2026-08-09] meeting-reingest | add 13 adjacent raw meeting summaries, repoint wiki source pages to summary/transcript pairs, and add a chronological 369 team meeting-history topic
 [2026-08-09] ingest | replace partial Laimory planning-review captures with the complete PDF and timed presentation script, then refresh source, topic, entity, and index links
+[2026-08-10] ingest | preserve the user-supplied original Laimory planning-review evaluation in raw notes and re-ingest official feedback into source, topic, entity, and index pages
+[2026-08-10] workflow | move the Laimory midterm-report guide to a raw human-review draft and require explicit review before wiki ingest
+[2026-08-12] ingest | preserve the August 7 Laimory marketing KPI mentoring and acquisition plan in raw notes, ingest its source page, and merge activation, retention, attribution, and campaign measurement into planning synthesis
 [2026-08-14] maintenance | add a human-facing wiki status dashboard to README and require it to stay synchronized with vault changes and review state
+[2026-08-16] review-draft | map midterm-report feedback to exact pages and draft privacy, model, evidence, retention, goal, and TTFV revisions without editing the Google Doc
+[2026-08-16] review-draft | create and visually verify a 25-slide Laimory midterm presentation draft that follows the report content and keeps evaluation criteria out of the deck structure
+[2026-08-17] review-draft | rebuild the Laimory midterm deck as a 40-slide print-ready HTML artifact using the requested agenda, with the largest section devoted to mobile, server, AI, marketing, KPI, and remaining development validation
+[2026-08-17] ingest | inspect and ingest the 27-page official Laimory midterm report, updating MVP status, beta validation, Android and AI implementation, model evaluation, runtime, mentor feedback, index, and README status

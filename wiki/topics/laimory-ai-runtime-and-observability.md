@@ -2,7 +2,7 @@
 title: Laimory AI Runtime and Observability
 kind: topic
 status: active-with-roadmap
-updated: 2026-08-09
+updated: 2026-08-17
 tags: [laimory, deployment, runtime, ec2, agentcore, observability]
 ---
 
@@ -22,6 +22,8 @@ Laimory AI server의 EC2·AgentCore 배포 경로, background task 수명, healt
 
 2026-07-28과 07-30 회의에서는 AI Server의 직접 RDB 접근을 제거하고 App Server API를 통해 조회·저장하는 전환, callback·polling 장애, server-to-server token 갱신, Elasticsearch보다 Agent 내부 판단을 보기 적합한 Langfuse 도입이 진행 상황으로 보고됐다. 08-02부터 08-06에는 AWS 예산에 따른 RDS·EC2·NAT 선택, AgentCore 후보, 외부 장소 API의 WebClient connection pool 병목과 User Memory 충돌 작업 재처리가 논의됐다. 비용과 성능 수치는 회의 중 추정 또는 관찰이므로 운영 결정 전에 측정 자료로 확인해야 한다.
 
+2026-08-17 공식 중간보고서는 현재 AI runtime을 Docker 기반 EC2와 GitHub Actions–ECR–SSM 자동 배포·rollback으로 설명하고, AgentCore on-demand는 향후 전환 계획으로 둔다. 운영 JSON은 Filebeat–Elasticsearch, Agent·LLM trace는 Langfuse에 보내고 taskId로 연결한다는 경계도 재확인한다. 보고서는 callback 유실, 중복 요청과 server restart에서도 정합성과 재처리가 유지되는지 실제 scenario로 검증하라는 backend mentor 의견을 포함한다.
+
 ## Key Points
 
 - 결과 저장과 callback, User Memory result 저장 여부는 task 완료 운영 이벤트의 핵심 상태다.
@@ -30,6 +32,7 @@ Laimory AI server의 EC2·AgentCore 배포 경로, background task 수명, healt
 - Filebeat 실패는 앱 배포를 막지 않으며 workflow에서 상태를 따로 확인해야 한다.
 - AgentCore 전환은 traffic ownership, task drain, CloudWatch→Elasticsearch 전달, IAM/network와 arm64 smoke test가 필요하다.
 - runtime version, image SHA, provider/model을 함께 관측해야 배포와 모델 변화의 영향을 분리할 수 있다.
+- 중간보고서의 `AgentCore 전환 예정`은 roadmap이며 현재 운영 완료 상태로 읽지 않는다.
 
 ## Open Questions
 
@@ -42,6 +45,7 @@ Laimory AI server의 EC2·AgentCore 배포 경로, background task 수명, healt
 
 ## Linked Sources
 
+- [[2026-08-17-pdf-laimory-midterm-report]]
 - [[2026-08-09-markdown-laimory-ai-system-architecture]]
 - [[2026-08-09-markdown-laimory-ai-deployment-and-runtime]]
 - [[2026-08-09-markdown-laimory-observability]]

@@ -102,6 +102,23 @@ When a new source is added, follow this workflow:
 Rule:
 Always create or update `wiki/sources/` before changing topic, entity, answer, or domain pages.
 
+## Draft Review Workflow
+
+When the LLM creates a new synthesis, report, answer, plan, or other document for the human to review:
+
+1. create or update the draft under the appropriate `raw/` path first, usually `raw/notes/`
+2. mark an LLM-authored draft as `status: awaiting-human-review`
+3. preserve the draft in `raw/` while the human reviews, corrects, and refines it
+4. do not create or update a corresponding `wiki/` page before the human explicitly approves ingest
+5. after approval, ingest the reviewed raw artifact by creating or updating `wiki/sources/` first, then update any topic, entity, answer, domain, index, and log pages
+
+Rules:
+
+- Never place a new LLM-authored review draft directly in `wiki/`.
+- Treat `wiki/` as the reviewed knowledge layer, not as a drafting surface.
+- Do not add an unapproved raw draft to `index.md`; add the reviewed wiki artifact only after ingest.
+- Existing approved wiki pages may be maintained from reviewed sources, but new substantive synthesis still passes through the raw review gate.
+
 ## Meeting Transcript Workflow
 
 When meeting transcript files are added to `raw/meetings/`:
@@ -150,8 +167,9 @@ When answering a question:
 3. consult `references/` when operating context, schema intent, or conceptual framing is needed
 4. synthesize the answer from maintained wiki pages
 5. consult raw sources when the wiki lacks detail, verification is needed, or the user explicitly asks for source-level checking
-6. if the answer is durable and likely to be reused, save it in `wiki/answers/`
-7. update `index.md` and `log.md` when durable artifacts are added
+6. if the answer is durable and likely to be reused, save a review draft in `raw/notes/` and wait for the human to review or approve it
+7. only after explicit approval, ingest the reviewed raw artifact by creating or updating `wiki/sources/` first and then `wiki/answers/`
+8. update `index.md` and `log.md` when the reviewed durable artifact is ingested
 
 ## Reference Workflow
 

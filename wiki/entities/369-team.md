@@ -2,7 +2,7 @@
 title: 369팀
 kind: entity
 status: active
-updated: 2026-08-09
+updated: 2026-08-17
 tags: [team, sw-maestro, laimory]
 ---
 
@@ -19,6 +19,8 @@ AI·SW마에스트로 제17기에서 Laimory를 기획/개발하는 팀. 이 페
 팀 소개 자료 기준 역할은 전형선이 Native Android 및 UI/UX, 정수현이 Backend/Infra, 이동건이 AI/Backend 및 팀장 역할을 맡는 구도다. 기획심의 보고서에서도 역할 분담은 이동건(팀장, AI, Backend), 정수현(Infra, Backend), 전형선(Android, 배포)로 기록된다.
 
 2026-05-16부터 05-23까지의 회의는 기획심의 준비 과정에서 문제 정의, MVP, 경쟁 분석, permission, 수익화와 검증 지표를 반복적으로 다듬은 기록이다. 07-28부터 08-06까지의 회의는 alpha test를 중심으로 AI 출력, server 통합, 관측성, Android 데이터와 성능 문제를 짧게 공유하고 후속 작업으로 연결하는 운영 사례를 보여준다. 자동 전사의 화자 표기는 누락되거나 검증되지 않은 경우가 있으므로 개별 발언을 기존 역할에 임의로 연결하지 않는다.
+
+2026-08-17 공식 중간보고서는 1차 MVP의 생성·편집·확정 흐름을 연동해 App Tester alpha test 중이라고 정리하고, 8월 24~30일 약 20명 beta test 계획을 제시한다. 세 담당 멘토는 각각 MVP 핵심 가치와 정량 결과, failure recovery·정합성, 더 넓은 회고 시장 발굴을 보완 과제로 남겼다.
 
 ## Key Points
 
@@ -37,6 +39,7 @@ AI·SW마에스트로 제17기에서 Laimory를 기획/개발하는 팀. 이 페
 
 ## Linked Sources
 
+- [[2026-08-17-pdf-laimory-midterm-report]]
 - [[2026-06-15-markdown-notion-369-team-root]]
 - [[2026-06-15-markdown-notion-369-team-introduction]]
 - [[2026-06-15-markdown-notion-369-team-schedule]]

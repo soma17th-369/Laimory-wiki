@@ -2,7 +2,7 @@
 title: Laimory User Memory
 kind: topic
 status: active
-updated: 2026-08-09
+updated: 2026-08-17
 tags: [laimory, user-memory, profile, privacy, context-engineering]
 ---
 
@@ -21,6 +21,8 @@ User Memory는 장기 사건 로그나 사실 source가 아니라 고정 크기�
 가장 중요한 안전장치는 문장 출처의 구분이다. AI가 작성한 title, subtitle, question에서 성향을 다시 추출하면 모델의 추측이 다음 세대의 사실처럼 증폭된다. 그래서 `personality`, `values`, `preferences`, `emotionalPatterns`, `memoryStyle`은 사용자가 직접 쓴 memo만 근거로 갱신한다. memo가 없는 batch에서 이 필드들을 그대로 유지하는 것은 정상 성공이다.
 
 2026-08-02부터 08-06까지의 회의에서는 User Memory가 제품의 장기 맥락 계층으로 구체화되는 과정이 기록됐다. 별도 table 저장, Timeline이 `SAVED`가 되는 시점의 갱신 trigger, 동일 사용자의 동시 Timeline 저장 충돌이 차례로 논의됐다. Redis 보류와 일일 batch 재처리 방안은 회의상 설계 또는 구현 중으로 언급됐지만 최종 구현 여부와 순서·멱등성·부분 실패 정책은 확인이 필요하다.
+
+2026-08-17 공식 중간보고서도 User Memory를 append log가 아닌 고정 JSON profile의 전체 rewrite로 설명하고, Timeline·Question에만 제공하며 source와 충돌하면 원본을 우선한다고 재확인한다. 성격·가치관·선호는 사용자 memo에서만 추출한다는 provenance 경계도 명시한다. 다만 보고서는 사용자 열람·수정·삭제, 동시 갱신과 retention 정책의 검증 결과를 제시하지 않는다.
 
 ## Key Points
 
@@ -43,6 +45,7 @@ User Memory는 장기 사건 로그나 사실 source가 아니라 고정 크기�
 
 ## Linked Sources
 
+- [[2026-08-17-pdf-laimory-midterm-report]]
 - [[2026-08-09-markdown-laimory-ai-system-architecture]]
 - [[2026-08-09-markdown-laimory-prompt-engineering]]
 - [[2026-08-09-markdown-laimory-user-memory]]

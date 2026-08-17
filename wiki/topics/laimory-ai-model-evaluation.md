@@ -2,7 +2,7 @@
 title: Laimory AI Model Evaluation
 kind: topic
 status: evaluation-planned
-updated: 2026-08-09
+updated: 2026-08-17
 tags: [laimory, llm, model-evaluation, benchmark, langfuse]
 ---
 
@@ -21,6 +21,8 @@ OpenAI, Gemini와 Bedrock은 공통 `LLMProvider` facade 아래 text, vision, to
 평가의 중심은 최종 문장이 그럴듯한지가 아니라 source 충실도와 구조적 신뢰성이다. hallucinated rawId, structured failure, fallback, 질문 coverage와 Repair 행동을 먼저 보고, 자연스러운 한국어 일기 문체, latency, token, 실제 청구 비용과 vision 품질을 함께 비교한다.
 
 2026-08-06 회의에서는 LLM 생성 결과의 품질 검증 프로그램을 local에서 개발 중이며 완성 후 repository에 반영할 예정이라고 보고되었다. 다만 전사에는 평가 fixture, metric, 실행 결과가 없으므로 기존 평가 계획이 구현되었다고 보기는 어렵다.
+
+2026-08-17 공식 중간보고서는 GPT-5.4 mini, Gemini 2.5 Flash, Amazon Nova 2 Lite를 동일 service data에서 사건 추론, 한국어 Timeline 품질, JSON 준수, image 이해, latency와 cost로 비교 중이라고 재확인한다. Langfuse input/output을 LLM-as-a-Judge로 평가하고 발견 문제를 test data로 되돌리는 loop를 설명하지만 model별 표본, 점수와 winner는 제시하지 않는다.
 
 ## Key Points
 
@@ -41,6 +43,7 @@ OpenAI, Gemini와 Bedrock은 공통 `LLMProvider` facade 아래 text, vision, to
 
 ## Linked Sources
 
+- [[2026-08-17-pdf-laimory-midterm-report]]
 - [[2026-08-09-markdown-laimory-prompt-engineering]]
 - [[2026-08-09-markdown-laimory-llm-provider-model-evaluation]]
 - [[2026-08-09-markdown-laimory-observability]]

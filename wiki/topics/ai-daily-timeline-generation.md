@@ -2,7 +2,7 @@
 title: AI Daily Timeline Generation
 kind: topic
 status: active
-updated: 2026-08-09
+updated: 2026-08-17
 tags: [laimory, ai-timeline, ai-agent, event-normalization, lifelogging]
 ---
 
@@ -22,6 +22,8 @@ AI 하루 타임라인 생성의 핵심은 사진, 위치, 캘린더, 수면·�
 
 User Memory는 Timeline 문체와 중요도, Question의 결을 조정하는 보조 context일 뿐 오늘 사건의 근거가 아니다. Event Agent와 Repair Agent에는 주입하지 않고, source와 충돌하면 source가 우선한다.
 
+2026-08-17 공식 중간보고서는 같은 pipeline을 프로젝트 중간 상태의 대표 구현으로 설명하고, App Tester alpha에서 생성·편집·확정까지 연동했다고 보고한다. 문서상 생성 시간은 약 40초이며 앱은 task 식별자, foreground polling과 background FCM 알림으로 비동기 완료를 처리한다. 이는 팀의 공식 상태 보고이지만 세부 구현 계약은 2026-08-09 source commit 문서가 더 구체적이고, 실제 latency 분포와 failure recovery는 아직 검증 결과가 없다.
+
 2026-07-28부터 08-05까지의 회의는 현재 구조로 수렴하는 통합 과정을 기록한다. `source_id`와 `row_id` 불일치, JSON 필수 필드 실패, callback 저장과 FCM·polling 문제를 발견한 뒤 structured output과 App Server 경유 저장을 강화했고, alpha test에서 하루 경계와 UTC/KST 해석 문제를 확인했다. 08-04에는 생성물을 `DRAFT` 편집 상태와 `SAVED` 기록 상태로 구분하고 저장을 User Memory 갱신 trigger로 삼는 방향이 논의됐다. 이 회의 기록은 당시 진행 상황이며 최종 구현 계약은 2026-08-09 AI 시스템 문서를 우선한다.
 
 ## Key Points
@@ -33,6 +35,7 @@ User Memory는 Timeline 문체와 중요도, Question의 결을 조정하는 보
 - Question Agent는 Repair 뒤 모든 event에 질문 하나를 시도하며 누락은 Timeline 저장을 막지 않는다.
 - Prompt version은 모든 Agent가 공유하고, v1/v2는 일부 Agent의 호출 graph까지 바꾼다.
 - Langfuse는 main graph, Agent, Repair cycle과 generation의 provider·model·prompt version·latency·token을 관측한다.
+- 공식 중간보고서는 source 근거, request window, Calendar 보존, Photo 귀속과 시간·길이 기준을 prompt metric과 결정론적 code로 이중 검사하고, 문제 사례를 평가 fixture로 되돌리는 개선 loop를 구축 중이라고 설명한다.
 
 ## Open Questions
 
@@ -44,6 +47,7 @@ User Memory는 Timeline 문체와 중요도, Question의 결을 조정하는 보
 
 ## Linked Sources
 
+- [[2026-08-17-pdf-laimory-midterm-report]]
 - [[2026-06-20-notes-ai-daily-timeline-agent-draft]]
 - [[2026-06-15-markdown-notion-ai-daily-timeline-mvp]]
 - [[2026-06-16-notes-timeline-card-grouping-design]]

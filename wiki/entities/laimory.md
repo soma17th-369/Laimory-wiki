@@ -2,7 +2,7 @@
 title: Laimory
 kind: entity
 status: active
-updated: 2026-08-09
+updated: 2026-08-17
 tags: [product, ai-life-logging, personal-ai-memory, android]
 ---
 
@@ -19,6 +19,8 @@ Laimory는 모바일 기기 안에 흩어진 사진, 위치, 일정, 앱 사용,
 제품의 핵심 문제의식은 두 가지다. 첫째, 사용자는 삶을 기록하고 회고하고 싶지만 데이터가 여러 서비스에 파편화되어 직접 회상·정리해야 하는 비용이 높다. 둘째, AI는 대화/파일 맥락을 다루는 방향으로 발전했지만 아직 사용자의 실제 일상과 장기적 삶의 컨텍스트를 충분히 이해하지 못한다.
 
 2026-08-09 기준 AI 구현은 App Server가 source, 결과, User Memory와 task 상태를 소유하고 FastAPI AI server가 무상태 실행 계층을 맡는 구조로 구체화되었다. 다섯 Event Agent가 source domain을 병렬 해석하고 Timeline, Repair, Question 단계를 거친다. User Memory는 사건 근거가 아닌 압축 profile이며, 배포는 현재 EC2 자동 경로와 AgentCore 수동 경로를 병행한다.
+
+2026-08-17 공식 중간보고서 기준 1차 MVP는 하루 Timeline 생성·기록이며 로그인, 권한 설정·생활 데이터 수집, 비동기 생성, 편집·확정과 월별 조회까지 구현·연동해 App Tester alpha test를 진행 중이라고 보고된다. 첫 가치 행동은 Timeline 확인·필요시 수정 뒤 첫 일간 회고 완료로 정했고, 8월 24~30일 약 20명 beta test를 계획한다. 출시·사용자 검증 완료가 아니라 문서 작성 시점의 자체 보고 상태다.
 
 회의 기록은 이 구조의 시간적 변화를 보완한다. 2026-05에는 AI 일기에서 모바일 life logging과 Personal AI Memory로 제품 정의를 넓히고 MVP와 permission 가설을 다듬었으며, 07-28 이후에는 alpha test에서 source ID, structured output, callback, Langfuse, 시간대, Android 수집과 외부 API 병목을 발견해 수정했다. 회의 중 수치·경쟁사 정보·잠정 설계는 해당 시점의 주장으로 남기고 최신 구현 판단에는 2026-08-09 시스템 문서를 우선한다.
 
@@ -37,6 +39,8 @@ Laimory는 모바일 기기 안에 흩어진 사진, 위치, 일정, 앱 사용,
 - 사업화 구상은 Free, Premium, Max 3단계 구독 모델이며, 고급 AI 회고/패턴/대화 기능을 유료화한다.
 - 기술 전략은 Android 앱, Spring Boot backend, 자체 경량 AI 서버/상용 LLM API, On-device AI 1차 가공, 모니터링 도구를 포함한다.
 - Laboratory Android lab에서 사진, 일정, 알림, Health Connect, Samsung Health-origin 데이터를 실험하고 있으며, 서버 전송 후보 구조는 typed timeline source item batch로 정리되었다.
+- 공식 중간보고서는 위치·일정·사진·건강·알림 수집을 공통 source로 정규화하고, 권한이 거부·회수되면 해당 source만 제한하며 사용자가 선택한 데이터만 AI 생성에 활용한다고 설명한다.
+- 콘텐츠 영역은 인증 userId와 분리한 무작위 Subject ID와 HMAC 조회 key를 사용하고, Timeline·AI staging·User Memory·FCM·Redis task·S3 namespace에 비식별 식별자를 적용했다고 보고한다. 실제 code와 배포 설정은 별도 검증이 필요하다.
 
 ## Risks and Tensions
 
@@ -48,6 +52,9 @@ Laimory는 모바일 기기 안에 흩어진 사진, 위치, 일정, 앱 사용,
 - 사진·위치·일정만으로 충분히 의미 있는 결과물을 만들 수 있는지 검증해야 한다.
 - 기존 Apple Journal, Day One 등과 비교해 사용자가 별도 앱에 장기 데이터를 맡겨야 하는 이유와 신뢰 형성 방식이 더 명확해야 한다.
 - 일기/회고 앱은 장기 리텐션 확보가 어렵기 때문에 반복 방문과 유료 전환 포인트를 정량적으로 검증해야 한다.
+- 제품 activation은 설치·가입·permission 동의나 AI 생성 완료 자체보다, 사용자가 첫 Timeline을 열람하고 필요한 수정·memo를 거쳐 완성·저장해 자기 기록으로 받아들인 행동에 둔다. 이후 retention도 단순 재실행이 아니라 Timeline의 반복 열람·완성으로 측정한다.
+- 공식 기획심의 의견은 자동 생성된 기억을 사용자가 쉽게 수정·삭제·비공개 처리할 수 있어야 하며, On-device 처리 범위와 외부 model 전송 기준을 명확히 하도록 요구한다.
+- 중간보고서는 첫 가치 행동을 첫 일간 회고 완료로 정의하지만 retention 표는 첫 Timeline 생성 후 재생성을 기준으로 두므로 실제 analytics event와 cohort 기준을 통일해야 한다.
 
 ## Open Questions
 
@@ -59,12 +66,14 @@ Laimory는 모바일 기기 안에 흩어진 사진, 위치, 일정, 앱 사용,
 
 ## Linked Sources
 
+- [[2026-08-17-pdf-laimory-midterm-report]]
+- [[2026-08-07-notes-laimory-marketing-kpi-mentoring]]
 - [[2026-06-15-markdown-notion-laimory]]
 - [[2026-06-15-markdown-notion-mobile-ai-lifelogging-app-1]]
 - [[2026-06-15-markdown-notion-ai-daily-timeline-mvp]]
 - [[2026-08-09-pdf-laimory-planning-review-report]]
 - [[2026-06-15-markdown-notion-laimory-presentation-script-260529]]
-- [[2026-06-15-markdown-notion-laimory-planning-review-evaluation]]
+- [[2026-06-05-notes-laimory-planning-review-evaluation]]
 - [[2026-06-15-markdown-notion-background-location]]
 - [[2026-06-20-notes-ai-daily-timeline-agent-draft]]
 - [[2026-06-27-github-laboratory-mobile-data-extraction]]
