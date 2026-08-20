@@ -1,6 +1,6 @@
 ---
 title: Laimory 프로젝트 중간점검 HTML 발표자료 초안
-status: awaiting-human-review
+status: approved-for-ingest
 created: 2026-08-17
 updated: 2026-08-17
 artifact: raw/notes/2026-08-17-laimory-midterm-presentation.html

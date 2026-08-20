@@ -2,7 +2,7 @@
 title: Laimory 중간 보고서 마케팅 및 KPI 설정 초안
 source_type: llm-authored-draft
 created_at: 2026-08-14
-status: awaiting-human-review
+status: approved-for-ingest
 tags: [laimory, midterm-report, marketing, kpi, activation, retention]
 ---
 

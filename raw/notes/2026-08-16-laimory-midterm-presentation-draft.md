@@ -1,6 +1,6 @@
 ---
 title: Laimory 프로젝트 중간점검 발표자료 초안
-status: awaiting-human-review
+status: approved-for-ingest
 created: 2026-08-16
 artifact: raw/notes/2026-08-16-laimory-midterm-presentation-draft.pptx
 source_url: https://docs.google.com/document/d/1PkBefhf0qBCuuKVEl6M95jhweyKK-2hbyXJK8vZuyg0/edit?usp=sharing

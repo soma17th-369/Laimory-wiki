@@ -2,7 +2,7 @@
 title: AI Daily Timeline Generation
 kind: topic
 status: active
-updated: 2026-08-17
+updated: 2026-08-20
 tags: [laimory, ai-timeline, ai-agent, event-normalization, lifelogging]
 ---
 
@@ -24,6 +24,8 @@ User Memory는 Timeline 문체와 중요도, Question의 결을 조정하는 보
 
 2026-08-17 공식 중간보고서는 같은 pipeline을 프로젝트 중간 상태의 대표 구현으로 설명하고, App Tester alpha에서 생성·편집·확정까지 연동했다고 보고한다. 문서상 생성 시간은 약 40초이며 앱은 task 식별자, foreground polling과 background FCM 알림으로 비동기 완료를 처리한다. 이는 팀의 공식 상태 보고이지만 세부 구현 계약은 2026-08-09 source commit 문서가 더 구체적이고, 실제 latency 분포와 failure recovery는 아직 검증 결과가 없다.
 
+2026-08-20에 인제스트한 prompt·alpha 기록 collection은 현재 구조 이전과 전환기의 품질 문제를 구체적으로 보여준다. timezone·하루 경계, 장거리 이동 과분할, 사진 누락·중복 귀속, Calendar·Location 결합 실패, 알림 분절과 귀가 누락이 반복됐고, 개선안은 raw item 처리 상태, 상위 journey, Candidate·Fragment 계약, 사진 단일 귀속과 privacy를 prompt와 validator 양쪽에 두도록 요구했다. 이 collection의 `prompt.md`는 보존 snapshot의 current일 뿐 현재 repository active prompt와 동일하지 않으므로 구현 판단에는 code와 이후 system document를 우선한다.
+
 2026-07-28부터 08-05까지의 회의는 현재 구조로 수렴하는 통합 과정을 기록한다. `source_id`와 `row_id` 불일치, JSON 필수 필드 실패, callback 저장과 FCM·polling 문제를 발견한 뒤 structured output과 App Server 경유 저장을 강화했고, alpha test에서 하루 경계와 UTC/KST 해석 문제를 확인했다. 08-04에는 생성물을 `DRAFT` 편집 상태와 `SAVED` 기록 상태로 구분하고 저장을 User Memory 갱신 trigger로 삼는 방향이 논의됐다. 이 회의 기록은 당시 진행 상황이며 최종 구현 계약은 2026-08-09 AI 시스템 문서를 우선한다.
 
 ## Key Points
@@ -36,6 +38,8 @@ User Memory는 Timeline 문체와 중요도, Question의 결을 조정하는 보
 - Prompt version은 모든 Agent가 공유하고, v1/v2는 일부 Agent의 호출 graph까지 바꾼다.
 - Langfuse는 main graph, Agent, Repair cycle과 generation의 provider·model·prompt version·latency·token을 관측한다.
 - 공식 중간보고서는 source 근거, request window, Calendar 보존, Photo 귀속과 시간·길이 기준을 prompt metric과 결정론적 code로 이중 검사하고, 문제 사례를 평가 fixture로 되돌리는 개선 loop를 구축 중이라고 설명한다.
+- alpha 개선 기록은 모든 유효 raw item을 candidate·fragment·noise·failure 중 하나로 추적하고, 최종 사용 여부를 검증 가능한 상태로 남길 것을 요구한다.
+- Timeline·Location은 작은 source 단위를 그대로 나열하기보다 하루 중심 사건과 연속 journey로 재구성하되, 의미 판단과 rawId·시간·privacy 같은 hard gate를 분리한다.
 
 ## Open Questions
 
@@ -44,10 +48,13 @@ User Memory는 Timeline 문체와 중요도, Question의 결을 조정하는 보
 - endpoint에서 역전된 request window를 언제 명시적으로 거절할 것인가?
 - provider별 실제 Timeline 품질과 운영 비용은 공통 fixture 평가에서 어떻게 달라지는가?
 - 어떤 uncertainty와 warning을 UI에 직접 노출할 것인가?
+- prompt collection의 역사적 regression case를 현재 schema와 fixture로 어떻게 안전하게 이관할 것인가?
 
 ## Linked Sources
 
 - [[2026-08-17-pdf-laimory-midterm-report]]
+- [[2026-08-20-markdown-laimory-ai-agent-prompt-collection]]
+- [[2026-08-20-markdown-laimory-ai-timeline-core-improvement-requirements]]
 - [[2026-06-20-notes-ai-daily-timeline-agent-draft]]
 - [[2026-06-15-markdown-notion-ai-daily-timeline-mvp]]
 - [[2026-06-16-notes-timeline-card-grouping-design]]

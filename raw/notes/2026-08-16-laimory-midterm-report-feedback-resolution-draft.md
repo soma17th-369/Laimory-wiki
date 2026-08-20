@@ -2,7 +2,7 @@
 title: Laimory 중간보고서 피드백 반영안
 source_type: llm-authored-review-draft
 created_at: 2026-08-16
-status: awaiting-human-review
+status: approved-for-ingest
 review_scope: Google Docs read-only review and Jongchan Kim comments
 source_url: https://docs.google.com/document/d/1PkBefhf0qBCuuKVEl6M95jhweyKK-2hbyXJK8vZuyg0/edit?usp=sharing
 tags: [laimory, midterm-report, privacy, model-infrastructure, market-evidence, retention, ttfv]

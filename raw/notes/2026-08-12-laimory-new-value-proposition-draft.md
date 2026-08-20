@@ -1,7 +1,7 @@
 ---
 title: Laimory 신규 기능 가치 제안 초안
 created: 2026-08-12
-status: awaiting-human-review
+status: approved-for-ingest
 tags: [laimory, product-planning, journaling, value-proposition]
 ---
 

@@ -2,7 +2,7 @@
 title: Laimory Planning And Validation
 kind: topic
 status: active
-updated: 2026-08-17
+updated: 2026-08-20
 tags: [laimory, product-validation, planning-review, business-model]
 ---
 
@@ -17,6 +17,8 @@ Laimory의 기획 검증, 심의 피드백, 사업화/metric 설계, 리스크�
 Laimory의 기획은 "자동 모바일 라이프 로그 -> 회고 -> 장기 기억 기반 AI 대화"로 확장되는 구조다. 내부 기획 자료는 이 방향을 Android 기반 시장 선점, 기록 피로 감소, 개인 AI 컨텍스트 구축의 기회로 본다. 2026-06-05 공식 심의 평가의견은 이 문제 정의와 자동 Timeline 아이디어를 긍정적으로 평가하면서도 민감 permission 이전의 즉시 가치, background data 유실과 battery, 기존 기록 서비스 대비 신뢰와 차별성, 실제 수집 가능한 source의 양과 품질, AI가 만드는 구체적 부가가치, 장기 retention과 유료 전환을 8월 중간점검의 핵심 개선 과제로 제시한다. 2026-08-07 마케팅 자문은 이를 측정 가능한 funnel로 좁혀 설치·가입이 아니라 사용자가 첫 Timeline을 수정·완성해 자기 기록으로 받아들이는 순간을 activation으로 보고, 그 cohort의 반복 행동을 retention으로 추적하는 방향을 제안했다.
 
 2026-08-17 공식 중간보고서는 1차 MVP를 하루 Timeline 생성·기록으로 좁히고, 기록·회고에 익숙한 20대 후반~30대 사회초년생·저연차 직장인을 초기 target으로 정했다. 첫 가치 행동은 생성된 Timeline을 확인·필요시 수정한 뒤 첫 일간 회고를 완료하는 것으로 정의하며, 약 20명의 beta cohort를 8월 24~30일 운영해 행동 지표와 설문·인터뷰를 함께 확인할 계획이다. 이는 실행 결과가 아니라 보고서 시점의 검증 계획이다.
+
+8월 12~17일의 승인된 review artifact는 이 정의를 더 엄격하게 다듬는다. 기록 기능의 즉시 가치는 AI 대필보다 `기억은 찾아주고 이야기는 사용자가 완성한다`는 자기효능감에 두고, 회고가 MVP에서 제외됐다면 First Value Action을 `첫 Timeline 확정·저장`으로 바꾸도록 권고한다. TTFV는 가입부터 첫 확정까지의 median·p75와 단계별 이탈로 보고, beta는 모집·MVP end-to-end·analytics·알림·운영 model 고정을 준비하는 실행계획으로 분해한다. 이 문서들은 승인된 knowledge input이지만 beta 완료나 기능 구현 결과를 뜻하지 않는다.
 
 따라서 검증의 중심은 기능 구현 여부보다 "사용자가 데이터 권한을 줄 만큼 즉시 가치를 느끼는가", "자동 타임라인이 반복 방문을 만들 만큼 의미 있는가", "기록 누적 후 회고/AI 대화가 유료 전환 가치로 이어지는가"에 있다.
 
@@ -43,6 +45,10 @@ Laimory의 기획은 "자동 모바일 라이프 로그 -> 회고 -> 장기 기�
 - 문서에 제시된 Agent·Reflection·Memory Graph 구조와 개발환경은 기획 시점 설계이며, 현재 구현 상태를 판단할 때는 2026-08-09 AI 시스템 문서를 우선한다.
 - 중간보고서의 첫 가치 행동은 `첫 일간 회고 완료`이지만 D1·D7·D30 표는 `첫 Timeline 생성 후 재생성`을 기준으로 삼는다. activation cohort와 retention event의 기준 시점을 하나의 분석 계약으로 맞춰야 한다.
 - 중간보고서의 멘토 의견은 범위 확대보다 MVP 핵심 가치, 지표별 정량 목표와 실제 결과, callback 유실·중복 요청·재시작 정합성, 더 넓은 시장 발굴을 남은 기간의 검증 과제로 강조한다.
+- 최신 review 기준 activation은 회고가 실제 MVP에 없을 경우 첫 Timeline 확인·필요한 수정·삭제·확정·저장으로 통일하고, 수정량과 memo는 참여도·correction burden 보조 지표로 둔다.
+- TTFV는 도달 사용자 평균 하나가 아니라 median·p75, 도달률, 생성 실패와 단계별 이탈을 함께 기록한다.
+- privacy 서사는 사용자 선택, task 단위 최소 source, AI Server 비영속, 외부 model 제공 고지·동의·마스킹을 기준으로 하며 `요약·인덱스만 전송`처럼 실제 처리와 다른 표현을 쓰지 않는다.
+- 목표 추적은 Timeline 품질과 반복 사용 검증 뒤 축적 기록에서 사용자가 정한 목표 관련 행동 근거를 확인하는 선택적 확장으로 둔다.
 
 ## Open Questions
 
@@ -55,10 +61,16 @@ Laimory의 기획은 "자동 모바일 라이프 로그 -> 회고 -> 장기 기�
 - Timeline `완성·저장` event의 정확한 UI 조건과 D1·D7·D30 retention의 exact-day·rolling 계산 방식을 어떻게 고정할 것인가?
 - `기억 복원`과 `기록 부담 감소` 중 어떤 소구점이 신청뿐 아니라 activation과 반복 사용이 높은 cohort를 만드는가?
 - 첫 일간 회고 완료를 activation으로 쓸 때 D1·D7·D30의 cohort anchor와 return event를 정확히 무엇으로 정의할 것인가?
+- 2026-08-24~30 beta가 실제로 시작됐는지, 모집 규모·완주·activation·retention 결과는 무엇인지?
 
 ## Linked Sources
 
 - [[2026-08-17-pdf-laimory-midterm-report]]
+- [[2026-08-10-notes-laimory-midterm-report-section-guide]]
+- [[2026-08-12-notes-laimory-new-value-proposition]]
+- [[2026-08-14-notes-laimory-midterm-marketing-kpi-draft]]
+- [[2026-08-16-notes-laimory-midterm-report-feedback-resolution]]
+- [[2026-08-17-notes-laimory-beta-test-execution-plan]]
 - [[2026-08-07-notes-laimory-marketing-kpi-mentoring]]
 - [[2026-08-09-pdf-laimory-planning-review-report]]
 - [[2026-06-15-markdown-notion-laimory-presentation-script-260529]]

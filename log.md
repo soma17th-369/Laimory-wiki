@@ -74,3 +74,8 @@
 [2026-08-16] review-draft | create and visually verify a 25-slide Laimory midterm presentation draft that follows the report content and keeps evaluation criteria out of the deck structure
 [2026-08-17] review-draft | rebuild the Laimory midterm deck as a 40-slide print-ready HTML artifact using the requested agenda, with the largest section devoted to mobile, server, AI, marketing, KPI, and remaining development validation
 [2026-08-17] ingest | inspect and ingest the 27-page official Laimory midterm report, updating MVP status, beta validation, Android and AI implementation, model evaluation, runtime, mentor feedback, index, and README status
+[2026-08-17] review-draft | correct the beta-test plan after direct review of midterm-report pages 13-24, removing unsupported thresholds and aligning recruitment, MVP validation, and KPI definitions with the report
+[2026-08-19] review-draft | create a timed 20-minute midterm presentation script from the 50-page slide deck and planning-review script, including a 30-second demo cue and contingency cuts
+[2026-08-20] review-draft | render the midterm presentation script as a five-page A4 landscape two-column print PDF, preserving 49 presentation sections and 63 fenced speech or transition blocks
+[2026-08-20] review-draft | revise the print script to monochrome outlines, remove the cut guide and fills, and separate transition-script fences as independent slide blocks with visible whitespace
+[2026-08-20] ingest | approve and ingest eight review drafts, the 42-file AI prompt collection, Timeline improvement requirements, the 63-page midterm deck, and the five-page print script; update source, topic, entity, answer, index, and README state

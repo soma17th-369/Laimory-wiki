@@ -2,7 +2,7 @@
 title: Laimory 중간보고서 목차별 작성 가이드 초안
 source_type: llm-draft
 created_at: 2026-08-10
-status: awaiting-human-review
+status: approved-for-ingest
 intended_wiki_path: wiki/answers/laimory-midterm-report-section-guide.md
 derived_from:
   - wiki/sources/2026-08-09-pdf-laimory-planning-review-report.md

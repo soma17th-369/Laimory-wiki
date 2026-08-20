@@ -2,7 +2,7 @@
 title: 369팀
 kind: entity
 status: active
-updated: 2026-08-17
+updated: 2026-08-20
 tags: [team, sw-maestro, laimory]
 ---
 
@@ -22,6 +22,8 @@ AI·SW마에스트로 제17기에서 Laimory를 기획/개발하는 팀. 이 페
 
 2026-08-17 공식 중간보고서는 1차 MVP의 생성·편집·확정 흐름을 연동해 App Tester alpha test 중이라고 정리하고, 8월 24~30일 약 20명 beta test 계획을 제시한다. 세 담당 멘토는 각각 MVP 핵심 가치와 정량 결과, failure recovery·정합성, 더 넓은 회고 시장 발굴을 보완 과제로 남겼다.
 
+8월 16~20일 presentation 작업은 25장 PPTX, 51장 HTML deck, 50쪽 기준 timed script, 전환 page를 포함한 63쪽 최종 PDF와 5쪽 인쇄 대본으로 발전했다. 이는 팀의 중간점검 설명 구조와 당시 project status를 보존하지만, 발표자료의 page 수와 script mapping은 버전별로 다르다.
+
 ## Key Points
 
 - 팀 목표는 실제 사용자 확보, 라이브 서비스 운영, 기술적 성장, 커뮤니티 교류, 취업/창업 가능성 탐색이다.
@@ -40,6 +42,11 @@ AI·SW마에스트로 제17기에서 Laimory를 기획/개발하는 팀. 이 페
 ## Linked Sources
 
 - [[2026-08-17-pdf-laimory-midterm-report]]
+- [[2026-08-16-notes-laimory-midterm-presentation-draft]]
+- [[2026-08-17-notes-laimory-midterm-presentation-html]]
+- [[2026-08-19-notes-laimory-midterm-presentation-script]]
+- [[2026-08-20-pdf-laimory-midterm-presentation]]
+- [[2026-08-17-notes-laimory-beta-test-execution-plan]]
 - [[2026-06-15-markdown-notion-369-team-root]]
 - [[2026-06-15-markdown-notion-369-team-introduction]]
 - [[2026-06-15-markdown-notion-369-team-schedule]]

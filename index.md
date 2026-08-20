@@ -34,6 +34,8 @@ Primary catalog for the LLM Wiki maintained in this vault.
   - [Observability - Filebeat, Elasticsearch, and Langfuse](wiki/sources/2026-08-09-markdown-laimory-observability.md)
   - [AI Domain Invariants, Glossary, and Known Gaps](wiki/sources/2026-08-09-markdown-laimory-ai-invariants-and-known-gaps.md)
   - [Laimory AI·LLM Wiki All-in-One](wiki/sources/2026-08-09-markdown-laimory-ai-llm-wiki-all-in-one.md)
+  - [Laimory AI Agent 프롬프트와 alpha 개선 기록 컬렉션](wiki/sources/2026-08-20-markdown-laimory-ai-agent-prompt-collection.md)
+  - [Laimory AI Timeline 핵심 개선 요구사항](wiki/sources/2026-08-20-markdown-laimory-ai-timeline-core-improvement-requirements.md)
 
 - Notion 369 team raw capture:
   - [Notion 369팀 루트](wiki/sources/2026-06-15-markdown-notion-369-team-root.md)
@@ -56,6 +58,15 @@ Primary catalog for the LLM Wiki maintained in this vault.
   - [Notion 백그운드 위치 가져오기](wiki/sources/2026-06-15-markdown-notion-background-location.md)
   - [AI·SW마에스트로 제17기 369팀 프로젝트 기획심의 보고서](wiki/sources/2026-08-09-pdf-laimory-planning-review-report.md)
   - [AI·SW마에스트로 제17기 서울센터 369팀 프로젝트 중간보고서](wiki/sources/2026-08-17-pdf-laimory-midterm-report.md)
+  - [Laimory 중간보고서 목차별 작성 가이드](wiki/sources/2026-08-10-notes-laimory-midterm-report-section-guide.md)
+  - [Laimory 신규 기능 가치 제안](wiki/sources/2026-08-12-notes-laimory-new-value-proposition.md)
+  - [Laimory 중간보고서 마케팅 및 KPI 설정안](wiki/sources/2026-08-14-notes-laimory-midterm-marketing-kpi-draft.md)
+  - [Laimory 중간보고서 피드백 반영안](wiki/sources/2026-08-16-notes-laimory-midterm-report-feedback-resolution.md)
+  - [Laimory 중간점검 25장 발표자료 초안](wiki/sources/2026-08-16-notes-laimory-midterm-presentation-draft.md)
+  - [Laimory 중간점검 HTML 발표자료](wiki/sources/2026-08-17-notes-laimory-midterm-presentation-html.md)
+  - [Laimory 베타테스트 준비 실행계획](wiki/sources/2026-08-17-notes-laimory-beta-test-execution-plan.md)
+  - [Laimory 중간점검 발표 대본](wiki/sources/2026-08-19-notes-laimory-midterm-presentation-script.md)
+  - [Laimory 프로젝트 중간점검 발표자료](wiki/sources/2026-08-20-pdf-laimory-midterm-presentation.md)
   - [Notion Laimory 기획심의 발표 스크립트 260529](wiki/sources/2026-06-15-markdown-notion-laimory-presentation-script-260529.md)
   - [AI·SW마에스트로 제17기 Laimory 기획심의 종합의견](wiki/sources/2026-06-05-notes-laimory-planning-review-evaluation.md)
 
@@ -92,6 +103,7 @@ Primary catalog for the LLM Wiki maintained in this vault.
 
 ## Answers
 
+- [Laimory 중간보고서 작성 가이드](wiki/answers/laimory-midterm-report-section-guide.md): 가설·피드백·구현 evidence·남은 metric을 필수 목차와 연결하는 재사용 가능한 작성 기준.
 - [Server-to-server auth for Laimory](wiki/answers/server-to-server-auth-for-laimory.md): recommended server-to-server authentication path for app server and AI server callbacks.
 - [Timeline Draft API Sequence Diagrams](wiki/answers/timeline-draft-api-sequence-diagrams.md): Mermaid sequence diagrams for the current timeline draft creation, AI callback, and polling APIs.
 - [Laimory Backend Feedback Code Mapping](wiki/answers/laimory-backend-feedback-code-mapping.md): maps mentor/backend review feedback to the planned server code changes.
