@@ -2,7 +2,7 @@
 title: 369팀 회의 이력
 kind: topic
 status: active
-updated: 2026-08-09
+updated: 2026-08-31
 tags: [369-team, laimory, meetings, decision-history, project-history]
 ---
 
@@ -10,7 +10,7 @@ tags: [369-team, laimory, meetings, decision-history, project-history]
 
 ## Scope
 
-369팀 회의 13건에서 Laimory의 제품 정의, 기획심의 준비, 구현 통합, alpha test와 기술 의사결정이 어떻게 변했는지를 시간순으로 연결한다. 각 항목은 `raw/meetings/`의 회의 요약본을 인제스트한 `wiki/sources/` page를 근거로 한다.
+369팀 회의 26건에서 Laimory의 제품 정의, 기획심의 준비, 구현 통합, alpha·beta 준비와 기술 의사결정이 어떻게 변했는지를 시간순으로 연결한다. 각 항목은 `raw/meetings/`의 회의 요약본을 인제스트한 `wiki/sources/` page를 근거로 한다.
 
 ## Current Synthesis
 
@@ -18,7 +18,11 @@ tags: [369-team, laimory, meetings, decision-history, project-history]
 
 2026-07-28과 07-30에는 구현 통합과 alpha test가 중심으로 이동했다. source ID와 structured output, App Server 경유 저장, callback·FCM·polling, Langfuse 관측성, 사진·알림 수집과 UTC/KST 하루 경계 문제가 실제 장애와 개선 항목으로 나타났다.
 
-2026-08-02부터 08-06까지는 모델 품질, User Memory, AWS와 AgentCore, privacy filter, DRAFT/SAVED UX, K6 부하 테스트, 위치·체류 데이터와 User Memory 동시 갱신으로 논의가 구체화됐다. 이 시기의 회의는 구현 진행 상황과 잠정 대안을 포함하므로 최종 계약은 2026-08-09 AI 시스템 문서를 우선하며, 수치·법률 해석·자동 전사 기술명은 별도 검증이 필요하다.
+2026-08-02부터 08-06까지는 모델 품질, User Memory, AWS와 AgentCore, privacy filter, DRAFT/SAVED UX, K6 부하 테스트, 위치·체류 데이터와 User Memory 동시 갱신으로 논의가 구체화됐다.
+
+2026-08-09부터 08-19까지는 중간보고서·발표와 beta 준비가 개발과 병행됐다. 데이터 비식별화·외부 AI 동의·위치 제외, 사회초년생 기록자 persona와 목표 기능, draft/saved API, notification filtering, 약관·push 동의, GA4·crash log, 탈퇴·재가입, 실제 앱 시연이 논의됐다. 08-19 rehearsal은 구현·시장·비용 주장을 발표 문구로 정리했으므로 독립 검증된 운영 상태와 구분해야 한다.
+
+2026-08-24부터 08-30까지는 초기 release의 마지막 통합 단계였다. GA4 funnel, AgentCore 연결, timeline 읽기·편집 UX, initializer와 onboarding, ALB callback, notification·위치 UX, 탈퇴 후 data lifecycle, Bedrock 모델 전환 장애와 단계별 model routing, 약관 WebView·static hosting, 무입력 empty state가 이어졌다. 이 시기의 구현 보고와 model명은 code·배포 기록으로 확인해야 하며, 회의 중 법률·비용·일정 추정은 확정 사실로 취급하지 않는다.
 
 ## Chronology
 
@@ -37,6 +41,19 @@ tags: [369-team, laimory, meetings, decision-history, project-history]
 | 2026-08-04 | privacy·UX | 외부 LLM 제3자 제공 우려, on-device SLM filter, DRAFT/SAVED와 저장 trigger 검토 |
 | 2026-08-05 | 평가·성능 | User Memory table, Langfuse evaluation, K6 외부 API 병목, 위치 noise와 marketing 준비 |
 | 2026-08-06 | 동시성·위치 | User Memory 충돌 작업 재처리, AI 품질 도구, 외부 API 성능과 주소 표시 검증 |
+| 2026-08-09 | 운영 일정 | 대면·비대면 mentoring 배치와 중간발표 전 marketing·mentor 조언 일정 조정 |
+| 2026-08-10 | privacy·제품 방향 | AI 비용, 비식별화·외부 제공 동의, 회고 대체 목표 기능과 보고서 구조 검토 |
+| 2026-08-12 | persona·data control | 사회초년생 기록자 persona, 제외 위치의 client-side 제거, 월 목표 기반 retention 방향 |
+| 2026-08-13 | API·mobile 상태 | draft/saved 동시 반환과 nullable emotion, 20분 미만 movement 제외, scheduler·Redis 정리 |
+| 2026-08-15 | beta 준비 | 보고·발표와 beta 준비 병렬화, GA4·crash log 우선, 탈퇴·재가입 정책 미결 |
+| 2026-08-16 | notification·약관 | 자동 notification filtering 우선, 약관 server abstraction, 장기 사용자 가치 미결 |
+| 2026-08-18 | 발표·push | Push 광고성·야간 동의 불확실성, 실제 앱 demo, saved event 수정 검증 |
+| 2026-08-19 | 중간발표 rehearsal | 18분 17초 rehearsal, section 전환·pace 수정, MVP·AI·beta 발표 주장 점검 |
+| 2026-08-24 | release·analytics | GA4 funnel, Play Store 준비, AgentCore·model 전환, Android 자동 수집·map·filter |
+| 2026-08-25 | timeline UX | 읽기·편집 mode 분리, initializer API, onboarding과 notification filter 검수 |
+| 2026-08-26 | runtime 통합 | AgentCore callback을 ALB로 보내기로 결정, initializer·monitoring·약관·onboarding 점검 |
+| 2026-08-27 | 품질·data lifecycle | Model 전환 장애, notification 과잉 event, 탈퇴 7일 삭제와 초기 release 병목 점검 |
+| 2026-08-30 | model routing·policy | Nova 계열 후보 제외, 단계별 model routing, Codex CLI judge, 약관 URL과 empty state |
 
 ## Durable Threads
 
@@ -45,6 +62,9 @@ tags: [369-team, laimory, meetings, decision-history, project-history]
 - Timeline 품질은 prompt만이 아니라 source ID, structured output, 시간대, callback과 수집량 제한 같은 시스템 정합성에 의존한다.
 - User Memory는 장기 맥락 가치의 핵심이지만 저장 trigger, provenance, 동시 갱신 순서와 실패 복구가 남아 있다.
 - Langfuse와 품질 평가 도구는 결과가 그럴듯한지를 넘어 source 충실도와 Agent 내부 동작을 검증하는 방향으로 발전했다.
+- Beta 준비는 GA4 funnel, crash log, onboarding, notification filtering, 읽기·편집 UX와 약관·탈퇴 lifecycle을 하나의 release gate로 묶었다.
+- AgentCore 전환은 단순 runtime 교체가 아니라 callback 경로, ALB, IAM/network와 server-to-server authentication을 함께 해결해야 하는 통합 문제로 드러났다.
+- Model 선택은 단일 provider 승자 결정에서 stage별 cost·quality routing으로 이동했지만, 정확한 model명과 재현 가능한 비교 결과는 아직 부족하다.
 - 외부 API와 cloud 비용 문제는 실제 traffic 목표와 측정 자료가 없으면 회의 중 관찰 또는 rough estimate로만 취급해야 한다.
 
 ## Open Questions
@@ -53,6 +73,8 @@ tags: [369-team, laimory, meetings, decision-history, project-history]
 - 결정·액션 아이템의 담당자와 완료 상태를 어떤 issue tracker와 연결할 것인가?
 - 법률 mentoring을 참석자가 재해석한 내용과 실제 법률 자문 원문을 어떻게 분리해 보존할 것인가?
 - 회의별 성능 수치와 모델 품질 관찰을 재현 가능한 benchmark·trace·issue로 어떻게 승격할 것인가?
+- 8월 말 계획했던 beta와 Play Store 심사가 실제로 시작·완료됐는지, GA4 funnel과 tester 결과는 무엇인가?
+- 약관·동의·삭제 scheduler와 notification policy가 실제 data lifecycle 및 platform 요구와 일치하는가?
 
 ## Linked Sources
 
@@ -69,6 +91,19 @@ tags: [369-team, laimory, meetings, decision-history, project-history]
 - [[2026-08-04-meeting-369-team-space]]
 - [[2026-08-05-meeting-369-team-space]]
 - [[2026-08-06-meeting-369-team-space]]
+- [[2026-08-09-meeting-369-team-space]]
+- [[2026-08-10-meeting-369-team-space]]
+- [[2026-08-12-meeting-369-team-space]]
+- [[2026-08-13-meeting-369-team-space]]
+- [[2026-08-15-meeting-369-team-space]]
+- [[2026-08-16-meeting-369-team-space]]
+- [[2026-08-18-meeting-369-team-space]]
+- [[2026-08-19-meeting-369-team-space]]
+- [[2026-08-24-meeting-369-team-space]]
+- [[2026-08-25-meeting-369-team-space]]
+- [[2026-08-26-meeting-369-team-space]]
+- [[2026-08-27-meeting-369-team-space]]
+- [[2026-08-30-meeting-369-team-space]]
 
 ## Related Pages
 
@@ -81,3 +116,4 @@ tags: [369-team, laimory, meetings, decision-history, project-history]
 - [[laimory-ai-model-evaluation]]
 - [[laimory-ai-runtime-and-observability]]
 - [[android-life-logging-data-collection]]
+- [[laimory-data-privacy-and-consent]]

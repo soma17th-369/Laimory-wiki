@@ -2,7 +2,7 @@
 title: 369팀
 kind: entity
 status: active
-updated: 2026-08-20
+updated: 2026-08-31
 tags: [team, sw-maestro, laimory]
 ---
 
@@ -18,11 +18,13 @@ AI·SW마에스트로 제17기에서 Laimory를 기획/개발하는 팀. 이 페
 
 팀 소개 자료 기준 역할은 전형선이 Native Android 및 UI/UX, 정수현이 Backend/Infra, 이동건이 AI/Backend 및 팀장 역할을 맡는 구도다. 기획심의 보고서에서도 역할 분담은 이동건(팀장, AI, Backend), 정수현(Infra, Backend), 전형선(Android, 배포)로 기록된다.
 
-2026-05-16부터 05-23까지의 회의는 기획심의 준비 과정에서 문제 정의, MVP, 경쟁 분석, permission, 수익화와 검증 지표를 반복적으로 다듬은 기록이다. 07-28부터 08-06까지의 회의는 alpha test를 중심으로 AI 출력, server 통합, 관측성, Android 데이터와 성능 문제를 짧게 공유하고 후속 작업으로 연결하는 운영 사례를 보여준다. 자동 전사의 화자 표기는 누락되거나 검증되지 않은 경우가 있으므로 개별 발언을 기존 역할에 임의로 연결하지 않는다.
+2026-05-16부터 05-23까지의 회의는 기획심의 준비 과정에서 문제 정의, MVP, 경쟁 분석, permission, 수익화와 검증 지표를 반복적으로 다듬은 기록이다. 07-28부터 08-30까지의 회의는 alpha 통합에서 중간발표, beta·release 준비로 이동하며 AI 출력, server·AgentCore 통합, 관측성, Android 데이터·UX, privacy·약관과 model 선택을 짧은 주기로 공유하고 후속 작업으로 연결하는 운영 사례를 보여준다. 자동 전사의 화자 표기는 누락되거나 검증되지 않은 경우가 있으므로 개별 발언을 기존 역할에 임의로 연결하지 않는다.
 
 2026-08-17 공식 중간보고서는 1차 MVP의 생성·편집·확정 흐름을 연동해 App Tester alpha test 중이라고 정리하고, 8월 24~30일 약 20명 beta test 계획을 제시한다. 세 담당 멘토는 각각 MVP 핵심 가치와 정량 결과, failure recovery·정합성, 더 넓은 회고 시장 발굴을 보완 과제로 남겼다.
 
 8월 16~20일 presentation 작업은 25장 PPTX, 51장 HTML deck, 50쪽 기준 timed script, 전환 page를 포함한 63쪽 최종 PDF와 5쪽 인쇄 대본으로 발전했다. 이는 팀의 중간점검 설명 구조와 당시 project status를 보존하지만, 발표자료의 page 수와 script mapping은 버전별로 다르다.
+
+8월 24~30일 회의는 GA4 funnel과 Play Store 제출을 준비하면서 AgentCore callback을 ALB로 통합하고 initializer·onboarding, notification filtering, timeline 읽기·편집 UX, 약관·탈퇴 data lifecycle과 model routing을 release gate로 다뤘다. 일정과 구현 완료 표현은 회의 보고 수준이며 실제 beta 시작·심사 제출·배포 상태는 별도 확인이 필요하다.
 
 ## Key Points
 
@@ -32,6 +34,7 @@ AI·SW마에스트로 제17기에서 Laimory를 기획/개발하는 팀. 이 페
 - 초기 아이디어 흐름은 AI 일기 초안, 회고/성장/기록, 모바일 기반 AI 라이프 로깅을 거쳐 Laimory로 수렴한다.
 - 기획심의 보고서의 멘토 역할은 서비스 기획·AI 응답 품질·LLM 비용, Spring·Backend·Cloud architecture, Android 안정성·성능 검토로 나뉜다.
 - 자동 전사 회의는 `raw/meetings/`에 원문을 보존하고 파일별 source page로 인제스트한다.
+- 회의 이력은 2026-08-30까지 26건이 인제스트됐고, 8월 말 회의부터 beta·release 준비와 운영 통합이 중심이 됐다.
 
 ## Open Questions
 
@@ -67,6 +70,19 @@ AI·SW마에스트로 제17기에서 Laimory를 기획/개발하는 팀. 이 페
 - [[2026-08-04-meeting-369-team-space]]
 - [[2026-08-05-meeting-369-team-space]]
 - [[2026-08-06-meeting-369-team-space]]
+- [[2026-08-09-meeting-369-team-space]]
+- [[2026-08-10-meeting-369-team-space]]
+- [[2026-08-12-meeting-369-team-space]]
+- [[2026-08-13-meeting-369-team-space]]
+- [[2026-08-15-meeting-369-team-space]]
+- [[2026-08-16-meeting-369-team-space]]
+- [[2026-08-18-meeting-369-team-space]]
+- [[2026-08-19-meeting-369-team-space]]
+- [[2026-08-24-meeting-369-team-space]]
+- [[2026-08-25-meeting-369-team-space]]
+- [[2026-08-26-meeting-369-team-space]]
+- [[2026-08-27-meeting-369-team-space]]
+- [[2026-08-30-meeting-369-team-space]]
 
 ## Related Pages
 
@@ -74,4 +90,5 @@ AI·SW마에스트로 제17기에서 Laimory를 기획/개발하는 팀. 이 페
 - [[laimory]]
 - [[ai-life-logging]]
 - [[laimory-planning-and-validation]]
+- [[laimory-data-privacy-and-consent]]
 

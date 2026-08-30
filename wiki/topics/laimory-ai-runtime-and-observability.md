@@ -2,7 +2,7 @@
 title: Laimory AI Runtime and Observability
 kind: topic
 status: active-with-roadmap
-updated: 2026-08-17
+updated: 2026-08-31
 tags: [laimory, deployment, runtime, ec2, agentcore, observability]
 ---
 
@@ -14,7 +14,7 @@ Laimory AI server의 EC2·AgentCore 배포 경로, background task 수명, healt
 
 ## Current Synthesis
 
-현재 `dev` 자동 배포는 EC2 amd64 단일 컨테이너이며 AgentCore arm64는 수동 배포·rollback 경로다. 하나의 Dockerfile과 `/ping`, `/invocations` 계약을 공유하지만 AgentCore 기본 전환은 아직 계획이다. EC2 배포는 OIDC, immutable ECR tag, SSM, idle 대기와 health 기반 rollback을 사용한다.
+2026-08-09 시스템 문서 기준 `dev` 자동 배포는 EC2 amd64 단일 컨테이너이며 AgentCore arm64는 수동 배포·rollback 경로다. 하나의 Dockerfile과 `/ping`, `/invocations` 계약을 공유하고 EC2 배포는 OIDC, immutable ECR tag, SSM, idle 대기와 health 기반 rollback을 사용한다. 이후 회의에서 AgentCore 배포·연결 작업이 보고됐으므로 현재 운영 traffic 경로는 배포 기록으로 재확인해야 한다.
 
 배포 안전성은 process-local inflight counter와 single worker에 의존한다. `/ping`이 `HealthyBusy`이면 기존 container를 최대 20분 기다려 background task 유실을 피한다. 하지만 durable queue나 drain, multi-replica busy 합산은 없으므로 AgentCore scale-in과 runtime 교체에서 같은 보장을 자동으로 얻을 수 없다.
 
@@ -23,6 +23,8 @@ Laimory AI server의 EC2·AgentCore 배포 경로, background task 수명, healt
 2026-07-28과 07-30 회의에서는 AI Server의 직접 RDB 접근을 제거하고 App Server API를 통해 조회·저장하는 전환, callback·polling 장애, server-to-server token 갱신, Elasticsearch보다 Agent 내부 판단을 보기 적합한 Langfuse 도입이 진행 상황으로 보고됐다. 08-02부터 08-06에는 AWS 예산에 따른 RDS·EC2·NAT 선택, AgentCore 후보, 외부 장소 API의 WebClient connection pool 병목과 User Memory 충돌 작업 재처리가 논의됐다. 비용과 성능 수치는 회의 중 추정 또는 관찰이므로 운영 결정 전에 측정 자료로 확인해야 한다.
 
 2026-08-17 공식 중간보고서는 현재 AI runtime을 Docker 기반 EC2와 GitHub Actions–ECR–SSM 자동 배포·rollback으로 설명하고, AgentCore on-demand는 향후 전환 계획으로 둔다. 운영 JSON은 Filebeat–Elasticsearch, Agent·LLM trace는 Langfuse에 보내고 taskId로 연결한다는 경계도 재확인한다. 보고서는 callback 유실, 중복 요청과 server restart에서도 정합성과 재처리가 유지되는지 실제 scenario로 검증하라는 backend mentor 의견을 포함한다.
+
+2026-08-24~30 회의에서는 AgentCore 자체 배포 뒤 application 연결과 end-to-end test가 진행 중이라고 보고됐다. AgentCore→App Server callback이 private DNS/IP 경로에서 실패해, 08-26에는 callback target을 ALB endpoint로 보내고 환경 분기와 load balancing을 application infrastructure에 맡기기로 했다. 이 결정은 server-to-server authentication, replay 방지, TLS, IAM/network와 traffic ownership을 여전히 열어 둔다. 같은 기간 Kibana·Grafana subdomain을 ALB에서 monitoring EC2로 연결했고, dev와 분리한 on-demand load-test server도 계획했다. Database·Redis를 공유하는 test server는 비용은 낮을 수 있지만 data isolation과 부하 간섭 위험을 별도로 검증해야 한다.
 
 ## Key Points
 
@@ -33,6 +35,8 @@ Laimory AI server의 EC2·AgentCore 배포 경로, background task 수명, healt
 - AgentCore 전환은 traffic ownership, task drain, CloudWatch→Elasticsearch 전달, IAM/network와 arm64 smoke test가 필요하다.
 - runtime version, image SHA, provider/model을 함께 관측해야 배포와 모델 변화의 영향을 분리할 수 있다.
 - 중간보고서의 `AgentCore 전환 예정`은 roadmap이며 현재 운영 완료 상태로 읽지 않는다.
+- 8월 말 회의상 AgentCore 배포는 진행됐지만 callback은 ALB로 재설계 중이었고 production traffic 전환·rollback 완료 근거는 없다.
+- AgentCore callback의 ALB 경로는 환경 분기를 단순화하지만 application-level authentication과 replay 방지를 대체하지 않는다.
 
 ## Open Questions
 
@@ -42,6 +46,8 @@ Laimory AI server의 EC2·AgentCore 배포 경로, background task 수명, healt
 - 관측 공백을 감지할 별도 health와 alert 기준은 무엇인가?
 - EC2와 AgentCore의 traffic ownership과 rollback 기간을 어떻게 운영할 것인가?
 - 외부 장소 API를 포함한 실제 production traffic에서 connection pool, batch 크기와 concurrency 목표는 얼마인가?
+- AgentCore→ALB callback의 identity, authorization, replay protection과 environment routing 계약은 무엇인가?
+- Dev database·Redis를 공유하는 on-demand load-test server를 production-like test에 쓸 때 isolation을 어떻게 보장할 것인가?
 
 ## Linked Sources
 
@@ -56,6 +62,14 @@ Laimory AI server의 EC2·AgentCore 배포 경로, background task 수명, healt
 - [[2026-08-03-meeting-369-team-space]]
 - [[2026-08-05-meeting-369-team-space]]
 - [[2026-08-06-meeting-369-team-space]]
+- [[2026-08-10-meeting-369-team-space]]
+- [[2026-08-13-meeting-369-team-space]]
+- [[2026-08-19-meeting-369-team-space]]
+- [[2026-08-24-meeting-369-team-space]]
+- [[2026-08-25-meeting-369-team-space]]
+- [[2026-08-26-meeting-369-team-space]]
+- [[2026-08-27-meeting-369-team-space]]
+- [[2026-08-30-meeting-369-team-space]]
 
 ## Related Pages
 
@@ -63,3 +77,4 @@ Laimory AI server의 EC2·AgentCore 배포 경로, background task 수명, healt
 - [[ai-daily-timeline-generation]]
 - [[laimory-user-memory]]
 - [[laimory-ai-model-evaluation]]
+- [[laimory-data-privacy-and-consent]]

@@ -1,8 +1,8 @@
 ---
 title: Laimory AI Model Evaluation
 kind: topic
-status: evaluation-planned
-updated: 2026-08-17
+status: evaluation-in-progress
+updated: 2026-08-31
 tags: [laimory, llm, model-evaluation, benchmark, langfuse]
 ---
 
@@ -24,6 +24,10 @@ OpenAI, Gemini와 Bedrock은 공통 `LLMProvider` facade 아래 text, vision, to
 
 2026-08-17 공식 중간보고서는 GPT-5.4 mini, Gemini 2.5 Flash, Amazon Nova 2 Lite를 동일 service data에서 사건 추론, 한국어 Timeline 품질, JSON 준수, image 이해, latency와 cost로 비교 중이라고 재확인한다. Langfuse input/output을 LLM-as-a-Judge로 평가하고 발견 문제를 test data로 되돌리는 loop를 설명하지만 model별 표본, 점수와 winner는 제시하지 않는다.
 
+2026-08-24~30 회의는 평가가 실제 전환 trial로 들어갔지만 아직 재현 가능한 결론에 도달하지 못했음을 보여준다. Bedrock 후보는 JSON tool/schema와 max token 문제로 output이 없거나 message에서 실제 행동을 충분히 추론하지 못하는 사례가 보고됐고, 08-30에는 전사상 Nova Lite로 들리는 후보를 Timeline 주력에서 제외하기로 했다. 대신 간단한 event 단계에는 저비용 model, 핵심 Timeline에는 더 강한 model을 쓰는 stage별 routing이 제안됐다. 자동 전사 model명은 일관되지 않고 표본·score·배포 설정이 없으므로 이를 검증된 winner나 production 계약으로 보아서는 안 된다.
+
+평가 도구는 Langfuse 결과를 local에서 분석하는 방향에서, API judge 비용을 줄이기 위해 구독 중인 Codex CLI를 local judge로 연결하는 실험까지 확장됐다. 이 방식은 비용 장점과 별개로 reproducibility, authentication, model/version 고정과 batch automation을 검증해야 한다.
+
 ## Key Points
 
 - 평균적인 하루와 함께 source 공백, 겹침, 누락, 민감정보, vision 실패, 깨진 profile fixture가 필요하다.
@@ -32,6 +36,8 @@ OpenAI, Gemini와 Bedrock은 공통 `LLMProvider` facade 아래 text, vision, to
 - source hallucination, structured failure, timeout, privacy 회귀와 Photo 요구 충족을 hard gate로 둔다.
 - 품질 평가는 모델 이름을 가린 blind review와 source 원본 대조가 바람직하다.
 - 가격과 availability는 평가 시점의 공식 문서와 실제 사용량·청구 snapshot으로 검증한다.
+- Stage별 model routing은 전체 평균만 비교하지 말고 event 단계와 Timeline 단계의 품질 gate·fallback·비용을 각각 측정해야 한다.
+- 회의에서 관찰된 structured output 실패와 notification 과잉 event는 task ID·trace·fixture로 보존해야 model attribution 오류를 피할 수 있다.
 
 ## Open Questions
 
@@ -40,6 +46,9 @@ OpenAI, Gemini와 Bedrock은 공통 `LLMProvider` facade 아래 text, vision, to
 - production 사용자 데이터를 사용하지 않고도 한국어 일상 분포를 충분히 재현할 수 있는가?
 - hard gate와 품질·latency·비용 가중치를 제품 단계별로 어떻게 바꿀 것인가?
 - 회의에서 언급된 local 품질 검증 프로그램이 기존 평가 계획의 어떤 metric과 fixture를 구현하는가?
+- 8월 말 회의에서 언급된 model들의 정확한 identifier, region, SCP·cross-region 조건과 실제 release 설정은 무엇인가?
+- Codex CLI judge를 반복 실행할 때 model/version, prompt, rate limit과 결과 provenance를 어떻게 고정할 것인가?
+- Stage별 routing의 fallback과 quality threshold를 어떤 offline·beta signal로 승인할 것인가?
 
 ## Linked Sources
 
@@ -52,6 +61,13 @@ OpenAI, Gemini와 Bedrock은 공통 `LLMProvider` facade 아래 text, vision, to
 - [[2026-08-02-meeting-369-team-space]]
 - [[2026-08-05-meeting-369-team-space]]
 - [[2026-08-06-meeting-369-team-space]]
+- [[2026-08-10-meeting-369-team-space]]
+- [[2026-08-12-meeting-369-team-space]]
+- [[2026-08-19-meeting-369-team-space]]
+- [[2026-08-24-meeting-369-team-space]]
+- [[2026-08-25-meeting-369-team-space]]
+- [[2026-08-27-meeting-369-team-space]]
+- [[2026-08-30-meeting-369-team-space]]
 
 ## Related Pages
 

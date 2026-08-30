@@ -84,17 +84,31 @@ Primary catalog for the LLM Wiki maintained in this vault.
   - [369팀 스페이스 회의 요약 - 2026-08-04](wiki/sources/2026-08-04-meeting-369-team-space.md)
   - [369팀 스페이스 회의 요약 - 2026-08-05](wiki/sources/2026-08-05-meeting-369-team-space.md)
   - [369팀 스페이스 회의 요약 - 2026-08-06](wiki/sources/2026-08-06-meeting-369-team-space.md)
+  - [369팀 스페이스 회의 요약 - 2026-08-09](wiki/sources/2026-08-09-meeting-369-team-space.md)
+  - [369팀 스페이스 회의 요약 - 2026-08-10](wiki/sources/2026-08-10-meeting-369-team-space.md)
+  - [369팀 스페이스 회의 요약 - 2026-08-12](wiki/sources/2026-08-12-meeting-369-team-space.md)
+  - [369팀 스페이스 회의 요약 - 2026-08-13](wiki/sources/2026-08-13-meeting-369-team-space.md)
+  - [369팀 스페이스 회의 요약 - 2026-08-15](wiki/sources/2026-08-15-meeting-369-team-space.md)
+  - [369팀 스페이스 회의 요약 - 2026-08-16](wiki/sources/2026-08-16-meeting-369-team-space.md)
+  - [369팀 스페이스 회의 요약 - 2026-08-18](wiki/sources/2026-08-18-meeting-369-team-space.md)
+  - [369팀 스페이스 회의 요약 - 2026-08-19](wiki/sources/2026-08-19-meeting-369-team-space.md)
+  - [369팀 스페이스 회의 요약 - 2026-08-24](wiki/sources/2026-08-24-meeting-369-team-space.md)
+  - [369팀 스페이스 회의 요약 - 2026-08-25](wiki/sources/2026-08-25-meeting-369-team-space.md)
+  - [369팀 스페이스 회의 요약 - 2026-08-26](wiki/sources/2026-08-26-meeting-369-team-space.md)
+  - [369팀 스페이스 회의 요약 - 2026-08-27](wiki/sources/2026-08-27-meeting-369-team-space.md)
+  - [369팀 스페이스 회의 요약 - 2026-08-30](wiki/sources/2026-08-30-meeting-369-team-space.md)
 
 ## Topics
 
-- [369팀 회의 이력](wiki/topics/369-team-meeting-history.md): 13개 회의의 제품 정의, 기획심의, 구현 통합, alpha test와 기술 의사결정 변화.
+- [369팀 회의 이력](wiki/topics/369-team-meeting-history.md): 26개 회의의 제품 정의, 기획심의, alpha·beta 준비, release 통합과 기술 의사결정 변화.
 - [AI Life Logging](wiki/topics/ai-life-logging.md): mobile AI life-logging and Personal AI Memory pattern synthesized from Laimory planning sources.
 - [AI Daily Timeline Generation](wiki/topics/ai-daily-timeline-generation.md): current Event-Agent fan-out, Timeline synthesis, deterministic Repair, and post-repair Question flow.
 - [Laimory User Memory](wiki/topics/laimory-user-memory.md): bounded user profile rewrite, memo provenance rules, and safe context consumption.
-- [Laimory AI Model Evaluation](wiki/topics/laimory-ai-model-evaluation.md): provider-neutral evaluation plan for source fidelity, structured reliability, quality, latency, and cost.
-- [Laimory AI Runtime and Observability](wiki/topics/laimory-ai-runtime-and-observability.md): EC2 and AgentCore runtime paths, task lifecycle, operational events, and Langfuse tracing.
+- [Laimory AI Model Evaluation](wiki/topics/laimory-ai-model-evaluation.md): provider-neutral evaluation, Bedrock 전환 관찰, stage별 model routing과 local judge 과제.
+- [Laimory AI Runtime and Observability](wiki/topics/laimory-ai-runtime-and-observability.md): EC2·AgentCore runtime, ALB callback, task lifecycle, operational events와 Langfuse tracing.
 - [Laimory Planning And Validation](wiki/topics/laimory-planning-and-validation.md): Laimory planning, activation·retention funnel, marketing experiments, risks, and validation questions.
 - [Android Life Logging Data Collection](wiki/topics/android-life-logging-data-collection.md): Android location/background-data constraints for life-logging apps.
+- [Laimory Data Privacy And Consent](wiki/topics/laimory-data-privacy-and-consent.md): source 선택·제외, 비식별 식별자, 약관·동의 version, 탈퇴·삭제와 외부 AI 제공 경계.
 
 ## Entities
 

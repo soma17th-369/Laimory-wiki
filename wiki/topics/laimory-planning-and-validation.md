@@ -2,7 +2,7 @@
 title: Laimory Planning And Validation
 kind: topic
 status: active
-updated: 2026-08-20
+updated: 2026-08-31
 tags: [laimory, product-validation, planning-review, business-model]
 ---
 
@@ -23,6 +23,10 @@ Laimory의 기획은 "자동 모바일 라이프 로그 -> 회고 -> 장기 기�
 따라서 검증의 중심은 기능 구현 여부보다 "사용자가 데이터 권한을 줄 만큼 즉시 가치를 느끼는가", "자동 타임라인이 반복 방문을 만들 만큼 의미 있는가", "기록 누적 후 회고/AI 대화가 유료 전환 가치로 이어지는가"에 있다.
 
 2026-05-16부터 05-23까지의 회의들은 이 가설이 한 번에 확정된 것이 아니라 문제 정의, MVP 데이터 범위, permission onboarding, 경쟁 비교, 수익화와 성공 지표를 반복해서 다듬은 결과임을 보여준다. 사진·위치·calendar 중심의 축소 MVP와 단계적 permission 요청은 유력한 안이었지만, 우선 persona와 일간 회고의 실제 문제 강도는 미결이었다. 2026-08-05에는 제품 상태를 alpha test 단계로 설명하고 marketing 시작 방식과 예산 집행을 mentor에게 묻는 준비가 보고됐다.
+
+2026-08-10~19 회의에서는 persona를 나이만이 아니라 기록을 적극적으로 하는 사회초년생 직장인으로 좁히고, 구현 제약이 큰 회고 대신 월 목표·progress·reminder를 retention 기능으로 탐색했다. 동시에 report·presentation, 외부 tester 모집, GA4·crash logging, 사전 녹화 demo와 탈퇴·약관 준비를 병렬화했다. 목표 기능은 상세 명세나 구현 결정이 아니라 Timeline 품질과 반복 사용 이후의 선택적 확장으로 남아 있다.
+
+2026-08-24~30 회의의 GA4 초안은 회원가입, permission, data 준비·검토·제외, 생성 요청·완료, 결과 재진입, event 수정·삭제·추가, memo와 저장을 funnel로 나눈다. 첫 가치는 이틀 안을 목표로 하되 최대 7일까지 관찰하는 안이 나왔고, 실제 tester 연락은 설치 가능한 release 뒤에 하기로 했다. Play Store 제출과 beta 시작은 8월 말~9월 초 목표로 계속 미뤄졌으므로, 8월 24~30 beta가 계획대로 실행됐다고 볼 근거는 없다.
 
 ## Key Points
 
@@ -49,6 +53,8 @@ Laimory의 기획은 "자동 모바일 라이프 로그 -> 회고 -> 장기 기�
 - TTFV는 도달 사용자 평균 하나가 아니라 median·p75, 도달률, 생성 실패와 단계별 이탈을 함께 기록한다.
 - privacy 서사는 사용자 선택, task 단위 최소 source, AI Server 비영속, 외부 model 제공 고지·동의·마스킹을 기준으로 하며 `요약·인덱스만 전송`처럼 실제 처리와 다른 표현을 쓰지 않는다.
 - 목표 추적은 Timeline 품질과 반복 사용 검증 뒤 축적 기록에서 사용자가 정한 목표 관련 행동 근거를 확인하는 선택적 확장으로 둔다.
+- 8월 24일 GA4 초안은 source 제외율, AI event 수정·삭제·추가, memo, permission과 생성 funnel을 함께 측정해 가치와 correction burden을 분리하려 했다.
+- 외부 tester 모집은 설치 가능한 release가 나온 뒤 시작하고, app review 중 beta를 병행한다는 운영안이었으나 실제 실행 결과는 확인되지 않았다.
 
 ## Open Questions
 
@@ -62,6 +68,8 @@ Laimory의 기획은 "자동 모바일 라이프 로그 -> 회고 -> 장기 기�
 - `기억 복원`과 `기록 부담 감소` 중 어떤 소구점이 신청뿐 아니라 activation과 반복 사용이 높은 cohort를 만드는가?
 - 첫 일간 회고 완료를 activation으로 쓸 때 D1·D7·D30의 cohort anchor와 return event를 정확히 무엇으로 정의할 것인가?
 - 2026-08-24~30 beta가 실제로 시작됐는지, 모집 규모·완주·activation·retention 결과는 무엇인지?
+- GA4 event naming, funnel denominator와 TTFV 2일 목표·7일 observation window를 실제 analytics contract로 어떻게 고정했는가?
+- Timeline 삭제·수정률을 품질 실패와 적극적 personalization 중 어떻게 구분할 것인가?
 
 ## Linked Sources
 
@@ -85,10 +93,24 @@ Laimory의 기획은 "자동 모바일 라이프 로그 -> 회고 -> 장기 기�
 - [[2026-05-21-meeting-369-team-planning-review-preparation]]
 - [[2026-05-23-meeting-369-team-space]]
 - [[2026-08-05-meeting-369-team-space]]
+- [[2026-08-09-meeting-369-team-space]]
+- [[2026-08-10-meeting-369-team-space]]
+- [[2026-08-12-meeting-369-team-space]]
+- [[2026-08-15-meeting-369-team-space]]
+- [[2026-08-16-meeting-369-team-space]]
+- [[2026-08-18-meeting-369-team-space]]
+- [[2026-08-19-meeting-369-team-space]]
+- [[2026-08-24-meeting-369-team-space]]
+- [[2026-08-25-meeting-369-team-space]]
+- [[2026-08-26-meeting-369-team-space]]
+- [[2026-08-27-meeting-369-team-space]]
+- [[2026-08-30-meeting-369-team-space]]
 
 ## Related Pages
 
 - [[laimory]]
 - [[ai-life-logging]]
 - [[android-life-logging-data-collection]]
+- [[laimory-data-privacy-and-consent]]
+- [[laimory-ai-model-evaluation]]
 

@@ -2,7 +2,7 @@
 title: Laimory User Memory
 kind: topic
 status: active
-updated: 2026-08-17
+updated: 2026-08-31
 tags: [laimory, user-memory, profile, privacy, context-engineering]
 ---
 
@@ -24,6 +24,8 @@ User Memory는 장기 사건 로그나 사실 source가 아니라 고정 크기�
 
 2026-08-17 공식 중간보고서도 User Memory를 append log가 아닌 고정 JSON profile의 전체 rewrite로 설명하고, Timeline·Question에만 제공하며 source와 충돌하면 원본을 우선한다고 재확인한다. 성격·가치관·선호는 사용자 memo에서만 추출한다는 provenance 경계도 명시한다. 다만 보고서는 사용자 열람·수정·삭제, 동시 갱신과 retention 정책의 검증 결과를 제시하지 않는다.
 
+2026-08-12 회의는 인증 userId와 AI 콘텐츠 식별자를 secret 기반 hash와 별도 subject mapping으로 분리하는 migration이 진행 중이라고 보고했고, 08-13에는 draft·saved 상태를 함께 반환하되 향후 saved만 User Memory에 반영할 수 있도록 status를 유지하기로 했다. 08-27에는 실제 사례에서 User Memory 유무가 Timeline 맥락에 주는 차이를 비교 중이었지만 benchmark나 결론은 없었다. 08-30에는 source와 User Memory가 모두 없는 신규 사용자의 empty state가 별도 문제로 제기됐다.
+
 ## Key Points
 
 - User Memory는 `rawId`나 `sourceRefs`를 갖지 않는다.
@@ -33,6 +35,7 @@ User Memory는 장기 사건 로그나 사실 source가 아니라 고정 크기�
 - 크기나 민감정보 위반은 잘라 저장하지 않고 전체 rewrite를 최대 두 번 재요청한다.
 - `schemaVersion`과 `updatedAt`은 LLM이 아니라 서버가 확정한다.
 - User Memory task는 callback 없이 SUCCESS 또는 FAILED result 저장 정확히 한 번으로 종료한다.
+- 콘텐츠 식별자 분리와 consent·삭제 lifecycle은 profile provenance와 별개로 검증해야 하며, pseudonymization이 민감 context 자체를 제거하지는 않는다.
 
 ## Open Questions
 
@@ -42,6 +45,8 @@ User Memory는 장기 사건 로그나 사실 source가 아니라 고정 크기�
 - profile retention, 사용자 열람·수정·삭제와 consent 정책은 어떻게 연결되는가?
 - 동일 사용자의 여러 Timeline이 동시에 완료될 때 User Memory 갱신 순서와 멱등성을 어떻게 보장하는가?
 - 2026-08-06 회의에서 언급된 Redis 보류 및 일일 batch 방안이 실제 구현인지 잠정 설계인지 확인해야 한다.
+- Saved 상태만 update trigger로 사용할지, 탈퇴·동의 철회 때 profile·backup·파생 결과를 어떻게 함께 삭제할 것인가?
+- User Memory 유무가 Timeline 품질을 높이는지 동일 fixture·source로 어떻게 측정할 것인가?
 
 ## Linked Sources
 
@@ -55,6 +60,11 @@ User Memory는 장기 사건 로그나 사실 source가 아니라 고정 크기�
 - [[2026-08-04-meeting-369-team-space]]
 - [[2026-08-05-meeting-369-team-space]]
 - [[2026-08-06-meeting-369-team-space]]
+- [[2026-08-12-meeting-369-team-space]]
+- [[2026-08-13-meeting-369-team-space]]
+- [[2026-08-19-meeting-369-team-space]]
+- [[2026-08-27-meeting-369-team-space]]
+- [[2026-08-30-meeting-369-team-space]]
 
 ## Related Pages
 
@@ -62,3 +72,4 @@ User Memory는 장기 사건 로그나 사실 source가 아니라 고정 크기�
 - [[ai-daily-timeline-generation]]
 - [[laimory-ai-model-evaluation]]
 - [[laimory-ai-runtime-and-observability]]
+- [[laimory-data-privacy-and-consent]]

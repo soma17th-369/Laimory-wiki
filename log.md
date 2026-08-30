@@ -79,3 +79,5 @@
 [2026-08-20] review-draft | render the midterm presentation script as a five-page A4 landscape two-column print PDF, preserving 49 presentation sections and 63 fenced speech or transition blocks
 [2026-08-20] review-draft | revise the print script to monochrome outlines, remove the cut guide and fills, and separate transition-script fences as independent slide blocks with visible whitespace
 [2026-08-20] ingest | approve and ingest eight review drafts, the 42-file AI prompt collection, Timeline improvement requirements, the 63-page midterm deck, and the five-page print script; update source, topic, entity, answer, index, and README state
+[2026-08-31] meeting-ingest | convert 13 August 9-30 transcripts to body-identical Markdown, add adjacent timestamped raw summaries, and ingest 13 meeting source pages
+[2026-08-31] maintenance | extend the 369 team meeting history to 26 meetings, promote the recurring privacy-consent topic, refresh synthesis/index/README, and verify meeting pairs plus wiki links; document 11 pre-existing missing raw image assets
