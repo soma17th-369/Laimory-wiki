@@ -97,23 +97,26 @@ Primary catalog for the LLM Wiki maintained in this vault.
   - [369팀 스페이스 회의 요약 - 2026-08-26](wiki/sources/2026-08-26-meeting-369-team-space.md)
   - [369팀 스페이스 회의 요약 - 2026-08-27](wiki/sources/2026-08-27-meeting-369-team-space.md)
   - [369팀 스페이스 회의 요약 - 2026-08-30](wiki/sources/2026-08-30-meeting-369-team-space.md)
+  - [369팀 스페이스 회의 요약 - 2026-09-01](wiki/sources/2026-09-01-meeting-369-team-space.md)
+  - [369팀 스페이스 회의 요약 - 2026-09-02](wiki/sources/2026-09-02-meeting-369-team-space.md)
+  - [369팀 스페이스 회의 요약 - 2026-09-03](wiki/sources/2026-09-03-meeting-369-team-space.md)
 
 ## Topics
 
-- [369팀 회의 이력](wiki/topics/369-team-meeting-history.md): 26개 회의의 제품 정의, 기획심의, alpha·beta 준비, release 통합과 기술 의사결정 변화.
+- [369팀 회의 이력](wiki/topics/369-team-meeting-history.md): 29개 회의의 제품 정의, 기획심의, alpha·beta 준비, release hardening과 기술 의사결정 변화.
 - [AI Life Logging](wiki/topics/ai-life-logging.md): mobile AI life-logging and Personal AI Memory pattern synthesized from Laimory planning sources.
-- [AI Daily Timeline Generation](wiki/topics/ai-daily-timeline-generation.md): current Event-Agent fan-out, Timeline synthesis, deterministic Repair, and post-repair Question flow.
+- [AI Daily Timeline Generation](wiki/topics/ai-daily-timeline-generation.md): current Agent pipeline, read/edit flow, empty state와 same-day multi-generation 계약.
 - [Laimory User Memory](wiki/topics/laimory-user-memory.md): bounded user profile rewrite, memo provenance rules, and safe context consumption.
-- [Laimory AI Model Evaluation](wiki/topics/laimory-ai-model-evaluation.md): provider-neutral evaluation, Bedrock 전환 관찰, stage별 model routing과 local judge 과제.
+- [Laimory AI Model Evaluation](wiki/topics/laimory-ai-model-evaluation.md): provider-neutral evaluation, stage별 routing, 정량 metric·local judge와 실제 비용 검증 과제.
 - [Laimory AI Runtime and Observability](wiki/topics/laimory-ai-runtime-and-observability.md): EC2·AgentCore runtime, ALB callback, task lifecycle, operational events와 Langfuse tracing.
 - [Laimory Planning And Validation](wiki/topics/laimory-planning-and-validation.md): Laimory planning, activation·retention funnel, marketing experiments, risks, and validation questions.
-- [Android Life Logging Data Collection](wiki/topics/android-life-logging-data-collection.md): Android location/background-data constraints for life-logging apps.
+- [Android Life Logging Data Collection](wiki/topics/android-life-logging-data-collection.md): Android source 수집, permission onboarding, release flow와 same-day draft 제약.
 - [Laimory Data Privacy And Consent](wiki/topics/laimory-data-privacy-and-consent.md): source 선택·제외, 비식별 식별자, 약관·동의 version, 탈퇴·삭제와 외부 AI 제공 경계.
 
 ## Entities
 
-- [369팀](wiki/entities/369-team.md): SW Maestro team, operating model, roles, and workspace structure.
-- [Laimory](wiki/entities/laimory.md): Android Personal AI Memory / AI life-logging product concept.
+- [369팀](wiki/entities/369-team.md): SW Maestro team, 역할·운영 model과 2026-09-03까지의 release hardening 이력.
+- [Laimory](wiki/entities/laimory.md): Android Personal AI Memory / AI life-logging product의 release 직전 구현·검증 상태.
 
 ## Answers
 

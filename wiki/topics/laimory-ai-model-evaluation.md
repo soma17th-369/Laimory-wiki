@@ -2,7 +2,7 @@
 title: Laimory AI Model Evaluation
 kind: topic
 status: evaluation-in-progress
-updated: 2026-08-31
+updated: 2026-09-04
 tags: [laimory, llm, model-evaluation, benchmark, langfuse]
 ---
 
@@ -28,6 +28,8 @@ OpenAI, Gemini와 Bedrock은 공통 `LLMProvider` facade 아래 text, vision, to
 
 평가 도구는 Langfuse 결과를 local에서 분석하는 방향에서, API judge 비용을 줄이기 위해 구독 중인 Codex CLI를 local judge로 연결하는 실험까지 확장됐다. 이 방식은 비용 장점과 별개로 reproducibility, authentication, model/version 고정과 batch automation을 검증해야 한다.
 
+2026-09-01~03 회의에서는 `과도하다`, `강하다` 같은 모호한 prompt 기준을 셀 수 있는 metric으로 바꾸고, 모순·불필요 instruction을 정리해 변경 전후 결과를 동일 score로 비교하는 evaluation system을 거의 확정했다고 보고했다. 실제 metric 목록·fixture·score 결과는 회의 전사에 없으므로 구현 완료나 개선 효과로 볼 수 없다. 같은 기간 Timeline 생성과 User Memory update 한 세트의 평균 비용을 약 `$0.1`로 추정했지만, model·token·retry·image·Repair 포함 범위와 billing sample이 없어 운영 예산의 검증값이 아니라 내부 가정이다.
+
 ## Key Points
 
 - 평균적인 하루와 함께 source 공백, 겹침, 누락, 민감정보, vision 실패, 깨진 profile fixture가 필요하다.
@@ -38,6 +40,8 @@ OpenAI, Gemini와 Bedrock은 공통 `LLMProvider` facade 아래 text, vision, to
 - 가격과 availability는 평가 시점의 공식 문서와 실제 사용량·청구 snapshot으로 검증한다.
 - Stage별 model routing은 전체 평균만 비교하지 말고 event 단계와 Timeline 단계의 품질 gate·fallback·비용을 각각 측정해야 한다.
 - 회의에서 관찰된 structured output 실패와 notification 과잉 event는 task ID·trace·fixture로 보존해야 model attribution 오류를 피할 수 있다.
+- 자연어 평가 기준은 관찰 가능한 count·ratio·hard violation으로 변환하고, prompt version별 동일 fixture score와 원본 failure를 함께 보존해야 한다.
+- request당 비용은 Timeline과 User Memory 단계별 token·retry·vision·Repair를 분리해 실제 billing과 대조해야 한다.
 
 ## Open Questions
 
@@ -49,6 +53,8 @@ OpenAI, Gemini와 Bedrock은 공통 `LLMProvider` facade 아래 text, vision, to
 - 8월 말 회의에서 언급된 model들의 정확한 identifier, region, SCP·cross-region 조건과 실제 release 설정은 무엇인가?
 - Codex CLI judge를 반복 실행할 때 model/version, prompt, rate limit과 결과 provenance를 어떻게 고정할 것인가?
 - Stage별 routing의 fallback과 quality threshold를 어떤 offline·beta signal로 승인할 것인가?
+- 9월 초에 거의 확정됐다고 보고한 정량 metric의 정확한 정의, 가중치, fixture와 regression threshold는 무엇인가?
+- `$0.1` 내부 추정의 sample 수와 model·token·retry·image·Repair 포함 범위는 무엇인가?
 
 ## Linked Sources
 
@@ -68,6 +74,9 @@ OpenAI, Gemini와 Bedrock은 공통 `LLMProvider` facade 아래 text, vision, to
 - [[2026-08-25-meeting-369-team-space]]
 - [[2026-08-27-meeting-369-team-space]]
 - [[2026-08-30-meeting-369-team-space]]
+- [[2026-09-01-meeting-369-team-space]]
+- [[2026-09-02-meeting-369-team-space]]
+- [[2026-09-03-meeting-369-team-space]]
 
 ## Related Pages
 

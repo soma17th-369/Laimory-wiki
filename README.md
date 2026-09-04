@@ -8,10 +8,10 @@
 
 | 항목 | 현재 값 |
 |---|---|
-| 마지막 상태 확인 | 2026-08-31 |
-| `main`에 반영된 위키 기준 | 2026-08-31 |
-| 상태 | 2026-08-09~30 신규 회의 13건 인제스트 완료, 로컬 인간 검토 대기 초안 1건은 `main` 미반영 |
-| 최근 작업 | 회의 전사 13건을 body-identical Markdown으로 전환하고 raw 요약·source·topic·entity를 갱신 |
+| 마지막 상태 확인 | 2026-09-04 |
+| `main`에 반영된 위키 기준 | 2026-09-03 |
+| 상태 | 2026-09-01~03 신규 회의 3건 인제스트 완료, 로컬 인간 검토 대기 초안 1건은 `main` 미반영 |
+| 최근 작업 | 9월 1~3일 회의 전사를 본문 보존 Markdown으로 전환하고 raw 요약·source·관련 synthesis를 갱신 |
 
 현재 로컬에서 인간 검토를 기다리는 초안은 `raw/notes/2026-08-20-nova2-lite-model-decision-work-plan.md` 1건입니다. 이번 회의 인제스트와 `main` 반영에서는 해당 초안을 제외했습니다.
 
@@ -19,6 +19,7 @@
 
 ### 최근 변경 이력
 
+- 2026-09-04: 9월 1~3일 신규 회의 전사 3건을 body-identical Markdown으로 전환하고, 날짜별 raw 요약과 source page를 만든 뒤 회의 이력·Timeline·Android·AI 평가·User Memory·privacy·검증 synthesis를 갱신했습니다.
 - 2026-08-31: 8월 9~30일 신규 회의 전사 13건을 본문 보존 Markdown으로 전환하고, 날짜별 raw 요약과 source page를 만든 뒤 회의 이력·제품·privacy·AI model/runtime·Android·검증 topic을 갱신했습니다.
 - 2026-08-20: 중간보고서 작성 가이드·가치 제안·마케팅 KPI·피드백 반영안·발표자료·베타 실행계획·발표 대본 등 검토 대기 초안 8건을 승인·인제스트했습니다.
 - 2026-08-20: AI Agent prompt 42-file 컬렉션과 Timeline 핵심 개선 요구사항을 `raw/markdown/`에 보존하고, 63쪽 최종 중간 발표 PDF와 5쪽 인쇄 대본을 검수·인제스트했습니다.

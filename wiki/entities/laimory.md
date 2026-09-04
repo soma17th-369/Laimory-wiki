@@ -2,7 +2,7 @@
 title: Laimory
 kind: entity
 status: active
-updated: 2026-08-31
+updated: 2026-09-04
 tags: [product, ai-life-logging, personal-ai-memory, android]
 ---
 
@@ -28,6 +28,8 @@ Laimory는 모바일 기기 안에 흩어진 사진, 위치, 일정, 앱 사용,
 
 2026-08-09~30 회의는 중간발표와 초기 release 준비를 연결한다. 사회초년생 기록자 persona, Timeline 확정·저장 중심 activation과 GA4 funnel, client-side source 제외, 약관·동의 version, notification filtering, 읽기·편집 UX와 onboarding이 구체화됐다. Runtime은 AgentCore 배포 뒤 application callback을 ALB로 보내는 방향으로 진행됐고, model 선택은 Nova 계열 후보의 품질·structured output 문제를 겪은 뒤 stage별 cost·quality routing을 시도하는 방향으로 바뀌었다. 이는 회의 보고이며 beta 결과, production 배포와 정확한 model명은 아직 검증되지 않았다.
 
+2026-09-01~03 회의에서는 photo·calendar·location·notification의 활용 이유를 설명하는 permission onboarding을 고정하고, 읽기·편집 mode, event 추가, notification·theme 설정을 구현했다고 보고했다. Release build·login·logging이 남아 release 목표는 9월 4일에서 주말 가능성으로 이동했다. 완전 무입력 첫날과 same-day multi-generation은 아직 완성된 product flow가 아니며, 초기 beta에는 하루 한 번 오후 9시 이후 생성하도록 안내하는 임시 규칙을 쓰기로 했다. 따라서 이 시점도 beta 결과가 아니라 release 직전 hardening 상태다.
+
 ## Key Points
 
 - 핵심 기능은 AI Timeline, 5가지 구조화 회고, 충분한 기록 누적 후 Personal AI Chat이다.
@@ -40,6 +42,7 @@ Laimory는 모바일 기기 안에 흩어진 사진, 위치, 일정, 앱 사용,
 - OpenAI, Gemini, Bedrock provider는 공통 계약을 공유한다. 8월 말 회의에서는 Nova 계열 후보를 주력에서 제외하고 저비용 event 단계와 핵심 Timeline 단계의 model을 나누는 routing이 제안됐지만 재현 가능한 비교표와 정확한 release 설정은 없다.
 - 2026-08-09 문서 기준 `dev` 자동 배포는 EC2이고 AgentCore는 수동 경로였다. 8월 말 회의에서는 AgentCore 배포·연결 시험과 ALB callback이 진행됐으므로 현재 traffic ownership과 운영 상태는 배포 기록으로 재확인해야 한다.
 - 기록은 저장 전까지 계속 추가되며, 기존 수정/작성 내용은 임시저장으로 유지되는 방향이 제안되었다.
+- 읽기 mode는 AI 질문을 숨기고 편집 button으로 기존 event 수정 UI에 들어가는 별도 depth를 유지하며, edit mode의 빈 memo에는 AI 질문을 보여주는 방향으로 구현 보고됐다.
 - 사업화 구상은 Free, Premium, Max 3단계 구독 모델이며, 고급 AI 회고/패턴/대화 기능을 유료화한다.
 - 기술 전략은 Android 앱, Spring Boot backend, 자체 경량 AI 서버/상용 LLM API, On-device AI 1차 가공, 모니터링 도구를 포함한다.
 - Laboratory Android lab에서 사진, 일정, 알림, Health Connect, Samsung Health-origin 데이터를 실험하고 있으며, 서버 전송 후보 구조는 typed timeline source item batch로 정리되었다.
@@ -62,6 +65,7 @@ Laimory는 모바일 기기 안에 흩어진 사진, 위치, 일정, 앱 사용,
 - 제품 표현 원칙은 `기억은 찾아주고, 이야기는 사용자가 완성한다`이며 AI가 사용자 감정·의미를 단정하거나 장문 기록을 강제하지 않는다.
 - First Value Action은 실제 MVP에 회고가 포함되는지에 따라 보고서 정의와 review 정의가 충돌한다. 현재 실행 계약을 정할 때 첫 Timeline 확정·저장을 중심으로 하나로 고정해야 한다.
 - 8월 말 회의에서는 약관 URL·동의 version·탈퇴 후 삭제 scheduler가 구체화됐지만 법률 요구, backup 삭제와 재가입 semantics는 아직 검증되지 않았다.
+- 수집 data가 전혀 없는 첫날과 같은 날 여러 번 생성하는 경우에는 낮은 first-value 품질, AI 비용, source dedupe, client window·history state가 충돌하며 정식 flow가 아직 없다.
 
 ## Open Questions
 
@@ -70,8 +74,9 @@ Laimory는 모바일 기기 안에 흩어진 사진, 위치, 일정, 앱 사용,
 - Google Timeline/Places 연동, Geofencing, Passive Location 중 MVP에 맞는 위치 수집 전략은 무엇인가?
 - 20~30대 직장인과 50대 이상 액티브 시니어 중 어떤 persona가 더 강한 문제/지불 의사를 보이는가?
 - 모바일 추출 데이터 중 metadata-only로 충분한 항목과 원본/썸네일 업로드가 필요한 항목을 어떻게 나눌 것인가?
-- 8월 말 계획한 beta와 Play Store 제출이 실제로 시작됐으며 activation·retention·수정·삭제 지표는 어떻게 나왔는가?
+- 9월 초까지 미뤄진 beta와 Play Store 제출이 실제로 시작됐으며 activation·retention·수정·삭제 지표는 어떻게 나왔는가?
 - 입력 source와 User Memory가 모두 없는 날의 첫 경험을 AI 호출 없이 어떻게 유용하게 만들 것인가?
+- 같은 날 복수 생성에서 server append, client request window와 previous record state를 어떤 계약으로 연결할 것인가?
 
 ## Linked Sources
 
@@ -124,6 +129,9 @@ Laimory는 모바일 기기 안에 흩어진 사진, 위치, 일정, 앱 사용,
 - [[2026-08-26-meeting-369-team-space]]
 - [[2026-08-27-meeting-369-team-space]]
 - [[2026-08-30-meeting-369-team-space]]
+- [[2026-09-01-meeting-369-team-space]]
+- [[2026-09-02-meeting-369-team-space]]
+- [[2026-09-03-meeting-369-team-space]]
 
 ## Related Pages
 

@@ -81,3 +81,5 @@
 [2026-08-20] ingest | approve and ingest eight review drafts, the 42-file AI prompt collection, Timeline improvement requirements, the 63-page midterm deck, and the five-page print script; update source, topic, entity, answer, index, and README state
 [2026-08-31] meeting-ingest | convert 13 August 9-30 transcripts to body-identical Markdown, add adjacent timestamped raw summaries, and ingest 13 meeting source pages
 [2026-08-31] maintenance | extend the 369 team meeting history to 26 meetings, promote the recurring privacy-consent topic, refresh synthesis/index/README, and verify meeting pairs plus wiki links; document 11 pre-existing missing raw image assets
+[2026-09-04] meeting-ingest | convert the September 1-3 transcripts to body-identical Markdown, add adjacent timestamped raw summaries, and ingest three meeting source pages
+[2026-09-04] maintenance | extend the 369 team meeting history to 29 meetings, refresh Timeline, Android, model-evaluation, User Memory, privacy, planning, entity, index, and README state, and verify meeting pairs plus wiki links

@@ -2,7 +2,7 @@
 title: AI Daily Timeline Generation
 kind: topic
 status: active
-updated: 2026-08-31
+updated: 2026-09-04
 tags: [laimory, ai-timeline, ai-agent, event-normalization, lifelogging]
 ---
 
@@ -30,6 +30,8 @@ User Memory는 Timeline 문체와 중요도, Question의 결을 조정하는 보
 
 2026-08-13~30 회의에서는 제품 flow와 품질 failure가 더 구체화됐다. 단건 조회는 draft와 saved를 모두 반환하고 status와 nullable emotion을 포함하는 방향으로 정리됐으며, saved-read와 edit mode를 분리하되 시각적 간격은 줄이기로 했다. 실제 사례에서는 messenger notification이 중요하지 않거나 민감한 event를 과도하게 만드는 문제가 나타나 call log로 scope를 넓히기보다 notification 판단과 최대 event 수를 먼저 보수적으로 조정하기로 했다. 08-30에는 입력 source와 User Memory가 모두 없는 날을 빈 결과로 끝내지 않도록 설명·질문·기본 입력을 제공하는 empty state가 열린 설계 과제로 추가됐다.
 
+2026-09-01~03 회의는 이 flow를 release 수준으로 좁혔다. 읽기 mode에서는 AI 질문을 숨기고 편집 button으로 기존 event 수정 UI에 진입하며, edit mode의 빈 memo에는 질문을 placeholder로 우선 유지한다. 완전 무입력 시 생성 차단과 AI 없는 manual blank Timeline이 대립했지만 data 부족 이유와 개선 방법을 설명해야 한다는 방향에는 합의했다. 같은 날 여러 번 생성할 때 server는 `DRAFT`에 새 source item을 append하고 `SAVED`는 거절한다고 보고됐으나, client의 window와 previous record 조회가 연결되지 않았다. Full flow는 beta 중 재설계하고 초기 beta에는 하루 한 번 오후 9시 이후 생성을 안내하기로 했다.
+
 ## Key Points
 
 - 제품 source는 location, calendar, photo, sleep/activity, notification이며 User Memory는 source 목록에서 분리한다.
@@ -44,7 +46,8 @@ User Memory는 Timeline 문체와 중요도, Question의 결을 조정하는 보
 - Timeline·Location은 작은 source 단위를 그대로 나열하기보다 하루 중심 사건과 연속 journey로 재구성하되, 의미 판단과 rawId·시간·privacy 같은 hard gate를 분리한다.
 - Draft와 saved는 조회 가능 상태로 함께 다루되, 생성 직후 편집과 저장 후 읽기·재편집의 affordance를 구분하는 방향이다.
 - Messenger notification 과잉 event는 source 확대보다 선택 기준과 event 수 제한을 먼저 조정하고, beta의 삭제 pattern으로 회귀를 찾는다.
-- 완전 무입력 날에는 AI 호출 여부, User Memory 활용과 기본 질문을 함께 고려한 명시적 empty state가 필요하다.
+- 완전 무입력 날에는 AI 호출을 막을지 manual blank Timeline을 줄지 미결이지만, data 부족 이유·permission·직접 event 추가 방법을 설명하는 명시적 empty state가 필요하다.
+- 같은 날 복수 생성은 source item dedupe뿐 아니라 `DRAFT` append, `SAVED` 거절, client request window와 previous record state를 하나의 계약으로 묶어야 한다.
 
 ## Open Questions
 
@@ -57,6 +60,7 @@ User Memory는 Timeline 문체와 중요도, Question의 결을 조정하는 보
 - 저장된 기록의 read/edit 상태와 수정 가능 API를 어떤 단일 상태 machine으로 고정할 것인가?
 - Notification event의 민감도·중요도와 max count를 어떤 fixture와 사용자 삭제 신호로 검증할 것인가?
 - source와 User Memory가 모두 없는 날의 기본 결과를 server와 AI 중 어디서 만들 것인가?
+- 같은 날 복수 생성의 window start, append ordering, saved transition과 cached history를 어느 layer가 책임질 것인가?
 
 ## Linked Sources
 
@@ -84,6 +88,9 @@ User Memory는 Timeline 문체와 중요도, Question의 결을 조정하는 보
 - [[2026-08-25-meeting-369-team-space]]
 - [[2026-08-27-meeting-369-team-space]]
 - [[2026-08-30-meeting-369-team-space]]
+- [[2026-09-01-meeting-369-team-space]]
+- [[2026-09-02-meeting-369-team-space]]
+- [[2026-09-03-meeting-369-team-space]]
 
 ## Related Pages
 

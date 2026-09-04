@@ -2,7 +2,7 @@
 title: Android Life Logging Data Collection
 kind: topic
 status: active
-updated: 2026-08-31
+updated: 2026-09-04
 tags: [android, location, background-data, laimory, technical-risk]
 ---
 
@@ -30,6 +30,8 @@ Laboratory Android lab work expands the collection scope beyond location into ph
 
 같은 기간 Timeline UI는 생성 직후 edit와 저장 후 read mode를 분리하고, initializer API가 onboarding·약관 등 초기 상태를 제공하는 방향으로 이동했다. Notification filter와 onboarding·약관 연결이 초기 release의 큰 mobile 병목으로 남았으며, 완전 무입력 날과 사진 없는 loading 화면도 명시적 empty-state 설계가 필요해졌다.
 
+2026-09-01~03 회의에서는 onboarding을 실제 기기에서 검수해 photo 의미 분석, 일정이 채워진 calendar, 여러 location marker, 결제·예약·배송 notification과 reminder가 Timeline에 어떻게 쓰이는지 직접 설명하도록 수정했다. System 설정까지 이동하는 permission depth는 beta 검증 대상으로 남았고, onboarding은 현재 상태로 고정됐다. 읽기·편집 mode, event 추가, notification 수신 설정과 light·dark·system theme는 구현 보고됐지만 release build·login·logging은 남아 있었다. 같은 날 복수 생성은 client window·history state가 완성되지 않아 초기 beta에 하루 한 번 오후 9시 이후 생성하도록 안내하기로 했다.
+
 ## Key Points
 
 - Android 8 이후 백그라운드 위치 업데이트가 제한되고 Doze 모드에서 GPS 접근이 막힐 수 있다.
@@ -45,6 +47,8 @@ Laboratory Android lab work expands the collection scope beyond location into ph
 - 제외한 위치와 관련 movement를 client에서 제거해 전송 자체를 막는 방향이며, 20분 미만 movement 제외는 구현 보고됐지만 정밀도 검증 결과는 없다.
 - Notification은 사용자의 app별 수동 설정에만 맡기지 않고 category·keyword·package 기반 자동 filter와 실제 수집 data 검수를 우선한다.
 - Onboarding initializer, 단계별 permission, 약관·notification 설정과 read/edit UI는 하나의 release flow로 연결된다.
+- Permission onboarding은 source 이름만 보여주지 않고 photo 의미 분석, calendar 일정, location route와 유용한 notification이 결과에 주는 가치를 구체적으로 설명해야 한다.
+- 같은 날 복수 생성은 Android의 request window와 previous record state가 server의 draft append와 일치해야 하며, beta의 하루 1회 규칙은 임시 우회다.
 
 ## Open Questions
 
@@ -59,6 +63,8 @@ Laboratory Android lab work expands the collection scope beyond location into ph
 - Notification filter가 민감한 대화를 과잉 event로 만들지 않으면서 결제·예약·배송을 보존하는지 어떻게 회귀 test할 것인가?
 - Calendar·Health 자동 갱신 실패, permission 철회와 background 전환을 어떤 UI·retry로 설명할 것인가?
 - 지도 SDK 이용조건과 location 제외 toggle이 server-side 장소 보강·photo·calendar 맥락에 일관되게 반영되는가?
+- System 설정까지 이동하는 location·notification permission flow의 단계별 허용률과 이탈은 어떻게 측정할 것인가?
+- client가 same-day draft의 마지막 window와 server state를 어떤 API·cache policy로 동기화할 것인가?
 
 ## Linked Sources
 
@@ -87,6 +93,9 @@ Laboratory Android lab work expands the collection scope beyond location into ph
 - [[2026-08-26-meeting-369-team-space]]
 - [[2026-08-27-meeting-369-team-space]]
 - [[2026-08-30-meeting-369-team-space]]
+- [[2026-09-01-meeting-369-team-space]]
+- [[2026-09-02-meeting-369-team-space]]
+- [[2026-09-03-meeting-369-team-space]]
 
 ## Related Pages
 

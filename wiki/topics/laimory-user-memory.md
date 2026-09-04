@@ -2,7 +2,7 @@
 title: Laimory User Memory
 kind: topic
 status: active
-updated: 2026-08-31
+updated: 2026-09-04
 tags: [laimory, user-memory, profile, privacy, context-engineering]
 ---
 
@@ -26,6 +26,8 @@ User Memory는 장기 사건 로그나 사실 source가 아니라 고정 크기�
 
 2026-08-12 회의는 인증 userId와 AI 콘텐츠 식별자를 secret 기반 hash와 별도 subject mapping으로 분리하는 migration이 진행 중이라고 보고했고, 08-13에는 draft·saved 상태를 함께 반환하되 향후 saved만 User Memory에 반영할 수 있도록 status를 유지하기로 했다. 08-27에는 실제 사례에서 User Memory 유무가 Timeline 맥락에 주는 차이를 비교 중이었지만 benchmark나 결론은 없었다. 08-30에는 source와 User Memory가 모두 없는 신규 사용자의 empty state가 별도 문제로 제기됐다.
 
+2026-09-02~03 회의에서는 완전 무입력 첫날에 User Memory까지 없으면 first-value가 막히는 문제가 이어졌고, 일부 지인 beta participant의 동의를 받아 사전 profile을 넣어 결과 차이를 비교하는 onboarding experiment가 제안됐다. Timeline 생성과 User Memory update 한 세트의 평균 비용을 약 `$0.1`로 계산했다는 보고도 있었지만, User Memory 단독 기여도·품질·token 비용을 분리한 결과는 없다. 사전 profile은 실제 제품 flow가 아니라 동의·provenance·cleanup이 필요한 실험안이다.
+
 ## Key Points
 
 - User Memory는 `rawId`나 `sourceRefs`를 갖지 않는다.
@@ -36,6 +38,7 @@ User Memory는 장기 사건 로그나 사실 source가 아니라 고정 크기�
 - `schemaVersion`과 `updatedAt`은 LLM이 아니라 서버가 확정한다.
 - User Memory task는 callback 없이 SUCCESS 또는 FAILED result 저장 정확히 한 번으로 종료한다.
 - 콘텐츠 식별자 분리와 consent·삭제 lifecycle은 profile provenance와 별개로 검증해야 하며, pseudonymization이 민감 context 자체를 제거하지는 않는다.
+- 사전 입력 User Memory experiment는 participant 동의, 입력 출처, 수정·삭제, 종료 후 cleanup과 비교군을 명시해야 한다.
 
 ## Open Questions
 
@@ -47,6 +50,8 @@ User Memory는 장기 사건 로그나 사실 source가 아니라 고정 크기�
 - 2026-08-06 회의에서 언급된 Redis 보류 및 일일 batch 방안이 실제 구현인지 잠정 설계인지 확인해야 한다.
 - Saved 상태만 update trigger로 사용할지, 탈퇴·동의 철회 때 profile·backup·파생 결과를 어떻게 함께 삭제할 것인가?
 - User Memory 유무가 Timeline 품질을 높이는지 동일 fixture·source로 어떻게 측정할 것인가?
+- onboarding에서 직접 받거나 beta 전에 넣은 profile이 cold-start 품질을 높이는지, 유도·privacy 비용을 포함해 어떻게 비교할 것인가?
+- `$0.1` end-to-end 추정에서 User Memory update의 독립 token·latency·retry 비용은 얼마인가?
 
 ## Linked Sources
 
@@ -65,6 +70,8 @@ User Memory는 장기 사건 로그나 사실 source가 아니라 고정 크기�
 - [[2026-08-19-meeting-369-team-space]]
 - [[2026-08-27-meeting-369-team-space]]
 - [[2026-08-30-meeting-369-team-space]]
+- [[2026-09-02-meeting-369-team-space]]
+- [[2026-09-03-meeting-369-team-space]]
 
 ## Related Pages
 

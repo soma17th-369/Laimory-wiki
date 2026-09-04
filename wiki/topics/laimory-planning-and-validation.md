@@ -2,7 +2,7 @@
 title: Laimory Planning And Validation
 kind: topic
 status: active
-updated: 2026-08-31
+updated: 2026-09-04
 tags: [laimory, product-validation, planning-review, business-model]
 ---
 
@@ -27,6 +27,8 @@ Laimory의 기획은 "자동 모바일 라이프 로그 -> 회고 -> 장기 기�
 2026-08-10~19 회의에서는 persona를 나이만이 아니라 기록을 적극적으로 하는 사회초년생 직장인으로 좁히고, 구현 제약이 큰 회고 대신 월 목표·progress·reminder를 retention 기능으로 탐색했다. 동시에 report·presentation, 외부 tester 모집, GA4·crash logging, 사전 녹화 demo와 탈퇴·약관 준비를 병렬화했다. 목표 기능은 상세 명세나 구현 결정이 아니라 Timeline 품질과 반복 사용 이후의 선택적 확장으로 남아 있다.
 
 2026-08-24~30 회의의 GA4 초안은 회원가입, permission, data 준비·검토·제외, 생성 요청·완료, 결과 재진입, event 수정·삭제·추가, memo와 저장을 funnel로 나눈다. 첫 가치는 이틀 안을 목표로 하되 최대 7일까지 관찰하는 안이 나왔고, 실제 tester 연락은 설치 가능한 release 뒤에 하기로 했다. Play Store 제출과 beta 시작은 8월 말~9월 초 목표로 계속 미뤄졌으므로, 8월 24~30 beta가 계획대로 실행됐다고 볼 근거는 없다.
+
+2026-09-01~03 회의는 permission onboarding을 각 source가 Timeline에 주는 가치를 먼저 설명하는 설득 flow로 고정하고, 첫날 data가 없을 때 낮은 품질을 보여줄지 manual 기록을 열어 둘지 first-value risk를 구체화했다. Release build·login·logging이 남아 실제 beta 시작은 다시 주말 가능성으로 밀렸다. 초기 beta는 in-app rating보다 지인 feedback과 종료 form을 우선하고, same-day multi-generation이 안정되지 않아 하루 한 번 오후 9시 이후 생성하도록 안내하는 임시 운영을 택했다. 이 규칙은 제품의 자연 사용 빈도와 TTFV를 왜곡할 수 있으므로 beta 결과 해석에 함께 기록해야 한다.
 
 ## Key Points
 
@@ -55,6 +57,8 @@ Laimory의 기획은 "자동 모바일 라이프 로그 -> 회고 -> 장기 기�
 - 목표 추적은 Timeline 품질과 반복 사용 검증 뒤 축적 기록에서 사용자가 정한 목표 관련 행동 근거를 확인하는 선택적 확장으로 둔다.
 - 8월 24일 GA4 초안은 source 제외율, AI event 수정·삭제·추가, memo, permission과 생성 funnel을 함께 측정해 가치와 correction burden을 분리하려 했다.
 - 외부 tester 모집은 설치 가능한 release가 나온 뒤 시작하고, app review 중 beta를 병행한다는 운영안이었으나 실제 실행 결과는 확인되지 않았다.
+- Permission onboarding은 photo·calendar·location·notification의 수집 이유와 처리 결과를 구체적으로 설명해 허용을 설득하는 flow로 바뀌었다.
+- 초기 beta의 하루 1회·오후 9시 이후 생성 규칙은 불완전한 복수 생성 UX를 피하기 위한 임시 운영이며, 자연 사용 빈도와 activation 분석의 제약으로 남겨야 한다.
 
 ## Open Questions
 
@@ -70,6 +74,8 @@ Laimory의 기획은 "자동 모바일 라이프 로그 -> 회고 -> 장기 기�
 - 2026-08-24~30 beta가 실제로 시작됐는지, 모집 규모·완주·activation·retention 결과는 무엇인지?
 - GA4 event naming, funnel denominator와 TTFV 2일 목표·7일 observation window를 실제 analytics contract로 어떻게 고정했는가?
 - Timeline 삭제·수정률을 품질 실패와 적극적 personalization 중 어떻게 구분할 것인가?
+- data가 없는 첫날의 block·manual blank Timeline·다음 날 안내 중 어느 방식이 activation과 신뢰를 가장 덜 훼손하는가?
+- beta의 강제 생성 시간과 횟수 제한을 제거했을 때 실제 사용 빈도·cost·retention이 어떻게 달라지는가?
 
 ## Linked Sources
 
@@ -105,6 +111,9 @@ Laimory의 기획은 "자동 모바일 라이프 로그 -> 회고 -> 장기 기�
 - [[2026-08-26-meeting-369-team-space]]
 - [[2026-08-27-meeting-369-team-space]]
 - [[2026-08-30-meeting-369-team-space]]
+- [[2026-09-01-meeting-369-team-space]]
+- [[2026-09-02-meeting-369-team-space]]
+- [[2026-09-03-meeting-369-team-space]]
 
 ## Related Pages
 
