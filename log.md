@@ -81,5 +81,17 @@
 [2026-08-20] ingest | approve and ingest eight review drafts, the 42-file AI prompt collection, Timeline improvement requirements, the 63-page midterm deck, and the five-page print script; update source, topic, entity, answer, index, and README state
 [2026-08-31] meeting-ingest | convert 13 August 9-30 transcripts to body-identical Markdown, add adjacent timestamped raw summaries, and ingest 13 meeting source pages
 [2026-08-31] maintenance | extend the 369 team meeting history to 26 meetings, promote the recurring privacy-consent topic, refresh synthesis/index/README, and verify meeting pairs plus wiki links; document 11 pre-existing missing raw image assets
+[2026-08-31] review-draft | summarize Laimory progress through the August 30 meeting as an integrated alpha MVP in beta/release hardening, separating reported implementation from unverified launch and validation outcomes
+[2026-09-03] review-draft | draft the Laimory landing-page structure, core copy, problem framing, product-demo flow, privacy section, CTA, and attached hook-image usage guidance
 [2026-09-04] meeting-ingest | convert the September 1-3 transcripts to body-identical Markdown, add adjacent timestamped raw summaries, and ingest three meeting source pages
 [2026-09-04] maintenance | extend the 369 team meeting history to 29 meetings, refresh Timeline, Android, model-evaluation, User Memory, privacy, planning, entity, index, and README state, and verify meeting pairs plus wiki links
+[2026-09-04] review-draft | consolidate meeting and topic discussions into a human-review backlog for beta observation, evidence-triggered release improvements, post-release expansion, and explicit promotion gates
+[2026-09-04] review-draft | preserve the original Laimory quantitative-metrics note and create a simplified LLM-as-a-Judge scoring rubric containing only semantic checks, code-measurable values, per-Agent 100-point weights, deprecated Sleep exclusion, and separately preserved user revision memos
+[2026-09-04] review-draft | replace undefined degree terms in the Laimory evaluation rubric with timestamp, count, field-match, source-support, event-identity, and explicit failure conditions while preserving the original note and all user revision memo lines
+[2026-09-11] review-draft | create KakaoTalk beta invitation copy covering the Laimory overview, Google account email collection purpose, private Play Store test link, and post-registration follow-up
+[2026-09-11] review-draft | split the KakaoTalk beta invitation into initial email collection and a separate Play Store link message sent after tester registration
+[2026-09-11] review-draft | revise the KakaoTalk beta invitation and registration follow-up into neutral, non-familiar honorific Korean
+[2026-09-11] review-draft | shorten the KakaoTalk beta invitation to the service summary, Google account email request, registration purpose, and later installation-link notice
+[2026-09-11] review-draft | reorder the KakaoTalk beta invitation as thanks, app summary, Google account email request, post-registration notice, and closing
+
+[2026-09-22] maintenance | verify approved wiki matches origin/main; confirm 100 wiki pages indexed and 30 transcript-summary pairs referenced with no remaining meeting TXT; sync README and maintenance history only, preserving seven review drafts and two unprocessed raw notes locally without ingest

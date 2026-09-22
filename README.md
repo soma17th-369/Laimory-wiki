@@ -8,18 +8,37 @@
 
 | 항목 | 현재 값 |
 |---|---|
-| 마지막 상태 확인 | 2026-09-04 |
+| 마지막 상태 확인 | 2026-09-22 |
 | `main`에 반영된 위키 기준 | 2026-09-03 |
-| 상태 | 2026-09-01~03 신규 회의 3건 인제스트 완료, 로컬 인간 검토 대기 초안 1건은 `main` 미반영 |
-| 최근 작업 | 9월 1~3일 회의 전사를 본문 보존 Markdown으로 전환하고 raw 요약·source·관련 synthesis를 갱신 |
+| 상태 | 2026-09-03까지 승인된 위키는 원격 `main`에 반영됨. 로컬 검토 대기 초안 7건과 미처리 raw note 2건은 제외 |
+| 최근 작업 | 원격 `main` 동기화 상태 확인, 위키 100개 페이지의 index 등록 및 회의 전사 30개의 요약·source 연결 점검 |
 
-현재 로컬에서 인간 검토를 기다리는 초안은 `raw/notes/2026-08-20-nova2-lite-model-decision-work-plan.md` 1건입니다. 이번 회의 인제스트와 `main` 반영에서는 해당 초안을 제외했습니다.
+현재 로컬에서 인간 검토를 기다리는 초안은 다음 7건입니다. 승인 전에는 `wiki/`, `index.md`, `main` 반영 대상에서 제외합니다.
+
+- `raw/notes/2026-08-20-nova2-lite-model-decision-work-plan.md`
+- `raw/notes/2026-08-31-laimory-progress-summary-draft.md`
+- `raw/notes/2026-09-03-laimory-landing-page-structure-draft.md`
+- `raw/notes/2026-09-04-laimory-beta-and-release-follow-up-backlog-draft.md`
+- `raw/notes/2026-09-04-laimory-agent-quantitative-evaluation-metrics-revision-draft.md`
+- `raw/notes/2026-09-11-laimory-kakaotalk-beta-invitation-template-draft.md`
+- `raw/notes/라이모리 정량적 메트릭.md`
+
+`raw/notes/라이모리 정량적 메트릭 초안.md`는 frontmatter가 없는 사용자 원본 note로 그대로 보존했습니다. 정량 평가 메트릭 개선 초안은 이 파일을 수정하지 않는 별도 복사본이며, 두 파일 모두 승인 전에는 `wiki/`와 `main` 반영 대상에서 제외합니다.
+
+`raw/notes/AI 프롬프트 개선안.md`도 미처리 raw note로 로컬에 보존하며, 이번 동기화에는 포함하지 않았습니다. 이번 확인은 Git 차이, index 등록, 회의 전사·요약·source 연결을 대상으로 했으며 전체 내용 재검증은 수행하지 않았습니다.
 
 기존 `raw/markdown/laimory-ai-agent-prompts/` 원본 collection에는 vault에 함께 들어오지 않은 embedded image 참조 11개가 남아 있습니다. Source layer 원문은 임의 수정하지 않았으며, 이미지 원본이 추가되면 별도 보완이 필요합니다.
 
 ### 최근 변경 이력
 
+- 2026-09-22: 원격 `main`과 승인된 위키의 일치를 확인하고, 로컬 검토 대기·미처리 자료 9건을 제외한 README와 작업 이력을 동기화했습니다.
+
+- 2026-09-11: Laimory 카카오톡 베타테스트 문구를 감사 인사, 앱 설명, Google 계정 이메일 요청, 등록 후 재안내와 마무리 순서로 정리했습니다.
+- 2026-09-04: 사용자 원본 정량 평가 note를 보존하고, 평가 실행 메타데이터를 제거한 뒤 LLM 확인 기준·코드 측정값·Agent별 100점 배점표로 단순화했으며 주관적 정도 표현을 판정 가능한 조건으로 교체했습니다.
+- 2026-09-04: 9월 3일까지의 회의·topic을 종합해 beta 중 관찰, evidence-triggered release 개선, post-release 확장과 승격 조건을 인간 검토 대기 backlog 초안으로 정리했습니다.
 - 2026-09-04: 9월 1~3일 신규 회의 전사 3건을 body-identical Markdown으로 전환하고, 날짜별 raw 요약과 source page를 만든 뒤 회의 이력·Timeline·Android·AI 평가·User Memory·privacy·검증 synthesis를 갱신했습니다.
+- 2026-09-03: 후기·성과가 없는 현재 단계에 맞춰 Laimory 랜딩 페이지의 핵심 문장, 문제 공감, 제품 데모, 개인정보, CTA와 첨부 이미지 사용 판단을 인간 검토 대기 초안으로 정리했습니다.
+- 2026-08-31: 8월 30일까지의 위키·회의 기록을 종합해 Laimory의 현재 단계를 `통합된 alpha MVP 이후 beta/초기 release 직전 hardening`으로 정리한 인간 검토 대기 초안을 작성했습니다.
 - 2026-08-31: 8월 9~30일 신규 회의 전사 13건을 본문 보존 Markdown으로 전환하고, 날짜별 raw 요약과 source page를 만든 뒤 회의 이력·제품·privacy·AI model/runtime·Android·검증 topic을 갱신했습니다.
 - 2026-08-20: 중간보고서 작성 가이드·가치 제안·마케팅 KPI·피드백 반영안·발표자료·베타 실행계획·발표 대본 등 검토 대기 초안 8건을 승인·인제스트했습니다.
 - 2026-08-20: AI Agent prompt 42-file 컬렉션과 Timeline 핵심 개선 요구사항을 `raw/markdown/`에 보존하고, 63쪽 최종 중간 발표 PDF와 5쪽 인쇄 대본을 검수·인제스트했습니다.
