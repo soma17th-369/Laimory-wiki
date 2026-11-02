@@ -2,7 +2,7 @@
 title: Laimory Data Privacy And Consent
 kind: topic
 status: active-with-open-legal-questions
-updated: 2026-09-04
+updated: 2026-11-02
 tags: [laimory, privacy, consent, data-minimization, retention, policy]
 ---
 
@@ -23,6 +23,12 @@ Laimory가 사진·위치·일정·건강·알림과 User Memory를 수집·전�
 09-01~03 회의에서는 약관 web posting 전환 완료가 보고됐고, onboarding에서 photo·calendar·location·notification의 처리 목적을 구체적으로 설명하는 방향이 고정됐다. Kakao login에서 나이를 받지 못해 login 또는 onboarding에서 `14세 이상` self-attestation을 받는 안이 제시됐지만 법률적 충분성과 위치는 검토되지 않았다. 일부 beta participant의 User Memory를 사전 입력해 결과 차이를 보는 아이디어도 나왔으나, 이는 실행 전 명시적 동의·수정·삭제와 비교군 기준이 필요한 별도 experiment다.
 
 따라서 현재의 durable 원칙은 `필요한 source만 선택`, `제외 데이터는 가능하면 client에서 제거`, `인증 식별자와 콘텐츠 식별자 분리`, `동의 version 기록`, `수정·삭제·탈퇴 경로 제공`, `법률 해석과 구현 상태를 분리`하는 것이다. On-device AI는 당시 MVP flow에 필수적이지 않다고 판단됐으며, privacy를 보장하는 만능 수단으로 설명해서는 안 된다.
+
+## 2026-09~11 회의 반영
+
+09-05 베타 profile 사전 수집·수동 입력안, 09-08 logging 고지·onboarding reset 시험 API, 09-09 초기 release 수면 제외, 09-17 카카오톡 수집 재허용은 서로 다른 경계를 바꾼다. 특히 카카오톡을 풀어 놓았다는 보고와 개인정보처리방침에 부합하는지 모른다는 발언을 함께 보존한다. 접근 제어·OS/스토어 정책·건강 데이터 적합성은 회의 요약으로 승인하지 않는다. [[2026-09-05-meeting-369-team-space]], [[2026-09-08-meeting-369-team-space]], [[2026-09-09-meeting-369-team-space]], [[2026-09-17-meeting-369-team-space]].
+
+09-21 회원 PK analytics 사용 논의와 10-11 masking 뒤 운영 식별 필요는 기존 Subject ID 분리 원칙 및 실제 analytics 식별 정책과 대조할 미결 사항이다. 09-28 문의 회신 이메일·첨부 수집도 별도 고지·보존 확인이 필요하다. 11-01 로컬 테스트 key 호출의 자체 원인 분석은 외부 유출을 독립적으로 배제하는 감사가 아니다. 계정 접근값·연락처·개인 일정은 원전에 남기고 요약에는 복제하지 않았다. [[2026-09-21-meeting-369-team-space]], [[2026-09-28-meeting-369-team-space]], [[2026-10-11-meeting-369-team-space]], [[2026-11-01-meeting-369-team-space]].
 
 ## Key Points
 
@@ -47,6 +53,14 @@ Laimory가 사진·위치·일정·건강·알림과 User Memory를 수집·전�
 - beta에서 사전 입력한 User Memory의 동의, provenance, 수정·삭제와 experiment 종료 후 cleanup을 어떻게 보장할 것인가?
 
 ## Linked Sources
+
+- [[2026-09-05-meeting-369-team-space]]
+- [[2026-09-08-meeting-369-team-space]]
+- [[2026-09-09-meeting-369-team-space]]
+- [[2026-09-17-meeting-369-team-space]]
+- [[2026-09-21-meeting-369-team-space]]
+- [[2026-09-28-meeting-369-team-space]]
+- [[2026-10-11-meeting-369-team-space]]
 
 - [[2026-08-17-pdf-laimory-midterm-report]]
 - [[2026-08-09-pdf-laimory-planning-review-report]]

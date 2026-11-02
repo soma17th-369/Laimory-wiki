@@ -2,7 +2,7 @@
 title: Android Life Logging Data Collection
 kind: topic
 status: active
-updated: 2026-09-04
+updated: 2026-11-02
 tags: [android, location, background-data, laimory, technical-risk]
 ---
 
@@ -31,6 +31,14 @@ Laboratory Android lab work expands the collection scope beyond location into ph
 같은 기간 Timeline UI는 생성 직후 edit와 저장 후 read mode를 분리하고, initializer API가 onboarding·약관 등 초기 상태를 제공하는 방향으로 이동했다. Notification filter와 onboarding·약관 연결이 초기 release의 큰 mobile 병목으로 남았으며, 완전 무입력 날과 사진 없는 loading 화면도 명시적 empty-state 설계가 필요해졌다.
 
 2026-09-01~03 회의에서는 onboarding을 실제 기기에서 검수해 photo 의미 분석, 일정이 채워진 calendar, 여러 location marker, 결제·예약·배송 notification과 reminder가 Timeline에 어떻게 쓰이는지 직접 설명하도록 수정했다. System 설정까지 이동하는 permission depth는 beta 검증 대상으로 남았고, onboarding은 현재 상태로 고정됐다. 읽기·편집 mode, event 추가, notification 수신 설정과 light·dark·system theme는 구현 보고됐지만 release build·login·logging은 남아 있었다. 같은 날 복수 생성은 client window·history state가 완성되지 않아 초기 beta에 하루 한 번 오후 9시 이후 생성하도록 안내하기로 했다.
+
+## 2026-09~11 회의 반영
+
+09-08에는 위치 항상 허용과 추적 시작을 혼동한 탓에 수집이 실험실 탭 진입에 의존한 문제가 드러났다. 09-09 초기 release의 수면 제외 방향, 09-15 notification filter 누락, 09-17 사진 checkbox·길게 미리보기·메모 UI 수정이 보고됐다. 권한 상태·실제 수집·선택·전송을 별개로 검증해야 한다. [[2026-09-08-meeting-369-team-space]], [[2026-09-09-meeting-369-team-space]], [[2026-09-15-meeting-369-team-space]], [[2026-09-17-meeting-369-team-space]].
+
+09-24 사진 resize·원본 보관·업로드 대기, 10-05 생성 기간·크레딧 확인창, 10-07 임의 animation과 실제 AI 처리 시간의 차이는 첫 가치 도달 지연을 구성하는 서로 다른 문제다. 10-20에는 UTC를 일부 수정했지만 통합은 미완료였으며 calendar를 로컬 DB 복제보다 live로 읽어 표시·전송하는 방향을 설명했다. 최종 구현·data ID·중복 방지는 확인해야 한다. [[2026-09-24-meeting-369-team-space]], [[2026-10-05-meeting-369-team-space]], [[2026-10-07-meeting-369-team-space]], [[2026-10-20-meeting-369-team-space]].
+
+10-10은 출시됨을 확인한 회의일이며 공식 최초 출시 시각은 모른다고 했다. 이후 심사 대기는 후속 업데이트의 상태와 구분한다. 10-26~27의 tutorial·gallery·장소 선택은 debug prototype과 설계이며, 11-01에는 GA4·알림 시험과 server·AI·Android 연동 배포가 남았다. 알림 지연의 exact/inexact·OS batching 설명은 참여자의 미확인 가설로 남기며 현재 Android 정책으로 일반화하지 않는다. [[2026-10-10-meeting-369-team-space]], [[2026-10-26-meeting-369-team-space]], [[2026-10-27-meeting-369-team-space]], [[2026-11-01-meeting-369-team-space]].
 
 ## Key Points
 
@@ -67,6 +75,30 @@ Laboratory Android lab work expands the collection scope beyond location into ph
 - client가 same-day draft의 마지막 window와 server state를 어떤 API·cache policy로 동기화할 것인가?
 
 ## Linked Sources
+
+- [[2026-09-05-meeting-369-team-space]]
+- [[2026-09-08-meeting-369-team-space]]
+- [[2026-09-09-meeting-369-team-space]]
+- [[2026-09-10-meeting-369-team-space]]
+- [[2026-09-14-meeting-369-team-space]]
+- [[2026-09-15-meeting-369-team-space]]
+- [[2026-09-17-meeting-369-team-space]]
+- [[2026-09-21-meeting-369-team-space]]
+- [[2026-09-24-meeting-369-team-space]]
+- [[2026-09-25-meeting-369-team-september-25]]
+- [[2026-09-28-meeting-369-team-space]]
+- [[2026-10-05-meeting-369-team-space]]
+- [[2026-10-07-meeting-369-team-space]]
+- [[2026-10-08-meeting-369-team-space]]
+- [[2026-10-10-meeting-369-team-space]]
+- [[2026-10-12-meeting-369-team-space]]
+- [[2026-10-13-meeting-369-team-space]]
+- [[2026-10-15-meeting-369-team-space]]
+- [[2026-10-17-meeting-369-team-space]]
+- [[2026-10-20-meeting-369-team-space]]
+- [[2026-10-26-meeting-369-team-space]]
+- [[2026-10-27-meeting-369-team-space]]
+- [[2026-11-01-meeting-369-team-space]]
 
 - [[2026-08-17-pdf-laimory-midterm-report]]
 - [[2026-06-15-markdown-notion-background-location]]

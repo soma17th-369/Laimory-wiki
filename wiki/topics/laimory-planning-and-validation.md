@@ -2,7 +2,7 @@
 title: Laimory Planning And Validation
 kind: topic
 status: active
-updated: 2026-09-04
+updated: 2026-11-02
 tags: [laimory, product-validation, planning-review, business-model]
 ---
 
@@ -30,6 +30,12 @@ Laimory의 기획은 "자동 모바일 라이프 로그 -> 회고 -> 장기 기�
 
 2026-09-01~03 회의는 permission onboarding을 각 source가 Timeline에 주는 가치를 먼저 설명하는 설득 flow로 고정하고, 첫날 data가 없을 때 낮은 품질을 보여줄지 manual 기록을 열어 둘지 first-value risk를 구체화했다. Release build·login·logging이 남아 실제 beta 시작은 다시 주말 가능성으로 밀렸다. 초기 beta는 in-app rating보다 지인 feedback과 종료 form을 우선하고, same-day multi-generation이 안정되지 않아 하루 한 번 오후 9시 이후 생성하도록 안내하는 임시 운영을 택했다. 이 규칙은 제품의 자연 사용 빈도와 TTFV를 왜곡할 수 있으므로 beta 결과 해석에 함께 기록해야 한다.
 
+## 2026-09~11 회의 반영
+
+9월 초의 지인 약 20명 beta 모집 계획은 스토어 절차용 인원과 구분한다. 09-14~15에는 초기 피드백·미사용자 확인·수집 오류 수정이 나타나고, 09-21 production 신청 뒤 심사 지연으로 랜딩 대기자·광고 개시 대안을 논의했다. 10-10 회의에서는 출시 상태를 확인했다고 보고했으나 최초 공개 시각은 몰랐다. 이후 심사 대기는 업데이트 문제이며 출시 전 상태로 되돌려 서술하지 않는다. [[2026-09-05-meeting-369-team-space]], [[2026-09-14-meeting-369-team-space]], [[2026-09-15-meeting-369-team-space]], [[2026-09-21-meeting-369-team-space]], [[2026-09-29-meeting-369-team-space]], [[2026-10-10-meeting-369-team-space]].
+
+출시 후에는 6시간·최소 데이터 gate와 튜토리얼, 장소 후보 확인·편집으로 첫 경험을 개선하려 했다. 10-18의 앱 재실행 유지율과 10-20 생성자 분모 재해석은 activation·생성·저장 retention을 분리해야 함을 보여준다. 11-01에는 영상이 기존 이미지보다 약하다는 관찰과 연동 배포·비용 사고 대응이 이어졌다. 회의의 잠정 수치를 최종보고서 성과·일반적 유료 전환 결론으로 승격하지 않으며, 별도 검토 대기인 보고서·광고 초안도 이번 회의 ingest로 승인된 것이 아니다. [[2026-10-15-meeting-369-team-space]], [[2026-10-18-meeting-369-team-space]], [[2026-10-20-meeting-369-team-space]], [[2026-10-27-meeting-369-team-space]], [[2026-11-01-meeting-369-team-space]].
+
 ## Key Points
 
 - 초기 persona는 20~30대 디지털 네이티브/직장인 중심이지만, 심의에서는 50대 이상 액티브 시니어와 자서전 방향 피봇 가능성도 제안되었다.
@@ -44,7 +50,7 @@ Laimory의 기획은 "자동 모바일 라이프 로그 -> 회고 -> 장기 기�
 - 초기 마케팅은 community·Instagram으로 20~30명의 관찰 가능한 beta cohort를 먼저 만들고 제품 funnel을 고친 뒤, Landing·Meta A/B test로 소구점별 activation과 cost per activated user를 비교하는 순서가 적절하다.
 - 중간보고서의 구체적 beta 계획은 약 20명, 2026-08-24~08-30, 5개 이상 일기 작성자 보상이며, 정식 출시 뒤 두 소구점에 Meta 광고 약 30만 원을 균등 배분하는 것이다.
 - 광고·콘텐츠 평가는 CTR이나 beta 신청에서 끝내지 않고 GA4, app event와 install referrer를 연결해 campaign별 첫 가치 행동과 D1·D7·D30 행동 retention까지 추적한다.
-- 유료화 가설은 기본 기록/타임라인은 무료, 고급 AI 회고/패턴 분석/AI 대화는 Premium/Max로 차등 제공하는 것이다.
+- 초기 구독 가설 이후 10월 회의에서는 생성 크레딧과 소량 구매 가격안을 논의했다. 실제 유료 전환과 상품·환불 정책은 검증되지 않았다. [[2026-10-15-meeting-369-team-space]], [[2026-10-20-meeting-369-team-space]].
 - 운영 비용 추정과 손익분기점은 내부 가정이므로 별도 검증 전에는 사업 계획 가설로 취급한다.
 - 기획심의 피드백은 Apple Journal 등 기존 서비스 대비 별도 앱을 신뢰하고 장기 데이터를 맡겨야 하는 이유를 더 명확히 요구한다.
 - 기획심의 보고서의 경쟁 구도는 웨어러블 기반 자동 로깅, 직접 입력형 AI 저널, 플랫폼 종속 저널의 세 유형이다. Laimory는 자동 기록과 장기 생활 맥락 기반 회고를 동시에 제공한다는 가설로 차별화한다.
@@ -64,7 +70,7 @@ Laimory의 기획은 "자동 모바일 라이프 로그 -> 회고 -> 장기 기�
 
 - 가장 먼저 검증할 "아하 모먼트"는 자동 타임라인, 회고 카드, AI 대화 중 무엇인가?
 - 권한 요청은 어떤 순서와 문구로 해야 이탈을 최소화할 수 있는가?
-- 무료 장기기억과 유료 AI 기능의 경계는 어느 시점에 그어야 하는가?
+- 회의에서 논의한 생성 크레딧의 실제 차감·무료 지급·유료 구매·실패 반환 정책과 전환 결과는 무엇인가?
 - 사용자 인터뷰/커뮤니티 반응에서 실제 문제 강도와 지불 의사는 어떻게 측정할 것인가?
 - 사용자가 장기 데이터를 별도 앱과 외부 model에 맡기기 전에 어떤 수정·삭제·비공개·전송 통제를 제공해야 하는가?
 - 사진·위치·일정만으로 만든 Timeline이 기억 복원에 도움이 됐는지를 어떤 정성·정량 기준으로 판단할 것인가?
@@ -78,6 +84,22 @@ Laimory의 기획은 "자동 모바일 라이프 로그 -> 회고 -> 장기 기�
 - beta의 강제 생성 시간과 횟수 제한을 제거했을 때 실제 사용 빈도·cost·retention이 어떻게 달라지는가?
 
 ## Linked Sources
+
+- [[2026-09-05-meeting-369-team-space]]
+- [[2026-09-09-meeting-369-team-space]]
+- [[2026-09-14-meeting-369-team-space]]
+- [[2026-09-15-meeting-369-team-space]]
+- [[2026-09-21-meeting-369-team-space]]
+- [[2026-09-25-meeting-369-team-september-25]]
+- [[2026-09-29-meeting-369-team-space]]
+- [[2026-10-05-meeting-369-team-space]]
+- [[2026-10-08-meeting-369-team-space]]
+- [[2026-10-10-meeting-369-team-space]]
+- [[2026-10-12-meeting-369-team-space]]
+- [[2026-10-15-meeting-369-team-space]]
+- [[2026-10-20-meeting-369-team-space]]
+- [[2026-10-27-meeting-369-team-space]]
+- [[2026-11-01-meeting-369-team-space]]
 
 - [[2026-08-17-pdf-laimory-midterm-report]]
 - [[2026-08-10-notes-laimory-midterm-report-section-guide]]

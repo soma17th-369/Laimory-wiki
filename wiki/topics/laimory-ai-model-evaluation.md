@@ -2,7 +2,7 @@
 title: Laimory AI Model Evaluation
 kind: topic
 status: evaluation-in-progress
-updated: 2026-09-04
+updated: 2026-11-02
 tags: [laimory, llm, model-evaluation, benchmark, langfuse]
 ---
 
@@ -29,6 +29,14 @@ OpenAI, Gemini와 Bedrock은 공통 `LLMProvider` facade 아래 text, vision, to
 평가 도구는 Langfuse 결과를 local에서 분석하는 방향에서, API judge 비용을 줄이기 위해 구독 중인 Codex CLI를 local judge로 연결하는 실험까지 확장됐다. 이 방식은 비용 장점과 별개로 reproducibility, authentication, model/version 고정과 batch automation을 검증해야 한다.
 
 2026-09-01~03 회의에서는 `과도하다`, `강하다` 같은 모호한 prompt 기준을 셀 수 있는 metric으로 바꾸고, 모순·불필요 instruction을 정리해 변경 전후 결과를 동일 score로 비교하는 evaluation system을 거의 확정했다고 보고했다. 실제 metric 목록·fixture·score 결과는 회의 전사에 없으므로 구현 완료나 개선 효과로 볼 수 없다. 같은 기간 Timeline 생성과 User Memory update 한 세트의 평균 비용을 약 `$0.1`로 추정했지만, model·token·retry·image·Repair 포함 범위와 billing sample이 없어 운영 예산의 검증값이 아니라 내부 가정이다.
+
+## 2026-09~11 회의 반영
+
+09-08~09-29에는 V3 개선이 여러 차례 목표 일정보다 길어졌고 09-29 원전은 아직 미완료라고 말한다. 10-10 production 반영 목표 뒤 10-11 전환 보고와 설정 문제를 함께 기록해야 한다. 평가 system 사용 보고는 있지만 동일 fixture의 전후 점수·운영 설정·반복 표본은 제시되지 않았다. 10-20 location·calendar의 LLM event 전처리를 code로 바꾸려는 계획은 8월의 다섯 Agent 문서를 갱신할 후속 검증 후보이며 실제 새 graph로 확정하지 않는다. 근거: [[2026-09-08-meeting-369-team-space]], [[2026-09-29-meeting-369-team-space]], [[2026-10-11-meeting-369-team-space]], [[2026-10-20-meeting-369-team-space]].
+
+장소 추론은 10-08 확대 시험 뒤 10-10 별도 근거가 없으면 주소 수준으로 보수화하는 방향으로 바뀌었다. 10-26~27에는 사진 근거 후보·새 event 유형·장소 선택 schema를 조정했다. 이는 prompt 품질뿐 아니라 입력 데이터·사용자 수정·schema 정합성을 함께 평가해야 하는 변화다. [[2026-10-08-meeting-369-team-space]], [[2026-10-10-meeting-369-team-space]], [[2026-10-26-meeting-369-team-space]], [[2026-10-27-meeting-369-team-space]].
+
+비용은 10-12 prompt 증가로 약 100원 수준 재상승, 10-18 일일 사용량 2.9와 원화 약 4,000원 추산, 11-01 개발 Agent의 실제 API 반복 호출 급증이 서로 다른 범위다. 활성 인원으로 일일 비용을 나눈 약 22원을 생성당 원가로 쓰지 않는다. 11-01 총 700달러에서 기충전 99달러를 뺀 601달러 추가안 역시 청구·납부 완료가 아니다. 광고의 약 5%·4.8%를 AI 성능으로 바꾼 10-07 자동 요약 오류도 재사용하지 않는다. [[2026-10-12-meeting-369-team-space]], [[2026-10-18-meeting-369-team-space]], [[2026-11-01-meeting-369-team-space]], [[2026-10-07-meeting-369-team-space]].
 
 ## Key Points
 
@@ -57,6 +65,18 @@ OpenAI, Gemini와 Bedrock은 공통 `LLMProvider` facade 아래 text, vision, to
 - `$0.1` 내부 추정의 sample 수와 model·token·retry·image·Repair 포함 범위는 무엇인가?
 
 ## Linked Sources
+
+- [[2026-09-05-meeting-369-team-space]]
+- [[2026-09-08-meeting-369-team-space]]
+- [[2026-09-10-meeting-369-team-space]]
+- [[2026-09-15-meeting-369-team-space]]
+- [[2026-09-29-meeting-369-team-space]]
+- [[2026-10-10-meeting-369-team-space]]
+- [[2026-10-11-meeting-369-team-space]]
+- [[2026-10-12-meeting-369-team-space]]
+- [[2026-10-13-meeting-369-team-space]]
+- [[2026-10-18-meeting-369-team-space]]
+- [[2026-11-01-meeting-369-team-space]]
 
 - [[2026-08-17-pdf-laimory-midterm-report]]
 - [[2026-08-09-markdown-laimory-prompt-engineering]]

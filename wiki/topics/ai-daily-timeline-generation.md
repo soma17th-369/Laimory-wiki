@@ -2,7 +2,7 @@
 title: AI Daily Timeline Generation
 kind: topic
 status: active
-updated: 2026-09-04
+updated: 2026-11-02
 tags: [laimory, ai-timeline, ai-agent, event-normalization, lifelogging]
 ---
 
@@ -31,6 +31,12 @@ User Memory는 Timeline 문체와 중요도, Question의 결을 조정하는 보
 2026-08-13~30 회의에서는 제품 flow와 품질 failure가 더 구체화됐다. 단건 조회는 draft와 saved를 모두 반환하고 status와 nullable emotion을 포함하는 방향으로 정리됐으며, saved-read와 edit mode를 분리하되 시각적 간격은 줄이기로 했다. 실제 사례에서는 messenger notification이 중요하지 않거나 민감한 event를 과도하게 만드는 문제가 나타나 call log로 scope를 넓히기보다 notification 판단과 최대 event 수를 먼저 보수적으로 조정하기로 했다. 08-30에는 입력 source와 User Memory가 모두 없는 날을 빈 결과로 끝내지 않도록 설명·질문·기본 입력을 제공하는 empty state가 열린 설계 과제로 추가됐다.
 
 2026-09-01~03 회의는 이 flow를 release 수준으로 좁혔다. 읽기 mode에서는 AI 질문을 숨기고 편집 button으로 기존 event 수정 UI에 진입하며, edit mode의 빈 memo에는 질문을 placeholder로 우선 유지한다. 완전 무입력 시 생성 차단과 AI 없는 manual blank Timeline이 대립했지만 data 부족 이유와 개선 방법을 설명해야 한다는 방향에는 합의했다. 같은 날 여러 번 생성할 때 server는 `DRAFT`에 새 source item을 append하고 `SAVED`는 거절한다고 보고됐으나, client의 window와 previous record 조회가 연결되지 않았다. Full flow는 beta 중 재설계하고 초기 beta에는 하루 한 번 오후 9시 이후 생성을 안내하기로 했다.
+
+## 2026-09~11 회의 반영
+
+첫 생성 문제는 beta 하루 1회 안내에서 데이터 준비·크레딧 소비·첫 체험 사이의 충돌로 확장됐다. 09-14 사진 기본 미선택·알림 제외의 비대칭, 10-05 사진 안내·기간·소비 확인창, 10-11~15의 0개 차단·권한 동의 후 6시간·튜토리얼 대안은 서로 다른 설계다. 6시간이 지나도 위치 미동의 등으로 데이터가 없을 수 있어 단일 확정 gate로 합치지 않는다. 10-17 채팅의 사진 1개·알림 3개 가이드 API는 dev 상태 보고이며 전체 OR/AND 정책은 없다. [[2026-09-14-meeting-369-team-space]], [[2026-10-05-meeting-369-team-space]], [[2026-10-11-meeting-369-team-space]], [[2026-10-15-meeting-369-team-space]], [[2026-10-17-meeting-369-team-space]].
+
+10-20에는 location·calendar event 전처리의 code 전환을 계획했고, 10-26에는 Stay·Shopping·Culture·개인 용무 추가를 보고했다. 장소 후보는 사진 근거 중심으로 설계하고 이동 event의 복수 장소·후보 번호를 검토한 뒤 10-27에는 event당 한 장소, 제목의 구체 장소명 축소, 이동은 주소 중심, 본문·별도 위치 편집으로 단순화하는 방향을 맞췄다. 삭제 보호·자동저장·후보 table은 code와 API 확인 전까지 회의상 설계다. 11-01 연동 production rollout이 남아 있으므로 8월 graph가 이 설계로 이미 바뀌었다고 쓰지 않는다. [[2026-10-20-meeting-369-team-space]], [[2026-10-26-meeting-369-team-space]], [[2026-10-27-meeting-369-team-space]], [[2026-11-01-meeting-369-team-space]].
 
 ## Key Points
 
@@ -63,6 +69,23 @@ User Memory는 Timeline 문체와 중요도, Question의 결을 조정하는 보
 - 같은 날 복수 생성의 window start, append ordering, saved transition과 cached history를 어느 layer가 책임질 것인가?
 
 ## Linked Sources
+
+- [[2026-08-09-markdown-laimory-ai-llm-wiki-all-in-one]]
+
+- [[2026-09-09-meeting-369-team-space]]
+- [[2026-09-14-meeting-369-team-space]]
+- [[2026-09-24-meeting-369-team-space]]
+- [[2026-10-05-meeting-369-team-space]]
+- [[2026-10-08-meeting-369-team-space]]
+- [[2026-10-10-meeting-369-team-space]]
+- [[2026-10-11-meeting-369-team-space]]
+- [[2026-10-15-meeting-369-team-space]]
+- [[2026-10-17-meeting-369-team-space]]
+- [[2026-10-18-meeting-369-team-space]]
+- [[2026-10-20-meeting-369-team-space]]
+- [[2026-10-26-meeting-369-team-space]]
+- [[2026-10-27-meeting-369-team-space]]
+- [[2026-11-01-meeting-369-team-space]]
 
 - [[2026-08-17-pdf-laimory-midterm-report]]
 - [[2026-08-20-markdown-laimory-ai-agent-prompt-collection]]

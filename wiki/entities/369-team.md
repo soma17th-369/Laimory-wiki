@@ -2,7 +2,7 @@
 title: 369팀
 kind: entity
 status: active
-updated: 2026-09-04
+updated: 2026-11-02
 tags: [team, sw-maestro, laimory]
 ---
 
@@ -28,6 +28,10 @@ AI·SW마에스트로 제17기에서 Laimory를 기획/개발하는 팀. 이 페
 
 9월 1~3일 회의는 onboarding을 data 활용 설명 중심으로 고정하고 읽기·편집·event 추가·notification·theme를 마무리하면서 release build·login·logging을 병행하는 마지막 hardening을 보여준다. AI 팀은 정량 metric과 request cost를 계산했고, Android·server·AI 사이에서는 완전 무입력 첫날과 same-day multi-generation gap을 임시 beta 규칙으로 관리하기로 했다. 주말 release 가능성이 언급됐지만 실제 artifact와 tester 운영은 확인되지 않았다.
 
+## 2026-09~11 회의 반영
+
+2026-09-05~11-01의 추가 자료 26건(음성 자동 전사 25건·10-17 채팅 1건)은 beta·스토어 제출 준비에서 출시 후 운영·지표·UX 개선으로 이동한 이력이다. 10-10에는 출시 상태를 확인했다고 보고했고 이후 업데이트 심사·광고·생성 데이터 부족·장소 후보·관측 오류를 병행했다. 11-01에는 로컬 Agent 테스트 비용 급증 자체 조사와 server·Android·AI 배포 조율을 논의했다. 누적 회의 source는 55건이며 10-17은 음성 전사가 없어 채팅 밖 합의를 복원하지 않는다. [[369-team-meeting-history]], [[2026-10-10-meeting-369-team-space]], [[2026-10-17-meeting-369-team-space]], [[2026-11-01-meeting-369-team-space]].
+
 ## Key Points
 
 - 팀 목표는 실제 사용자 확보, 라이브 서비스 운영, 기술적 성장, 커뮤니티 교류, 취업/창업 가능성 탐색이다.
@@ -36,7 +40,7 @@ AI·SW마에스트로 제17기에서 Laimory를 기획/개발하는 팀. 이 페
 - 초기 아이디어 흐름은 AI 일기 초안, 회고/성장/기록, 모바일 기반 AI 라이프 로깅을 거쳐 Laimory로 수렴한다.
 - 기획심의 보고서의 멘토 역할은 서비스 기획·AI 응답 품질·LLM 비용, Spring·Backend·Cloud architecture, Android 안정성·성능 검토로 나뉜다.
 - 자동 전사 회의는 `raw/meetings/`에 원문을 보존하고 파일별 source page로 인제스트한다.
-- 회의 이력은 2026-09-03까지 29건이 인제스트됐고, 8월 말~9월 초 회의부터 beta·release hardening과 운영 통합이 중심이 됐다.
+- 회의 이력은 2026-11-01까지 55건(음성 전사 54건·채팅 1건)이 인제스트됐고, 8월 말~9월 초 회의부터 beta·release hardening과 운영 통합이 중심이 됐다.
 
 ## Open Questions
 
@@ -45,6 +49,35 @@ AI·SW마에스트로 제17기에서 Laimory를 기획/개발하는 팀. 이 페
 - Jira/Figma의 실제 URL과 최신 상태는 raw 캡처에 없다.
 
 ## Linked Sources
+
+- [[2026-06-28-github-github-co-work-rule]]
+
+- [[2026-09-05-meeting-369-team-space]]
+- [[2026-09-08-meeting-369-team-space]]
+- [[2026-09-09-meeting-369-team-space]]
+- [[2026-09-10-meeting-369-team-space]]
+- [[2026-09-14-meeting-369-team-space]]
+- [[2026-09-15-meeting-369-team-space]]
+- [[2026-09-17-meeting-369-team-space]]
+- [[2026-09-21-meeting-369-team-space]]
+- [[2026-09-24-meeting-369-team-space]]
+- [[2026-09-25-meeting-369-team-september-25]]
+- [[2026-09-28-meeting-369-team-space]]
+- [[2026-09-29-meeting-369-team-space]]
+- [[2026-10-05-meeting-369-team-space]]
+- [[2026-10-07-meeting-369-team-space]]
+- [[2026-10-08-meeting-369-team-space]]
+- [[2026-10-10-meeting-369-team-space]]
+- [[2026-10-11-meeting-369-team-space]]
+- [[2026-10-12-meeting-369-team-space]]
+- [[2026-10-13-meeting-369-team-space]]
+- [[2026-10-15-meeting-369-team-space]]
+- [[2026-10-17-meeting-369-team-space]]
+- [[2026-10-18-meeting-369-team-space]]
+- [[2026-10-20-meeting-369-team-space]]
+- [[2026-10-26-meeting-369-team-space]]
+- [[2026-10-27-meeting-369-team-space]]
+- [[2026-11-01-meeting-369-team-space]]
 
 - [[2026-08-17-pdf-laimory-midterm-report]]
 - [[2026-08-16-notes-laimory-midterm-presentation-draft]]

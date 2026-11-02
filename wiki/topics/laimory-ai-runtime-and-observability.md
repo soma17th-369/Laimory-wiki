@@ -2,7 +2,7 @@
 title: Laimory AI Runtime and Observability
 kind: topic
 status: active-with-roadmap
-updated: 2026-08-31
+updated: 2026-11-02
 tags: [laimory, deployment, runtime, ec2, agentcore, observability]
 ---
 
@@ -25,6 +25,14 @@ Laimory AI server의 EC2·AgentCore 배포 경로, background task 수명, healt
 2026-08-17 공식 중간보고서는 현재 AI runtime을 Docker 기반 EC2와 GitHub Actions–ECR–SSM 자동 배포·rollback으로 설명하고, AgentCore on-demand는 향후 전환 계획으로 둔다. 운영 JSON은 Filebeat–Elasticsearch, Agent·LLM trace는 Langfuse에 보내고 taskId로 연결한다는 경계도 재확인한다. 보고서는 callback 유실, 중복 요청과 server restart에서도 정합성과 재처리가 유지되는지 실제 scenario로 검증하라는 backend mentor 의견을 포함한다.
 
 2026-08-24~30 회의에서는 AgentCore 자체 배포 뒤 application 연결과 end-to-end test가 진행 중이라고 보고됐다. AgentCore→App Server callback이 private DNS/IP 경로에서 실패해, 08-26에는 callback target을 ALB endpoint로 보내고 환경 분기와 load balancing을 application infrastructure에 맡기기로 했다. 이 결정은 server-to-server authentication, replay 방지, TLS, IAM/network와 traffic ownership을 여전히 열어 둔다. 같은 기간 Kibana·Grafana subdomain을 ALB에서 monitoring EC2로 연결했고, dev와 분리한 on-demand load-test server도 계획했다. Database·Redis를 공유하는 test server는 비용은 낮을 수 있지만 data isolation과 부하 간섭 위험을 별도로 검증해야 한다.
+
+## 2026-09~11 회의 반영
+
+운영 회의에서는 관측·응답·저장 성공이 서로 다르게 실패했다. 09-17에는 응답 전 동기 logging 병목을 비동기화했다고 보고했지만 정량 비교는 없다. 10-10에는 Redis TTL 뒤 AI 실패를 알리지 않는 경로, 10-13에는 Elasticsearch index로 인한 로그 누락, 10-18에는 AgentCore timeout 알림과 callback 저장 성공의 공존을 보고했다. Cold start 원인은 당시 가설이며 timeout을 늘리는 조치가 task 복구 보장을 뜻하지 않는다. 근거: [[2026-09-17-meeting-369-team-space]], [[2026-10-10-meeting-369-team-space]], [[2026-10-13-meeting-369-team-space]], [[2026-10-18-meeting-369-team-space]].
+
+10-11의 V3 production 전환 보고는 회의 중 환경변수·배포 상태 불일치와 실제 사용자 실패로 다시 점검됐다. 11-01에도 server production은 아직 배포 전이었고 Android 심사·AI 전환·필수 버전을 맞추려 했다. 따라서 runtime 문서와 회의의 배포 완료 표현은 실제 image·환경 설정·후속 smoke test와 대조해야 한다. 11-01 API 비용 급증은 로컬 개발 Agent가 환경 파일의 key로 반복 호출한 것으로 자체 조사됐으며 외부 유출 배제는 독립 감사 결과가 아니다. 개발·운영 비용 경계와 반복 제한은 후속 확인 과제다. 근거: [[2026-10-11-meeting-369-team-space]], [[2026-11-01-meeting-369-team-space]].
+
+09-10 gap lock·deadlock과 Flyway 도입, 09-28 service transaction 범위는 구현 검증이 필요한 논의다. AI의 row lock 설명을 원 query 없이 믿었던 사례를 일반 DB 규칙으로 만들지 않는다. [[2026-09-10-meeting-369-team-space]], [[2026-09-28-meeting-369-team-space]].
 
 ## Key Points
 
@@ -51,6 +59,22 @@ Laimory AI server의 EC2·AgentCore 배포 경로, background task 수명, healt
 
 ## Linked Sources
 
+- [[2026-06-20-notes-item-type-column-plan]]
+
+- [[2026-09-08-meeting-369-team-space]]
+- [[2026-09-10-meeting-369-team-space]]
+- [[2026-09-14-meeting-369-team-space]]
+- [[2026-09-15-meeting-369-team-space]]
+- [[2026-09-17-meeting-369-team-space]]
+- [[2026-09-28-meeting-369-team-space]]
+- [[2026-10-07-meeting-369-team-space]]
+- [[2026-10-10-meeting-369-team-space]]
+- [[2026-10-11-meeting-369-team-space]]
+- [[2026-10-13-meeting-369-team-space]]
+- [[2026-10-18-meeting-369-team-space]]
+- [[2026-10-20-meeting-369-team-space]]
+- [[2026-11-01-meeting-369-team-space]]
+
 - [[2026-08-17-pdf-laimory-midterm-report]]
 - [[2026-08-09-markdown-laimory-ai-system-architecture]]
 - [[2026-08-09-markdown-laimory-ai-deployment-and-runtime]]
@@ -72,6 +96,9 @@ Laimory AI server의 EC2·AgentCore 배포 경로, background task 수명, healt
 - [[2026-08-30-meeting-369-team-space]]
 
 ## Related Pages
+
+- [[laimory-backend-feedback-code-mapping]]
+- [[timeline-draft-api-sequence-diagrams]]
 
 - [[laimory]]
 - [[ai-daily-timeline-generation]]

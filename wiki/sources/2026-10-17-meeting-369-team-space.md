@@ -1,0 +1,65 @@
+---
+title: 369팀 스페이스 채팅 기록 요약 - 2026-10-17
+source_type: meeting
+source_path: raw/meetings/369팀 스페이스_20261017_2300/회의 요약_369팀 스페이스_20261017.md
+transcript_path: raw/meetings/369팀 스페이스_20261017_2300/채팅 메시지_369팀 스페이스_20261017.md
+meeting_date: 2026-10-17
+summary_date: 2026-11-02
+ingest_date: 2026-11-02
+transcript_type: chat-export-only
+speaker_attribution: available-unverified
+status: ingested
+tags: [meeting, chat-export, 369-team, laimory]
+---
+
+# 369팀 스페이스 채팅 기록 요약 - 2026-10-17
+
+## 개요
+
+음성 전사 없이 남은 채팅에서 최소 데이터 가이드의 dev/prod 상태, calendar·UTC 수정 계획, 초기 지표의 집계 불확실성을 확인했다.
+
+## 상세 요약
+
+### Calendar·UTC
+
+- **수정 예정**: UTC 오류와 일정 수집을 로컬 DB 저장에서 live 읽기로 바꾸는 작업을 언급했고 일요일에 수정할 계획이라고 했다. 완료 보고가 아니다. (`23:11`)
+
+### 최소 데이터 가이드
+
+- **dev API 상태 보고**: 사진 1개·알림 3개 등 가이드 API가 dev에만 있고 release 시 prod로 배포한다고 설명했다. 각 수치를 완전한 차단 조건이나 최종 OR/AND 규칙으로 추정하지 않는다. (`23:12`)
+
+### 책임 분담
+
+- **설계 설명**: 기준은 server가 관리하고 client는 보내는 구조라고 했다. Credit 소비와 품질 때문에 최소 안내가 필요하다는 의견, server message를 snackbar로 보여주는 안이 나왔다. (`23:13-23:15`)
+
+### 초기 지표
+
+- **잠정 화면 관찰**: 월간 활성 기기 28과 별점 사례가 채팅에 남지만 숫자가 정확하지 않고 download 집계가 13일까지만 보이는 것 같다고 했다. 확정 MAU·설치수·만족도 표본으로 쓰지 않는다. (`23:19-23:28`)
+
+## 결정·진행 상태
+
+| 쟁점 | 회의에서 확인되는 상태 | 근거 |
+|---|---|---|
+| Calendar·UTC | 수정 예정 | `23:11` |
+| 최소 데이터 가이드 | dev API 상태 보고 | `23:12` |
+| 책임 분담 | 설계 설명 | `23:13-23:15` |
+| 초기 지표 | 잠정 화면 관찰 | `23:19-23:28` |
+
+## 후속 확인·열린 질문
+
+음성 기록 없이 채팅에 남지 않은 합의는 확인할 수 없다. API의 실제 prod 반영과 최종 조건·calendar 수정·콘솔 집계 범위를 확인해야 한다.
+
+## 주의 사항
+
+- 음성 전사와 제공 자동 요약이 없는 채팅 export다. 채팅에 남지 않은 구두 설명·의사결정·전체 회의 시간은 복원하지 않는다.
+- 구현·배포·성과·비용은 해당 시점 참여자의 보고 또는 추정이다. 코드·콘솔·청구서·실데이터로 독립 검증한 결과가 아니며 목표를 완료로 바꾸지 않는다.
+- 개인정보가 포함된 원전의 개인 일정·연락처·로그인 접근값은 요약에 재기재하지 않는다.
+
+## 관련 페이지
+
+- [[369-team-meeting-history]]
+- [[369-team]]
+- [[laimory]]
+- [[android-life-logging-data-collection]]
+- [[ai-daily-timeline-generation]]
+- [[laimory-planning-and-validation]]

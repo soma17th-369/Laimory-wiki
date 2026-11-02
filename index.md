@@ -101,9 +101,36 @@ Primary catalog for the LLM Wiki maintained in this vault.
   - [369팀 스페이스 회의 요약 - 2026-09-02](wiki/sources/2026-09-02-meeting-369-team-space.md)
   - [369팀 스페이스 회의 요약 - 2026-09-03](wiki/sources/2026-09-03-meeting-369-team-space.md)
 
+  - [369팀 스페이스 회의 요약 - 2026-09-05](wiki/sources/2026-09-05-meeting-369-team-space.md)
+  - [369팀 스페이스 회의 요약 - 2026-09-08](wiki/sources/2026-09-08-meeting-369-team-space.md)
+  - [369팀 스페이스 회의 요약 - 2026-09-09](wiki/sources/2026-09-09-meeting-369-team-space.md)
+  - [369팀 스페이스 회의 요약 - 2026-09-10](wiki/sources/2026-09-10-meeting-369-team-space.md)
+  - [369팀 스페이스 회의 요약 - 2026-09-14](wiki/sources/2026-09-14-meeting-369-team-space.md)
+  - [369팀 스페이스 회의 요약 - 2026-09-15](wiki/sources/2026-09-15-meeting-369-team-space.md)
+  - [369팀 스페이스 회의 요약 - 2026-09-17](wiki/sources/2026-09-17-meeting-369-team-space.md)
+  - [369팀 스페이스 회의 요약 - 2026-09-21](wiki/sources/2026-09-21-meeting-369-team-space.md)
+  - [369팀 스페이스 회의 요약 - 2026-09-24](wiki/sources/2026-09-24-meeting-369-team-space.md)
+  - [09월 25일 회의 요약 - 2026-09-25](wiki/sources/2026-09-25-meeting-369-team-september-25.md)
+  - [369팀 스페이스 회의 요약 - 2026-09-28](wiki/sources/2026-09-28-meeting-369-team-space.md)
+  - [369팀 스페이스 회의 요약 - 2026-09-29](wiki/sources/2026-09-29-meeting-369-team-space.md)
+  - [369팀 스페이스 회의 요약 - 2026-10-05](wiki/sources/2026-10-05-meeting-369-team-space.md)
+  - [369팀 스페이스 회의 요약 - 2026-10-07](wiki/sources/2026-10-07-meeting-369-team-space.md)
+  - [369팀 스페이스 회의 요약 - 2026-10-08](wiki/sources/2026-10-08-meeting-369-team-space.md)
+  - [369팀 스페이스 회의 요약 - 2026-10-10](wiki/sources/2026-10-10-meeting-369-team-space.md)
+  - [369팀 스페이스 회의 요약 - 2026-10-11](wiki/sources/2026-10-11-meeting-369-team-space.md)
+  - [369팀 스페이스 회의 요약 - 2026-10-12](wiki/sources/2026-10-12-meeting-369-team-space.md)
+  - [369팀 스페이스 회의 요약 - 2026-10-13](wiki/sources/2026-10-13-meeting-369-team-space.md)
+  - [369팀 스페이스 회의 요약 - 2026-10-15](wiki/sources/2026-10-15-meeting-369-team-space.md)
+  - [369팀 스페이스 채팅 기록 요약 - 2026-10-17](wiki/sources/2026-10-17-meeting-369-team-space.md)
+  - [369팀 스페이스 회의 요약 - 2026-10-18](wiki/sources/2026-10-18-meeting-369-team-space.md)
+  - [369팀 스페이스 회의 요약 - 2026-10-20](wiki/sources/2026-10-20-meeting-369-team-space.md)
+  - [369팀 스페이스 회의 요약 - 2026-10-26](wiki/sources/2026-10-26-meeting-369-team-space.md)
+  - [369팀 스페이스 회의 요약 - 2026-10-27](wiki/sources/2026-10-27-meeting-369-team-space.md)
+  - [369팀 스페이스 회의 요약 - 2026-11-01](wiki/sources/2026-11-01-meeting-369-team-space.md)
+
 ## Topics
 
-- [369팀 회의 이력](wiki/topics/369-team-meeting-history.md): 29개 회의의 제품 정의, 기획심의, alpha·beta 준비, release hardening과 기술 의사결정 변화.
+- [369팀 회의 이력](wiki/topics/369-team-meeting-history.md): 55개 회의 source(전사 54·채팅 1)의 제품 정의·beta·출시 확인·운영 개선·지표·비용 이력.
 - [AI Life Logging](wiki/topics/ai-life-logging.md): mobile AI life-logging and Personal AI Memory pattern synthesized from Laimory planning sources.
 - [AI Daily Timeline Generation](wiki/topics/ai-daily-timeline-generation.md): current Agent pipeline, read/edit flow, empty state와 same-day multi-generation 계약.
 - [Laimory User Memory](wiki/topics/laimory-user-memory.md): bounded user profile rewrite, memo provenance rules, and safe context consumption.
@@ -115,8 +142,8 @@ Primary catalog for the LLM Wiki maintained in this vault.
 
 ## Entities
 
-- [369팀](wiki/entities/369-team.md): SW Maestro team, 역할·운영 model과 2026-09-03까지의 release hardening 이력.
-- [Laimory](wiki/entities/laimory.md): Android Personal AI Memory / AI life-logging product의 release 직전 구현·검증 상태.
+- [369팀](wiki/entities/369-team.md): SW Maestro team, 역할·운영 model과 2026-11-01까지의 beta·출시·운영 이력.
+- [Laimory](wiki/entities/laimory.md): Android Personal AI Memory / AI life-logging product의 출시 확인·운영 개선·검증 상태(2026-11-01 회의까지).
 
 ## Answers
 

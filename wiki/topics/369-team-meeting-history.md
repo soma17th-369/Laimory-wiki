@@ -2,7 +2,7 @@
 title: 369팀 회의 이력
 kind: topic
 status: active
-updated: 2026-09-04
+updated: 2026-11-02
 tags: [369-team, laimory, meetings, decision-history, project-history]
 ---
 
@@ -10,7 +10,7 @@ tags: [369-team, laimory, meetings, decision-history, project-history]
 
 ## Scope
 
-369팀 회의 29건에서 Laimory의 제품 정의, 기획심의 준비, 구현 통합, alpha·beta 준비와 기술 의사결정이 어떻게 변했는지를 시간순으로 연결한다. 각 항목은 `raw/meetings/`의 회의 요약본을 인제스트한 `wiki/sources/` page를 근거로 한다.
+369팀 회의 source 55건(음성 자동 전사 54건·채팅만 1건)에서 Laimory의 제품 정의, 기획심의 준비, 구현 통합, alpha·beta 준비와 기술 의사결정이 어떻게 변했는지를 시간순으로 연결한다. 각 항목은 `raw/meetings/`의 회의 요약본을 인제스트한 `wiki/sources/` page를 근거로 한다.
 
 ## Current Synthesis
 
@@ -25,6 +25,10 @@ tags: [369-team, laimory, meetings, decision-history, project-history]
 2026-08-24부터 08-30까지는 초기 release의 마지막 통합 단계였다. GA4 funnel, AgentCore 연결, timeline 읽기·편집 UX, initializer와 onboarding, ALB callback, notification·위치 UX, 탈퇴 후 data lifecycle, Bedrock 모델 전환 장애와 단계별 model routing, 약관 WebView·static hosting, 무입력 empty state가 이어졌다. 이 시기의 구현 보고와 model명은 code·배포 기록으로 확인해야 하며, 회의 중 법률·비용·일정 추정은 확정 사실로 취급하지 않는다.
 
 2026-09-01부터 09-03까지는 permission onboarding과 읽기·편집 mode를 고정하고 release build·login·logging을 마무리하는 hardening 단계였다. Onboarding은 photo·calendar·location·notification을 왜 읽고 어떻게 Timeline에 쓰는지 구체적으로 설명하는 방향으로 수정됐다. 완전 무입력 첫날에는 생성을 막을지 manual blank Timeline을 줄지 미결이었고, 같은 날 복수 생성은 server append와 client window·history state가 완전히 연결되지 않아 초기 beta에서는 하루 한 번 오후 9시 이후 생성하도록 안내하기로 했다. Release는 9월 4일 목표에서 주말 가능성으로 밀렸으며 실제 배포·beta 시작은 확인되지 않았다.
+
+2026-09-05~29에는 지인 beta, 사진·메모·onboarding QA, GA4 debug 검증, production 신청과 심사 지연, 광고 계정 접근 장애를 다뤘다. 10-05~08은 출시 전 접수·광고 소구점과 생성 확인·공지·로딩을 검토한 시기다. 자동 요약의 설치·AI 재현율·V3 완료 단정은 원전과 맞지 않는 부분이 있어 각 source에 구분했다.
+
+10-10 회의는 출시됨을 확인한 보고이며 최초 공개 시각은 불명이다. 10-11~20에는 V3 설정·로그 누락·AgentCore timeout, 첫 생성 데이터 부족·credit·초기 사용자 지표를 점검했다. 10-26~11-01에는 tutorial·gallery·사진 근거 장소 후보와 schema를 정리하고 연동 release, 알림 지연·추가 GA4, 개발 Agent 테스트의 API 비용 급증을 다뤘다. 실제 release·billing·cohort 검증 없이 회의 보고를 성과 확정값으로 승격하지 않는다.
 
 ## Chronology
 
@@ -59,6 +63,32 @@ tags: [369-team, laimory, meetings, decision-history, project-history]
 | 2026-09-01 | onboarding review | data 활용을 직접 설명하는 permission onboarding, photo 의미 분석·calendar·location visual과 release 범위 조정 |
 | 2026-09-02 | edit UX·first value | onboarding 고정, 별도 depth의 읽기·편집 mode, 14세 확인과 완전 무입력 first experience 논의 |
 | 2026-09-03 | release hardening | 읽기·편집·event 추가·notification·theme 구현 보고, AI metric·비용 추정, 복수 생성 gap과 beta 하루 1회 규칙 |
+| [2026-09-05](../sources/2026-09-05-meeting-369-team-space.md) | 회의 | AI 정량 평가와 release·QA 빌드를 점검하고 Play Store 제출 및 지인 베타 운영을 준비했다 |
+| [2026-09-08](../sources/2026-09-08-meeting-369-team-space.md) | 회의 | Prompt V3 개선과 mobile onboarding·수집·logging 문제를 함께 점검했다 |
+| [2026-09-09](../sources/2026-09-09-meeting-369-team-space.md) | 회의 | 홈 화면 redesign과 데이터·기록 접근성을 검토하고 beta 전 마무리 항목을 조율했다 |
+| [2026-09-10](../sources/2026-09-10-meeting-369-team-space.md) | 회의 | Prompt V3와 홈 UI·onboarding 마무리를 공유했다 |
+| [2026-09-14](../sources/2026-09-14-meeting-369-team-space.md) | 회의 | 초기 사용자 반응과 첫 사용 UX를 검토했다 |
+| [2026-09-15](../sources/2026-09-15-meeting-369-team-space.md) | 회의 | Beta 중 수집·편집 오류와 버그 추적을 점검하고 미사용자 후속 확인 및 V3 배포 목표를 논의했다 |
+| [2026-09-17](../sources/2026-09-17-meeting-369-team-space.md) | 회의 | 부하 테스트에서 동기 logging 병목을 발견한 뒤 비동기 전환을 보고했다 |
+| [2026-09-21](../sources/2026-09-21-meeting-369-team-space.md) | 회의 | 프로덕션 접근 신청과 GA4 debug 테스트를 보고하고 메모 계측을 단순화했다 |
+| [2026-09-24](../sources/2026-09-24-meeting-369-team-space.md) | 회의 | GA4·광고 귀속과 스토어 자료를 준비하고 사진 크기·업로드 지연을 검토했다 |
+| [2026-09-25](../sources/2026-09-25-meeting-369-team-september-25.md) | 회의 | 충전한 Meta 광고 계정이 콘솔에서 보이지 않는 문제를 조사하고 지원·결제 증빙 경로를 찾았다 |
+| [2026-09-28](../sources/2026-09-28-meeting-369-team-space.md) | 회의 | KPI 쿼리·스토어와 랜딩 시각 자료·문의 기능을 준비했다 |
+| [2026-09-29](../sources/2026-09-29-meeting-369-team-space.md) | 회의 | V3·계측 준비와 출시 지연에 따른 마케팅 시작 시점을 조율했다 |
+| [2026-10-05](../sources/2026-10-05-meeting-369-team-space.md) | 회의 | 출시 전 광고의 관심·전화번호 접수와 랜딩 마찰을 검토했다 |
+| [2026-10-07](../sources/2026-10-07-meeting-369-team-space.md) | 회의 | 출시 전 광고 지표·크레딧 확인 UI·공지·로딩을 검토했다 |
+| [2026-10-08](../sources/2026-10-08-meeting-369-team-space.md) | 회의 | 의미 없는 체류 사건을 줄이고 장소 기반 추론을 시험했다 |
+| [2026-10-10](../sources/2026-10-10-meeting-369-team-space.md) | 회의 | 회의 중 Play Store 출시 상태를 확인했다고 보고하고 V3 production 전환과 후속 UX 업데이트를 조율했다 |
+| [2026-10-11](../sources/2026-10-11-meeting-369-team-space.md) | 회의 | V3 production 전환을 보고했으나 회의 중 실제 사용자 생성 실패와 환경변수·배포 상태 불일치를 점검했다 |
+| [2026-10-12](../sources/2026-10-12-meeting-369-team-space.md) | 회의 | Play Store 후속 업데이트 심사를 기다리며 홈페이지 다운로드 연결·UTM·AI 고지를 점검했다 |
+| [2026-10-13](../sources/2026-10-13-meeting-369-team-space.md) | 회의 | 운영 로그 누락과 정리 batch를 보완하고 심사 지연 중 남은 UX·마케팅 준비를 공유했다 |
+| [2026-10-15](../sources/2026-10-15-meeting-369-team-space.md) | 회의 | 스토어 이미지·크레딧 가격 화면을 다듬고 첫날 데이터 부족과 생성 제한·튜토리얼 대안을 길게 논의했다 |
+| [2026-10-17](../sources/2026-10-17-meeting-369-team-space.md) | 채팅만 보존 | 음성 전사 없이 남은 채팅에서 최소 데이터 가이드의 dev/prod 상태, calendar·UTC 수정 계획, 초기 지표의 집계 불확실성을 확인했다 |
+| [2026-10-18](../sources/2026-10-18-meeting-369-team-space.md) | 회의 | 출시 후 debug 수정과 AgentCore timeout을 점검하고 첫 사용·유지 지표를 확인했다 |
+| [2026-10-20](../sources/2026-10-20-meeting-369-team-space.md) | 회의 | Calendar 수집 정합성과 위치 후보 확인·지도 UX를 검토했다 |
+| [2026-10-26](../sources/2026-10-26-meeting-369-team-space.md) | 회의 | Event 종류 확장과 장소 후보 저장·표시 계약을 맞췄다 |
+| [2026-10-27](../sources/2026-10-27-meeting-369-team-space.md) | 회의 | 튜토리얼과 gallery prototype을 검토하고 장소 선택을 event당 하나로 단순화하는 방향을 맞췄다 |
+| [2026-11-01](../sources/2026-11-01-meeting-369-team-space.md) | 회의 | API 비용 급증을 조사하다 로컬 개발 Agent 테스트의 실제 API 호출을 원인으로 보고했다 |
 
 ## Durable Threads
 
@@ -80,11 +110,38 @@ tags: [369-team, laimory, meetings, decision-history, project-history]
 - 결정·액션 아이템의 담당자와 완료 상태를 어떤 issue tracker와 연결할 것인가?
 - 법률 mentoring을 참석자가 재해석한 내용과 실제 법률 자문 원문을 어떻게 분리해 보존할 것인가?
 - 회의별 성능 수치와 모델 품질 관찰을 재현 가능한 benchmark·trace·issue로 어떻게 승격할 것인가?
-- 8월 말 계획했던 beta와 Play Store 심사가 실제로 시작·완료됐는지, GA4 funnel과 tester 결과는 무엇인가?
+- 10월 출시 확인 이후 beta·유료 유입·업데이트별 GA4 cohort와 실제 생성·저장 결과를 어떻게 검증할 것인가?
 - 초기 beta의 하루 1회·오후 9시 이후 안내가 실제 사용 pattern과 first-value 평가를 얼마나 왜곡하는가?
 - 약관·동의·삭제 scheduler와 notification policy가 실제 data lifecycle 및 platform 요구와 일치하는가?
 
 ## Linked Sources
+
+- [[2026-09-05-meeting-369-team-space]]
+- [[2026-09-08-meeting-369-team-space]]
+- [[2026-09-09-meeting-369-team-space]]
+- [[2026-09-10-meeting-369-team-space]]
+- [[2026-09-14-meeting-369-team-space]]
+- [[2026-09-15-meeting-369-team-space]]
+- [[2026-09-17-meeting-369-team-space]]
+- [[2026-09-21-meeting-369-team-space]]
+- [[2026-09-24-meeting-369-team-space]]
+- [[2026-09-25-meeting-369-team-september-25]]
+- [[2026-09-28-meeting-369-team-space]]
+- [[2026-09-29-meeting-369-team-space]]
+- [[2026-10-05-meeting-369-team-space]]
+- [[2026-10-07-meeting-369-team-space]]
+- [[2026-10-08-meeting-369-team-space]]
+- [[2026-10-10-meeting-369-team-space]]
+- [[2026-10-11-meeting-369-team-space]]
+- [[2026-10-12-meeting-369-team-space]]
+- [[2026-10-13-meeting-369-team-space]]
+- [[2026-10-15-meeting-369-team-space]]
+- [[2026-10-17-meeting-369-team-space]]
+- [[2026-10-18-meeting-369-team-space]]
+- [[2026-10-20-meeting-369-team-space]]
+- [[2026-10-26-meeting-369-team-space]]
+- [[2026-10-27-meeting-369-team-space]]
+- [[2026-11-01-meeting-369-team-space]]
 
 - [[2026-05-16-meeting-369-team-space]]
 - [[2026-05-17-meeting-369-team-space]]

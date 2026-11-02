@@ -2,7 +2,7 @@
 title: Laimory
 kind: entity
 status: active
-updated: 2026-09-04
+updated: 2026-11-02
 tags: [product, ai-life-logging, personal-ai-memory, android]
 ---
 
@@ -10,7 +10,7 @@ tags: [product, ai-life-logging, personal-ai-memory, android]
 
 ## Scope
 
-369팀이 기획 중인 Android 기반 Personal AI Memory / AI life-logging 서비스.
+369팀이 기획·개발하고 출시·운영 상태를 점검하는 Android 기반 Personal AI Memory / AI life-logging 서비스.
 
 ## Current Synthesis
 
@@ -30,6 +30,12 @@ Laimory는 모바일 기기 안에 흩어진 사진, 위치, 일정, 앱 사용,
 
 2026-09-01~03 회의에서는 photo·calendar·location·notification의 활용 이유를 설명하는 permission onboarding을 고정하고, 읽기·편집 mode, event 추가, notification·theme 설정을 구현했다고 보고했다. Release build·login·logging이 남아 release 목표는 9월 4일에서 주말 가능성으로 이동했다. 완전 무입력 첫날과 same-day multi-generation은 아직 완성된 product flow가 아니며, 초기 beta에는 하루 한 번 오후 9시 이후 생성하도록 안내하는 임시 규칙을 쓰기로 했다. 따라서 이 시점도 beta 결과가 아니라 release 직전 hardening 상태다.
 
+## 2026-09~11 회의 반영
+
+2026-11-02 추가 회의 ingest는 9월 beta·출시 준비에서 11월 초 운영까지를 연결한다. 10-10에는 Play Store 출시됨을 확인했다고 보고했으나 정확한 최초 공개 시각은 모른다. 10-11 V3 전환 보고는 환경변수·배포 오류와 함께 읽어야 한다. 10-20 이후 location·calendar code 전처리, 새 event 종류·사진 근거 장소 후보·단일 장소 편집을 설계했고 11-01에는 연동 rollout이 남았다. 8월 구현 문서는 기준 snapshot이며 최신 production 계약은 후속 commit·artifact로 재검증해야 한다. [[2026-10-10-meeting-369-team-space]], [[2026-10-11-meeting-369-team-space]], [[2026-10-20-meeting-369-team-space]], [[2026-10-26-meeting-369-team-space]], [[2026-10-27-meeting-369-team-space]], [[2026-11-01-meeting-369-team-space]].
+
+첫 사용의 핵심은 권한 허용만으로 유효 source가 보장되지 않는 점과 credit을 쓰기 전에 품질·데이터를 설명하는 점으로 구체화됐다. 6시간 gate·0개 차단·tutorial·사진 선택은 미결·변화 중인 설계로 분리한다. 초기 169~170명·42%는 정의를 점검하던 앱 재실행 지표이며 승인된 생성·저장 retention이 아니다. 상품 화면안·API 비용·영상 약세는 [[laimory-planning-and-validation]] 및 관련 source에서 계획·관측·검증 상태를 확인한다. [[2026-10-15-meeting-369-team-space]], [[2026-10-18-meeting-369-team-space]].
+
 ## Key Points
 
 - 핵심 기능은 AI Timeline, 5가지 구조화 회고, 충분한 기록 누적 후 Personal AI Chat이다.
@@ -43,7 +49,7 @@ Laimory는 모바일 기기 안에 흩어진 사진, 위치, 일정, 앱 사용,
 - 2026-08-09 문서 기준 `dev` 자동 배포는 EC2이고 AgentCore는 수동 경로였다. 8월 말 회의에서는 AgentCore 배포·연결 시험과 ALB callback이 진행됐으므로 현재 traffic ownership과 운영 상태는 배포 기록으로 재확인해야 한다.
 - 기록은 저장 전까지 계속 추가되며, 기존 수정/작성 내용은 임시저장으로 유지되는 방향이 제안되었다.
 - 읽기 mode는 AI 질문을 숨기고 편집 button으로 기존 event 수정 UI에 들어가는 별도 depth를 유지하며, edit mode의 빈 memo에는 AI 질문을 보여주는 방향으로 구현 보고됐다.
-- 사업화 구상은 Free, Premium, Max 3단계 구독 모델이며, 고급 AI 회고/패턴/대화 기능을 유료화한다.
+- 초기 문서의 Free/Premium/Max 구독 구상 이후, 10월 회의에서는 생성 크레딧과 소량 구매 가격안을 논의했다. 상품 등록·실결제·매출은 별도 확인 대상이다. [[2026-10-15-meeting-369-team-space]], [[2026-10-20-meeting-369-team-space]].
 - 기술 전략은 Android 앱, Spring Boot backend, 자체 경량 AI 서버/상용 LLM API, On-device AI 1차 가공, 모니터링 도구를 포함한다.
 - Laboratory Android lab에서 사진, 일정, 알림, Health Connect, Samsung Health-origin 데이터를 실험하고 있으며, 서버 전송 후보 구조는 typed timeline source item batch로 정리되었다.
 - 공식 중간보고서는 위치·일정·사진·건강·알림 수집을 공통 source로 정규화하고, 권한이 거부·회수되면 해당 source만 제한하며 사용자가 선택한 데이터만 AI 생성에 활용한다고 설명한다.
@@ -74,11 +80,38 @@ Laimory는 모바일 기기 안에 흩어진 사진, 위치, 일정, 앱 사용,
 - Google Timeline/Places 연동, Geofencing, Passive Location 중 MVP에 맞는 위치 수집 전략은 무엇인가?
 - 20~30대 직장인과 50대 이상 액티브 시니어 중 어떤 persona가 더 강한 문제/지불 의사를 보이는가?
 - 모바일 추출 데이터 중 metadata-only로 충분한 항목과 원본/썸네일 업로드가 필요한 항목을 어떻게 나눌 것인가?
-- 9월 초까지 미뤄진 beta와 Play Store 제출이 실제로 시작됐으며 activation·retention·수정·삭제 지표는 어떻게 나왔는가?
+- 10월 출시 확인 이후 activation·생성·저장 retention·수정·삭제 지표는 어떤 검증된 cohort와 집계 창으로 나왔는가?
 - 입력 source와 User Memory가 모두 없는 날의 첫 경험을 AI 호출 없이 어떻게 유용하게 만들 것인가?
 - 같은 날 복수 생성에서 server append, client request window와 previous record state를 어떤 계약으로 연결할 것인가?
 
 ## Linked Sources
+
+- [[2026-09-05-meeting-369-team-space]]
+- [[2026-09-08-meeting-369-team-space]]
+- [[2026-09-09-meeting-369-team-space]]
+- [[2026-09-10-meeting-369-team-space]]
+- [[2026-09-14-meeting-369-team-space]]
+- [[2026-09-15-meeting-369-team-space]]
+- [[2026-09-17-meeting-369-team-space]]
+- [[2026-09-21-meeting-369-team-space]]
+- [[2026-09-24-meeting-369-team-space]]
+- [[2026-09-25-meeting-369-team-september-25]]
+- [[2026-09-28-meeting-369-team-space]]
+- [[2026-09-29-meeting-369-team-space]]
+- [[2026-10-05-meeting-369-team-space]]
+- [[2026-10-07-meeting-369-team-space]]
+- [[2026-10-08-meeting-369-team-space]]
+- [[2026-10-10-meeting-369-team-space]]
+- [[2026-10-11-meeting-369-team-space]]
+- [[2026-10-12-meeting-369-team-space]]
+- [[2026-10-13-meeting-369-team-space]]
+- [[2026-10-15-meeting-369-team-space]]
+- [[2026-10-17-meeting-369-team-space]]
+- [[2026-10-18-meeting-369-team-space]]
+- [[2026-10-20-meeting-369-team-space]]
+- [[2026-10-26-meeting-369-team-space]]
+- [[2026-10-27-meeting-369-team-space]]
+- [[2026-11-01-meeting-369-team-space]]
 
 - [[2026-08-17-pdf-laimory-midterm-report]]
 - [[2026-08-12-notes-laimory-new-value-proposition]]
